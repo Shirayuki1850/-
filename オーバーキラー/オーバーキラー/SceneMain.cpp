@@ -24,7 +24,7 @@ CSceneMain::CSceneMain()
 //デストラクタ
 CSceneMain::~CSceneMain()
 {
-
+	
 }
 
 //初期化メソッド
