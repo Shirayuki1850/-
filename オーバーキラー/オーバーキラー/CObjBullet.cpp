@@ -69,5 +69,4 @@ void CObjBullet::Draw()
 	//•`‰æ
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 }
-
-
+//Git is father fucker
