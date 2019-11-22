@@ -69,5 +69,5 @@ void CObjBullet::Draw()
 	//•`‰æ
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 }
-//Git“ñ“x‚Æg‚¢‚½‚­‚È‚¢B
+
 
