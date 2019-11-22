@@ -439,15 +439,3 @@ bool CObjBlock::HeroBlckCrossPoint(
 
 
 }
-//GitŽ€‚Ë
-
-
-
-
-
-
-
-
-
-
-
