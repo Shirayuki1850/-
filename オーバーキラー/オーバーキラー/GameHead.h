@@ -13,6 +13,7 @@ enum OBJ_NAME
 	OBJ_BULLET,
 	OBJ_BOOS_ENEMY,
 	OBJ_STAGE,
+	OBJ_TITLE,
 };
 //------------------------------------------------
 
@@ -60,13 +61,16 @@ struct UserData
 #include "ObjBlock.h"
 #include "ObjEnemy.h"
 #include "ObjStage.h"
+
+#include "ObjTitle.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
+#include "SceneTitle.h"
 #include "SceneMain.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneMain  
+#define SET_GAME_START CSceneTitle  
 //-----------------------------------------------
