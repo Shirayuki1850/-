@@ -33,7 +33,7 @@ void CSceneMain::InitScene()
 	//外部データの読み込み（ステージ情報）
 	unique_ptr<wchar_t>p;//ステージ情報ポインター
 	int size;
-	p = Save::ExternalDataOpen(L"マップEasy.csv", &size);//外部データの読み込み
+	p = Save::ExternalDataOpen(L"マップデータ/マップEasy.csv", &size);//外部データの読み込み
 	//p = Save::ExternalDataOpen(L"マップNomal.csv", &size);//外部データの読み込み
 	//p = Save::ExternalDataOpen(L"マップ.Hard.csv", &size);//外部データの読み込み
 
@@ -54,13 +54,12 @@ void CSceneMain::InitScene()
 
 	
 	//グラフィック読み込み
-	Draw::LoadImageW(L"うーたん集合.png", 2,TEX_SIZE_512);
-	Draw::LoadImageW(L"背景昼間.jpg", 0, TEX_SIZE_512);
-	//Draw::LoadImageW(L"背景昼間.jpg", 0, TEX_SIZE_512);
-	//Draw::LoadImageW(L"背景昼間.jpg", 0, TEX_SIZE_512);
-	Draw::LoadImageW(L"銃,アーマーまとめ.png", 4, TEX_SIZE_512);
-	Draw::LoadImageW(L"アイテムまとめ.png", 3, TEX_SIZE_512);
-	Draw::LoadImageW(L"test.png", 1, TEX_SIZE_512);
+	Draw::LoadImageW(L"画像/うーたん集合.png", 2,TEX_SIZE_512);
+	Draw::LoadImageW(L"画像/背景昼間.jpg", 0, TEX_SIZE_512);
+
+	Draw::LoadImageW(L"画像/銃,アーマーまとめ.png", 4, TEX_SIZE_512);
+	Draw::LoadImageW(L"画像/アイテムまとめ.png", 3, TEX_SIZE_512);
+	Draw::LoadImageW(L"画像/test.png", 1, TEX_SIZE_512);
 	//Draw::LoadImageW(L"昼用弾丸.png", 5, TEX_SIZE_512);
 	//Draw::LoadImageW(L"夕方用弾丸.png", 6, TEX_SIZE_512);
 	//Draw::LoadImageW(L"夜用弾丸.png", 7, TEX_SIZE_512);
