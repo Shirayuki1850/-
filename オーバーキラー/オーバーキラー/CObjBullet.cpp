@@ -70,3 +70,5 @@ void CObjBullet::Draw()
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 }
 //Git is father fucker
+//Git is dead.„‚Í‚à‚¤g‚¢‚½‚­‚È‚¢‚Á‚Ä‚Ì‚ª–{‰¹B
+
