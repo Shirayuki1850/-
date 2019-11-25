@@ -78,6 +78,10 @@ void CSceneMain::InitScene()
 	CObjStage* objs = new CObjStage();
 	Objs::InsertObj(objs, OBJ_STAGE, 1);
 
+	/*//敵オブジェクト作成
+	CObjEnemy*obje = new CObjEnemy();
+	Objs::InsertObj(obje, OBJ_ENEMY, 13);*/
+
 	
 
 }

@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\GAMEOVER">
+      <UniqueIdentifier>{56143e40-0fdf-49f6-9d96-dc4665b17f02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GAMECLEAR">
+      <UniqueIdentifier>{e98e8d3e-df3e-49ef-9c81-2a68fa5b071c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GAMETITLE">
+      <UniqueIdentifier>{253a6231-7b8e-4cfb-b7eb-2c12fc4ba7ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CObjBullet.cpp">
@@ -72,10 +81,31 @@
     <ClCompile Include="GameL\WinInputs.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="ObjGameOver.cpp">
+      <Filter>ソース ファイル\GAMEOVER</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGameOver.cpp">
+      <Filter>ソース ファイル\GAMEOVER</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjClear.cpp">
+      <Filter>ソース ファイル\GAMECLEAR</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneClear.cpp">
+      <Filter>ソース ファイル\GAMECLEAR</Filter>
+    </ClCompile>
     <ClCompile Include="ObjTitle.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\GAMETITLE</Filter>
     </ClCompile>
     <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソース ファイル\GAMETITLE</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjMediumBoss.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjSpecialEnemy.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjEnemyBoss.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -137,10 +167,31 @@
     <ClInclude Include="GameL\WinInputs.h">
       <Filter>リソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SceneTitle.h">
-      <Filter>ソース ファイル</Filter>
+    <ClInclude Include="ObjGameOver.h">
+      <Filter>ソース ファイル\GAMEOVER</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneGameOver.h">
+      <Filter>ソース ファイル\GAMEOVER</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjClear.h">
+      <Filter>ソース ファイル\GAMECLEAR</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneClear.h">
+      <Filter>ソース ファイル\GAMECLEAR</Filter>
     </ClInclude>
     <ClInclude Include="ObjTitle.h">
+      <Filter>ソース ファイル\GAMETITLE</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>ソース ファイル\GAMETITLE</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjMediumBoss.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjSpecialEnemy.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjEnemyBoss.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>
