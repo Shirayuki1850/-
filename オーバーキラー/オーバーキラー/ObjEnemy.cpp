@@ -19,6 +19,8 @@ CObjEnemy::CObjEnemy(float x, float y)
 //イニシャライズ
 void CObjEnemy::Init()
 {
+
+	m_hp = 3;//HP
 	
 	m_vx = 0.0f;//移動ベクトル
 	m_vy = 0.0f;
@@ -126,6 +128,20 @@ void CObjEnemy::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
+
+	//弾丸と接触していたらHPを減らす
+	if (hit ->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	{
+		m_hp -= 1;
+	}
+
+	//HPが0になったら破壊
+	if (m_hp <= 0)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+	
 }
 //ドロー
 void CObjEnemy::Draw()
@@ -158,7 +174,7 @@ void CObjEnemy::Draw()
 	dst.m_bottom = 64.0f+m_py;
 
 	//描画
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, c, 0.0f);
 
 
 }
