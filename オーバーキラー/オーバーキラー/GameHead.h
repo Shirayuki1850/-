@@ -14,6 +14,8 @@ enum OBJ_NAME
 	OBJ_BOOS_ENEMY,
 	OBJ_STAGE,
 	OBJ_TITLE,
+	OBJ_CLEAR,
+	OBJ_GAMEOVER,
 };
 //------------------------------------------------
 
@@ -63,10 +65,14 @@ struct UserData
 #include "ObjStage.h"
 
 #include "ObjTitle.h"
+#include "ObjClear.h"
+#include "ObjGameOver.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneTitle.h"
+#include "SceneClear.h"
+#include "SceneGameOver.h"
 #include "SceneMain.h"
 //-----------------------------------------------
 
