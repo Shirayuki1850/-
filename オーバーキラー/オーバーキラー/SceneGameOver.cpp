@@ -37,7 +37,7 @@ void CSceneGameOver::Scene()
 	Font::SetStrTex(L"NEW GAME : RESPORN");
 
 	//Music loading
-	Audio::LoadAudio(0, L"BJMSE/ゲームオーバー.wav", BACK_MUSIC);
+	Audio::LoadAudio(2, L"BJMSE/ゲームオーバー.wav", BACK_MUSIC);
 
 	//Volume 1.0 return
 	float v = Audio::VolumeMaster(0);

@@ -29,7 +29,7 @@ void CSceneClear::InitScene()
 
 
 	//Music loading
-	Audio::LoadAudio(1, L"ゲームクリア.wav", BACK_MUSIC);
+	Audio::LoadAudio(1, L"BJMSE/ゲームクリア.wav", BACK_MUSIC);
 
 	//Volume 1.0 return
 	float v = Audio::VolumeMaster(0);
