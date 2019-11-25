@@ -8,14 +8,13 @@ enum OBJ_NAME
 	//OBJ_○○と表記
 	OBJ_HERO,
 	OBJ_BLOCK,
-	OBJ_TIME,
 	OBJ_ENEMY,
 	OBJ_BULLET,
-	OBJ_BOOS_ENEMY,
+	OBJ_BOSS_ENEMY,
 	OBJ_STAGE,
 	OBJ_TITLE,
-	OBJ_CLEAR,
-	OBJ_GAMEOVER,
+	OBJ_MEDIUM_BOSS,
+	OBJ_SPECIAL_ENEMY,
 };
 //------------------------------------------------
 
@@ -62,17 +61,16 @@ struct UserData
 #include "ObjHero.h"
 #include "ObjBlock.h"
 #include "ObjEnemy.h"
+#include "CobjBullet.h"
 #include "ObjStage.h"
-
+#include "CObjMediumBoss.h"
+#include "CObjSpecialEnemy.h"
+#include "ObjEnemyBoss.h"
 #include "ObjTitle.h"
-#include "ObjClear.h"
-#include "ObjGameOver.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneTitle.h"
-#include "SceneClear.h"
-#include "SceneGameOver.h"
 #include "SceneMain.h"
 //-----------------------------------------------
 

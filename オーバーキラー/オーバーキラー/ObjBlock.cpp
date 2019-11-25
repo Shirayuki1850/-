@@ -61,8 +61,21 @@ void CObjBlock::Action()
 	//敵出現ラインの列を検索
 	for(int i=0;i<10;i++)
 	{
+		if (m_map[i][ex] == 2)
+		{
+			// 2があればMob出現
+			CObjEnemy*Obje = new CObjEnemy(ex*64.0f, i*64.0f);
+			Objs::InsertObj(Obje, OBJ_ENEMY, 11);
+
+			//敵出現０
+			m_map[i][ex] = 0;
+		}
 		
-	    
+
+	
+
+
+
 	}
 	
 }
@@ -96,35 +109,43 @@ void CObjBlock::Draw()
 		{
 			if(m_map[i][j]>0)
 			{
-
-				//表示位置の設定
-				dst.m_top = i*64.0f;
-				dst.m_left = j * 64.0f + m_scroll;
-				dst.m_right = dst.m_left+64.0;
-				dst.m_bottom = dst.m_top +64.0;
 				
-				if (m_map[i][j] == 2)
-				{
-					//スタートブロック
-					BlockDraw(320.0f, 0.0f, &dst, c);
-				}
-				else if (m_map[i][j] == 3)
-				{
-					//ゴールブロック
-					BlockDraw(320.0f, 0.0f, &dst, c);
 
-				}
+
+					//表示位置の設定
+					dst.m_top = i * 64.0f;
+					dst.m_left = j * 64.0f + m_scroll;
+					dst.m_right = dst.m_left + 64.0;
+					dst.m_bottom = dst.m_top + 64.0;
+
+					if (m_map[i][j] == 1)
+					{
+						//スタートブロック
+						BlockDraw(320.0f, 0.0f, &dst, c);
+					}
+					else if (m_map[i][j] == 3)
+					{
+						//ゴールブロック
+						BlockDraw(320.0f, 0.0f, &dst, c);
+
+					}
+
+					else
+					{
+						BlockDraw(320.0f, 0.0f, &dst, c);
+
+					}
+					
+
 				
-				else
-				{
-					BlockDraw(320.0f , 0.0f, &dst, c);
-
-				}
+			
+		
 			}
 		}
 	}
-	
 }
+	
+
 //BlockDrawMethod関数
 //引数1 flost    x      :リソース切り取り位置X
 //引数2 float    y      :リソース切り取り位置Y
