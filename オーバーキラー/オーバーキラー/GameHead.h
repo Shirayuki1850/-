@@ -8,12 +8,13 @@ enum OBJ_NAME
 	//OBJ_ÅõÅõÇ∆ï\ãL
 	OBJ_HERO,
 	OBJ_BLOCK,
-	OBJ_TIME,
 	OBJ_ENEMY,
 	OBJ_BULLET,
-	OBJ_BOOS_ENEMY,
+	OBJ_BOSS_ENEMY,
 	OBJ_STAGE,
 	OBJ_TITLE,
+	OBJ_MEDIUM_BOSS,
+	OBJ_SPECIAL_ENEMY,
 };
 //------------------------------------------------
 
@@ -60,8 +61,11 @@ struct UserData
 #include "ObjHero.h"
 #include "ObjBlock.h"
 #include "ObjEnemy.h"
+#include "CobjBullet.h"
 #include "ObjStage.h"
-
+#include "CObjMediumBoss.h"
+#include "CObjSpecialEnemy.h"
+#include "ObjEnemyBoss.h"
 #include "ObjTitle.h"
 //------------------------------------------------
 
