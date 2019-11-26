@@ -60,6 +60,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"画像/銃,アーマーまとめ.png", 4, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/アイテムまとめ.png", 3, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/test.png", 1, TEX_SIZE_512);
+	/*Draw::LoadImageW(L"画像/Title.png",9,TEX_SIZE_512);*/
 	//Draw::LoadImageW(L"昼用弾丸.png", 5, TEX_SIZE_512);
 	//Draw::LoadImageW(L"夕方用弾丸.png", 6, TEX_SIZE_512);
 	//Draw::LoadImageW(L"夜用弾丸.png", 7, TEX_SIZE_512);

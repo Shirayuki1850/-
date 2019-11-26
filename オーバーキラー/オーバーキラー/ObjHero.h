@@ -22,6 +22,7 @@ public:
 	float GetVX() { return m_vx; }
 	int GetBT() { return m_block_type; }
 	
+
 	void SetX(float x) { m_px = x; }
 	void SetY(float y) { m_py = y; }
 	void SetVY(float vy) { m_vy = vy; }

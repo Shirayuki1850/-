@@ -27,6 +27,9 @@ void CSceneTitle::InitScene()
 	//Music　loading
 	Audio::LoadAudio(0, L"BGMSE/ゲームタイトル.wav", SOUND_TYPE::BACK_MUSIC);
 
+	// image loading
+	Draw::LoadImageW(L"画像/タイトル背景.jpg", 0, TEX_SIZE_512);
+
 	//BackMusic Start
 	float Volume = Audio::VolumeMaster(-0.8f);		//MasterVolume 0.8down
 	Audio::Start(0);		//Music Start*/
