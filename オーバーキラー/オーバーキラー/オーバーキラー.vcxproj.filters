@@ -81,18 +81,6 @@
     <ClCompile Include="GameL\WinInputs.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="ObjGameOver.cpp">
-      <Filter>ソース ファイル\GAMEOVER</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneGameOver.cpp">
-      <Filter>ソース ファイル\GAMEOVER</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjClear.cpp">
-      <Filter>ソース ファイル\GAMECLEAR</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneClear.cpp">
-      <Filter>ソース ファイル\GAMECLEAR</Filter>
-    </ClCompile>
     <ClCompile Include="ObjTitle.cpp">
       <Filter>ソース ファイル\GAMETITLE</Filter>
     </ClCompile>
@@ -107,6 +95,18 @@
     </ClCompile>
     <ClCompile Include="ObjEnemyBoss.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjClear.cpp">
+      <Filter>ソース ファイル\GAMECLEAR</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneClear.cpp">
+      <Filter>ソース ファイル\GAMECLEAR</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGameOver.cpp">
+      <Filter>ソース ファイル\GAMEOVER</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjGameOver.cpp">
+      <Filter>ソース ファイル\GAMEOVER</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -167,18 +167,6 @@
     <ClInclude Include="GameL\WinInputs.h">
       <Filter>リソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ObjGameOver.h">
-      <Filter>ソース ファイル\GAMEOVER</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneGameOver.h">
-      <Filter>ソース ファイル\GAMEOVER</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjClear.h">
-      <Filter>ソース ファイル\GAMECLEAR</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneClear.h">
-      <Filter>ソース ファイル\GAMECLEAR</Filter>
-    </ClInclude>
     <ClInclude Include="ObjTitle.h">
       <Filter>ソース ファイル\GAMETITLE</Filter>
     </ClInclude>
@@ -193,6 +181,18 @@
     </ClInclude>
     <ClInclude Include="ObjEnemyBoss.h">
       <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjClear.h">
+      <Filter>ソース ファイル\GAMECLEAR</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneClear.h">
+      <Filter>ソース ファイル\GAMECLEAR</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneGameOver.h">
+      <Filter>ソース ファイル\GAMEOVER</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjGameOver.h">
+      <Filter>ソース ファイル\GAMEOVER</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
