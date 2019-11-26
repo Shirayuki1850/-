@@ -15,6 +15,7 @@ enum OBJ_NAME
 	OBJ_TITLE,
 	OBJ_MEDIUM_BOSS,
 	OBJ_SPECIAL_ENEMY,
+	OBJ_ENEMY_BOSS,
 };
 //------------------------------------------------
 
