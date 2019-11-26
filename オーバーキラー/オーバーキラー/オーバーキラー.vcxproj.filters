@@ -22,15 +22,18 @@
     <Filter Include="ソース ファイル\GAMETITLE">
       <UniqueIdentifier>{253a6231-7b8e-4cfb-b7eb-2c12fc4ba7ab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\ENEMY">
+      <UniqueIdentifier>{eea2a80b-7703-42f7-a7b1-56f41ff0c116}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Respoawn">
+      <UniqueIdentifier>{3befffd3-8aa9-4192-b75a-47b310af8ffe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CObjBullet.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="ObjBlock.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjEnemy.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="ObjHero.cpp">
@@ -81,18 +84,6 @@
     <ClCompile Include="GameL\WinInputs.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="ObjGameOver.cpp">
-      <Filter>ソース ファイル\GAMEOVER</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneGameOver.cpp">
-      <Filter>ソース ファイル\GAMEOVER</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjClear.cpp">
-      <Filter>ソース ファイル\GAMECLEAR</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneClear.cpp">
-      <Filter>ソース ファイル\GAMECLEAR</Filter>
-    </ClCompile>
     <ClCompile Include="ObjTitle.cpp">
       <Filter>ソース ファイル\GAMETITLE</Filter>
     </ClCompile>
@@ -100,13 +91,22 @@
       <Filter>ソース ファイル\GAMETITLE</Filter>
     </ClCompile>
     <ClCompile Include="CObjMediumBoss.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\ENEMY</Filter>
     </ClCompile>
     <ClCompile Include="CObjSpecialEnemy.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\ENEMY</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjEnemy.cpp">
+      <Filter>ソース ファイル\ENEMY</Filter>
     </ClCompile>
     <ClCompile Include="ObjEnemyBoss.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\ENEMY</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneRespoawn.cpp">
+      <Filter>ソース ファイル\Respoawn</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjRespoawn.cpp">
+      <Filter>ソース ファイル\Respoawn</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -114,9 +114,6 @@
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjBlock.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjEnemy.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjHero.h">
@@ -167,18 +164,6 @@
     <ClInclude Include="GameL\WinInputs.h">
       <Filter>リソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ObjGameOver.h">
-      <Filter>ソース ファイル\GAMEOVER</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneGameOver.h">
-      <Filter>ソース ファイル\GAMEOVER</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjClear.h">
-      <Filter>ソース ファイル\GAMECLEAR</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneClear.h">
-      <Filter>ソース ファイル\GAMECLEAR</Filter>
-    </ClInclude>
     <ClInclude Include="ObjTitle.h">
       <Filter>ソース ファイル\GAMETITLE</Filter>
     </ClInclude>
@@ -186,13 +171,22 @@
       <Filter>ソース ファイル\GAMETITLE</Filter>
     </ClInclude>
     <ClInclude Include="CObjMediumBoss.h">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\ENEMY</Filter>
     </ClInclude>
     <ClInclude Include="CObjSpecialEnemy.h">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\ENEMY</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjEnemy.h">
+      <Filter>ソース ファイル\ENEMY</Filter>
     </ClInclude>
     <ClInclude Include="ObjEnemyBoss.h">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\ENEMY</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneRespoawn.h">
+      <Filter>ソース ファイル\Respoawn</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjRespoawn.h">
+      <Filter>ソース ファイル\Respoawn</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
