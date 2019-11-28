@@ -1,6 +1,7 @@
 //GameLで使用するヘッダー
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawTexture.h"
+#include"GameL\DrawFont.h"
 #include "GameL\WinInputs.h"
 #include "GameHead.h"
 #include "ObjHero.h"
@@ -36,6 +37,8 @@ void CObjHero::Init()
 
 	 m_block_type = 0;//踏んでいるBlockの種類を確認用
 
+	 hit_time = 0;
+	 hit_flag = false;
 	 //当たり判定用のHitBoxを作成
 	 Hits::SetHitBox(this, m_px, m_py, 64, 64, ELEMENT_PLAYER, OBJ_HERO, 1);
 	 m_f = true;
@@ -200,9 +203,8 @@ void CObjHero::Action()
 	for (int i = 0; i < 2; i++)
 	{
 		if (hit->CheckObjNameHit(data_base[i]) != nullptr)
-
 		{
-			m_hp -= 1;
+			
 		}
 
 		//HPが０になったら破壊
@@ -214,6 +216,13 @@ void CObjHero::Action()
 			Scene::SetScene(new CSceneGameOver());
 		}
 	}
+	
+
+	if (hit->CheckObjNameHit(OBJ_HEAL_ITEM) != nullptr)
+	{
+		m_hp += 5;
+	}
+
 	//位置の最新
 	m_px += m_vx;
 	m_py += m_vy;
@@ -224,9 +233,6 @@ void CObjHero::Action()
 //ドロー
 void CObjHero::Draw()
 {
-
-	
-
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 	int anidata[2] = {0,2};
@@ -267,7 +273,7 @@ void CObjHero::Draw()
 
 	//描画
 	Draw::Draw(2, &src, &dst, c, 0.0f);
-
+	
 	//交点
 	float  cc[4] = { 1.0f,0.0f,0.0f,1.0f };
 	src.m_top = 0.0f;
@@ -279,5 +285,12 @@ void CObjHero::Draw()
 	dst.m_right = dst.m_left + 10.0f;
 	dst.m_bottom = dst.m_top + 10.0f;
 	Draw::Draw(0, &src, &dst, cc, 0.0f);
+
+	wchar_t str[10];
+	float c2[4] = { 1.0f,0.0f,0.0f,1.0f };
+
+	swprintf_s(str, L"HP:%d", m_hp);
+
+	Font::StrDraw(str, 20, 20, 40, c2);
 
 }

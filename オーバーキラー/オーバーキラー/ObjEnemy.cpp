@@ -40,6 +40,8 @@ void CObjEnemy::Init()
 	 m_hit_left   =  false;
 	 m_hit_right  =  false;
 
+	 hit_flag = false;
+
 	 //当たり判定用のHitBoxを作成
 	 Hits::SetHitBox(this, m_px, m_py, 64, 64, ELEMENT_ENEMY, OBJ_ENEMY, 1);
 
@@ -117,6 +119,7 @@ void CObjEnemy::Action()
 
 	//ブロック情報を持ってくる
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
 
 	//HitBoxの位置の変更
 	CHitBox*hit = Hits::GetHitBox(this);
@@ -133,6 +136,21 @@ void CObjEnemy::Action()
 	if (hit ->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		m_hp -= 1;
+	}
+	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+	{
+		if (hit_flag == false)
+		{
+			h->SetDamege(1);
+			hit_flag = true;
+		}
+	}
+	else
+	{
+		if (hit_flag == true)
+		{
+			hit_flag = false;
+		}
 	}
 
 	//HPが0になったら破壊
