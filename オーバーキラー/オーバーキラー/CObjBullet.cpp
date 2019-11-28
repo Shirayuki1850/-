@@ -3,6 +3,7 @@
 #include "CobjBullet.h"
 #include "GameL\DrawTexture.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -82,4 +83,9 @@ void CObjBullet::Draw()
 
 	//描画
 	Draw::Draw(0, &src, &dst, c, 0.0f);
+
+	//Music loading
+	Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
+	//Music Start
+	Audio::Start(4);
 }

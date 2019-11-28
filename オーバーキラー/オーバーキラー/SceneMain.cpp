@@ -5,6 +5,7 @@
 //GameLで使用するヘッダー
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawTexture.h"
+#include"GameL/Audio.h"
 
 #include "GameL\UserData.h"
 
@@ -83,8 +84,10 @@ void CSceneMain::InitScene()
 	CObjEnemy*obje = new CObjEnemy();
 	Objs::InsertObj(obje, OBJ_ENEMY, 13);*/
 
-	
-
+	//Music loading
+	Audio::LoadAudio(0, L"BGMSE/ゲームメイン.wav", SOUND_TYPE::BACK_MUSIC);
+	//Music Start
+	Audio::Start(0);
 }
 
 //実行中メソッド
