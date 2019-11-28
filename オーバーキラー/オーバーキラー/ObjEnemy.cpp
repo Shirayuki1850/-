@@ -1,8 +1,7 @@
 
 //GameLで使用するヘッダー
-#include "GameL\SceneObjManager.h"
+//#include "GameL\SceneObjManager.h"
 #include "GameL\DrawTexture.h"
-#include "GameL\WinInputs.h"
 #include "GameHead.h"
 #include "ObjEnemy.h"
 #include "GameL\HitBoxManager.h"
@@ -116,11 +115,11 @@ void CObjEnemy::Action()
 	m_py += m_vy;
 
 	//ブロック情報を持ってくる
-	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	
 
 	//HitBoxの位置の変更
 	CHitBox*hit = Hits::GetHitBox(this);
-	hit->SetPos(m_px+block->GetScroll(), m_py);
+	hit->SetPos(m_px+pb->GetScroll(), m_py);
 
 	//弾丸と接触しているかどうか調べる
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)

@@ -18,7 +18,7 @@ CObjBoss::CObjBoss(float x, float y)
 //イニシャライズ
 void CObjBoss::Init()
 {
-	m_vx - 0.0f;
+	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_hp = 20;	//HP
 
@@ -115,8 +115,7 @@ void CObjBoss::Action()
 	m_py += m_vy;
 
 	//ブロック情報を持ってくる
-	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
-
+	
 	//移動方向
 	m_vx = -1.0f;
 	m_vy = 0.0f;
