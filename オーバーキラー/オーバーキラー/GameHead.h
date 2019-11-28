@@ -68,11 +68,13 @@ struct UserData
 #include "CObjSpecialEnemy.h"
 #include "ObjEnemyBoss.h"
 #include "ObjTitle.h"
+#include "ObjRespoawn.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneTitle.h"
 #include "SceneMain.h"
+#include "SceneRespoawn.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
