@@ -1,7 +1,8 @@
 
 //GameLで使用するヘッダー
-//#include "GameL\SceneObjManager.h"
+#include "GameL\SceneObjManager.h"
 #include "GameL\DrawTexture.h"
+#include "GameL\WinInputs.h"
 #include "GameHead.h"
 #include "ObjEnemy.h"
 #include "GameL\HitBoxManager.h"
@@ -38,6 +39,8 @@ void CObjEnemy::Init()
 	 m_hit_down   =  false;
 	 m_hit_left   =  false;
 	 m_hit_right  =  false;
+
+	 hit_flag = false;
 
 	 //当たり判定用のHitBoxを作成
 	 Hits::SetHitBox(this, m_px, m_py, 64, 64, ELEMENT_ENEMY, OBJ_ENEMY, 1);
@@ -115,11 +118,12 @@ void CObjEnemy::Action()
 	m_py += m_vy;
 
 	//ブロック情報を持ってくる
-	
+	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
 
 	//HitBoxの位置の変更
 	CHitBox*hit = Hits::GetHitBox(this);
-	hit->SetPos(m_px+pb->GetScroll(), m_py);
+	hit->SetPos(m_px+block->GetScroll(), m_py);
 
 	//弾丸と接触しているかどうか調べる
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
@@ -132,6 +136,21 @@ void CObjEnemy::Action()
 	if (hit ->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		m_hp -= 1;
+	}
+	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+	{
+		if (hit_flag == false)
+		{
+			h->SetDamege(1);
+			hit_flag = true;
+		}
+	}
+	else
+	{
+		if (hit_flag == true)
+		{
+			hit_flag = false;
+		}
 	}
 
 	//HPが0になったら破壊

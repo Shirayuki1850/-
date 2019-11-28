@@ -38,6 +38,10 @@ void CObjBoss::Init()
 	m_hit_left = false;
 	m_hit_right = false;
 
+	hit_flag = false;
+
+	dm = 5;
+
 	//“–‚½‚è”»’è—pHitBox‚ğì¬
 	Hits::SetHitBox(this, m_px, m_py, 32, 32, ELEMENT_ENEMY, OBJ_BOSS_ENEMY, 1);
 }
@@ -50,7 +54,10 @@ void CObjBoss::Action()
 	{
 		;
 	}
+	if (m_hp < 8);
+	{
 
+	}
 
 	//’Êí‘¬“x
 	m_speed_power = 0.5f;
@@ -142,13 +149,27 @@ void CObjBoss::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
-
+	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	//’eŠÛ‚ÆÚG‚µ‚Ä‚¢‚½‚çHP‚ğŒ¸‚ç‚·
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		m_hp -= 1;
 	}
-
+	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+	{
+		if (hit_flag == false)
+		{
+			h->SetDamege(dm);
+			hit_flag = true;
+		}
+	}
+	else
+	{
+		if (hit_flag == true)
+		{
+			hit_flag = false;
+		}
+	}
 	//HP‚ª‚O‚É‚È‚Á‚½‚ç”j‰ó
 	if (m_hp <= 0)
 	{

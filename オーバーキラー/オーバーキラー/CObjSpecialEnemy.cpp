@@ -38,6 +38,8 @@ void CObjSpecialEnemy::Init()
 	m_hit_left = false;
 	m_hit_right = false;
 
+	hit_flag = false;
+	
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_px, m_py, 32, 32, ELEMENT_ENEMY, OBJ_SPECIAL_ENEMY, 1);
 }
@@ -45,13 +47,13 @@ void CObjSpecialEnemy::Init()
 //アクション
 void CObjSpecialEnemy::Action()
 {	
+
 	//落下
 	if (m_py > 1000.0f)
 	{
 		;
 	}
-
-
+	
 	//通常速度
 	m_speed_power = 0.5f;
 	m_ani_max_time = 4;
@@ -150,7 +152,22 @@ void CObjSpecialEnemy::Action()
 	{
 		m_hp -= 1;
 	}
-
+	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
+	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+	{
+		if (hit_flag == false)
+		{
+			h->SetDamege(1);
+			hit_flag = true;
+		}
+	}
+	else
+	{
+		if (hit_flag == true)
+		{
+			hit_flag = false;
+		}
+	}
 	//HPが０になったら破壊
 	if (m_hp <= 0)
 	{
