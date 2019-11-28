@@ -41,6 +41,7 @@ void CSceneGameOver::InitScene()
 
 	//Music Start
 	Audio::Start(2);
+
 	
 }
 
