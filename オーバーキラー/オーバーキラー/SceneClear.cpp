@@ -38,8 +38,8 @@ void CSceneClear::InitScene()
 	//Music Start
 	Audio::Start(1);
 
-		//clear object
-		CObjClear* obj = new CObjClear();
+	//clear object
+	CObjClear* obj = new CObjClear();
 	Objs::InsertObj(obj, OBJ_CLEAR, 10);
 }
 

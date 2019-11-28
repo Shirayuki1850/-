@@ -73,6 +73,8 @@ struct UserData
 #include "ObjEnemyBoss.h"
 #include "ObjTitle.h"
 #include "ObjRespoawn.h"
+#include "ObjClear.h"
+#include "ObjGameOver.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
