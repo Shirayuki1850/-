@@ -39,6 +39,8 @@ void CObjMediumBoss::Init()
 	m_hit_left = false;
 	m_hit_right = false;
 
+	hit_flag = false;
+
 	//“–‚½‚è”»’è—pHitBox‚ğì¬
 	Hits::SetHitBox(this, m_px, m_py, 32, 32, ELEMENT_ENEMY, OBJ_MEDIUM_BOSS, 1);
 }
@@ -150,12 +152,27 @@ void CObjMediumBoss::Action()
 	{
 		m_hp -= 1;
 	}
-
-	//HP‚ª‚O‚É‚È‚Á‚½‚ç”j‰ó
-	if (m_hp <= 0)
+	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
+	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
 	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+		if (hit_flag == false)
+		{
+			h->SetDamege(1);
+			hit_flag = true;
+		}
+	}
+	else
+	{
+		if (hit_flag == true)
+		{
+			hit_flag = false;
+		}
+		//HP‚ª‚O‚É‚È‚Á‚½‚ç”j‰ó
+		if (m_hp <= 0)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+		}
 	}
 }
 

@@ -136,6 +136,7 @@
     <ClCompile Include="ObjEnemy.cpp" />
     <ClCompile Include="ObjEnemyBoss.cpp" />
     <ClCompile Include="ObjGameOver.cpp" />
+    <ClCompile Include="ObjHealItem.cpp" />
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjRespoawn.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
@@ -176,6 +177,7 @@
     <ClInclude Include="ObjEnemy.h" />
     <ClInclude Include="ObjEnemyBoss.h" />
     <ClInclude Include="ObjGameOver.h" />
+    <ClInclude Include="ObjHealItem.h" />
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjRespoawn.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
