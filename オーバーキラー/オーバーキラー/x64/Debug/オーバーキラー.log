@@ -1,7 +1,7 @@
-<<<<<<< HEAD
-﻿  ObjTitle.cpp
+﻿  ObjClear.cpp
+  ObjGameOver.cpp
+  SceneClear.cpp
+  SceneGameOver.cpp
+c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\scenegameover.cpp(44): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+  コードを生成中...
   オーバーキラー.vcxproj -> C:\Users\GA1A\Desktop\死ね\オーバーキラー\x64\Debug\オーバーキラー.exe
-=======
-﻿  SceneTitle.cpp
-  オーバーキラー.vcxproj -> C:\Users\GA1A\Desktop\マスターデータ\オーバーキラー\x64\Debug\オーバーキラー.exe
->>>>>>> 56f13513cfca57542dbe43f8e12f07b851198754
