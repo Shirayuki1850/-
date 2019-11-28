@@ -15,8 +15,7 @@ enum OBJ_NAME
 	OBJ_TITLE,
 	OBJ_MEDIUM_BOSS,
 	OBJ_SPECIAL_ENEMY,
-	OBJ_GAMEOVER,
-	OBJ_CLEAR,
+	OBJ_ENEMY_BOSS,
 };
 //------------------------------------------------
 
@@ -69,15 +68,13 @@ struct UserData
 #include "CObjSpecialEnemy.h"
 #include "ObjEnemyBoss.h"
 #include "ObjTitle.h"
-#include "ObjClear.h"
-#include "ObjGameOver.h"
+#include "ObjRespoawn.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneTitle.h"
-#include "SceneClear.h"
-#include "SceneGameOver.h"
 #include "SceneMain.h"
+#include "SceneRespoawn.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

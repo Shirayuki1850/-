@@ -70,6 +70,41 @@ void CObjBlock::Action()
 			//敵出現０
 			m_map[i][ex] = 0;
 		}
+
+		if (m_map[i][ex] == 5)
+		{
+			//5があれば特殊ゾンビ出現
+			CObjSpecialEnemy*ObjS = new CObjSpecialEnemy(ex*64.0f, i*64.0f);
+			Objs::InsertObj(ObjS, OBJ_SPECIAL_ENEMY, 12);
+
+			//特殊ゾンビ出現
+			m_map[i][ex] = 0;
+
+		}
+
+		if (m_map[i][ex] == 6)
+		{
+			//6があれば中ボス出現
+			CObjMediumBoss*ObjM = new CObjMediumBoss(ex*64.0f, i*64.0f);
+			Objs::InsertObj(ObjM, OBJ_MEDIUM_BOSS, 13);
+
+			//中ボス出現
+			m_map[i][ex] = 0;
+
+
+		}
+
+		/*if(m_map[i][ex]==7)
+		{
+			//7があればボス出現
+			CObjBoss*ObjB = new CObjBoss(ex*64.0f, i*64.0f);
+			Objs::InsertObj(ObjB, OBJ_ENEMY_BOSS, 14);
+
+			//ボス出現
+			m_map[i][ex] = 0;
+
+
+		}*/
 		
 
 	
