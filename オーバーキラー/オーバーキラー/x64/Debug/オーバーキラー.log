@@ -1,2 +1,1 @@
-﻿ObjHero.obj : error LNK2019: 未解決の外部シンボル "public: __cdecl CSceneGameOver::CSceneGameOver(void)" (??0CSceneGameOver@@QEAA@XZ) が関数 "public: virtual void __cdecl CObjHero::Action(void)" (?Action@CObjHero@@UEAAXXZ) で参照されました。
-C:\Users\GA1A\Desktop\これでお願い\オーバーキラー\x64\Debug\オーバーキラー.exe : fatal error LNK1120: 1 件の未解決の外部参照
+﻿  オーバーキラー.vcxproj -> C:\Users\GA1A\Desktop\これでお願い\オーバーキラー\x64\Debug\オーバーキラー.exe
