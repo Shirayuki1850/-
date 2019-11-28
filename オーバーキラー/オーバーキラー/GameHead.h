@@ -19,6 +19,7 @@ enum OBJ_NAME
 	OBJ_RESPOAWN,
 	OBJ_GAMEOVER,
 	OBJ_CLEAR,
+	OBJ_HEAL_ITEM,
 };
 //------------------------------------------------
 
