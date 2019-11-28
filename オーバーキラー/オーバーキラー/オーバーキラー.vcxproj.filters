@@ -120,7 +120,7 @@
     <ClCompile Include="ObjGameOver.cpp">
       <Filter>ソース ファイル\GAMEOVER</Filter>
     </ClCompile>
-    <ClCompile Include="ObjHealItem.cpp">
+    <ClCompile Include="CObjBulletLeft.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -215,7 +215,7 @@
     <ClInclude Include="ObjGameOver.h">
       <Filter>ソース ファイル\GAMEOVER</Filter>
     </ClInclude>
-    <ClInclude Include="ObjHealItem.h">
+    <ClInclude Include="CObjBulletLeft.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>

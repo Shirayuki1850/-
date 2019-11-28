@@ -3,10 +3,12 @@
 #include "GameL\DrawTexture.h"
 #include"GameL\DrawFont.h"
 #include "GameL\WinInputs.h"
+#include"GameL/Audio.h"
+
 #include "GameHead.h"
 #include "ObjHero.h"
 #include "GameL\HitBoxManager.h"
-#include "CobjBullet.h"
+
 
 //使用するネームスペース
 using namespace GameL;
@@ -42,6 +44,8 @@ void CObjHero::Init()
 	 //当たり判定用のHitBoxを作成
 	 Hits::SetHitBox(this, m_px, m_py, 64, 64, ELEMENT_PLAYER, OBJ_HERO, 1);
 	 m_f = true;
+
+	 move_flag = true;
 }
 //アクション
 void CObjHero::Action()
@@ -86,10 +90,29 @@ void CObjHero::Action()
 	{
 		if (m_f == true)
 		{
-			//弾丸オブジェクト作成
-			CObjBullet*obj_b = new CObjBullet(m_px+50.0f, m_py+20.0f);	//弾丸オブジェクト作成
-			Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
-			m_f = false;
+			if (move_flag == true)
+			{
+				//Music loading
+				Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
+				//Music Start
+				Audio::Start(4);
+				//弾丸オブジェクト作成
+				CObjBullet*obj_b = new CObjBullet(m_px + 50.0f, m_py + 20.0f);	//弾丸オブジェクト作成
+				Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
+				m_f = false;
+			}
+			else if(move_flag==false)
+			{
+				//Music loading
+				Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
+				//Music Start
+				Audio::Start(4);
+				//弾丸オブジェクト作成
+				CObjBulletLeft*obj_b = new CObjBulletLeft(m_px - 50.0f, m_py +20.0f);	//弾丸オブジェクト作成
+				Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
+				m_f = false;
+			}
+			
 		}
 	}
 	else
@@ -102,17 +125,20 @@ void CObjHero::Action()
 		m_vx += m_speed_power;
 		m_posture = 1.0f;
 		m_ani_time += 1;
+		move_flag = true;
 	}
 	else if (Input::GetVKey(VK_LEFT) == true)
 	{
 		m_vx -= m_speed_power;
 		m_posture = 0.0f;
 		m_ani_time += 1;
+		move_flag = false;
 	}
 	else
 	{
 		m_ani_frame = 0;//キー入力がない場合は静止フレームにする
 		m_ani_time =  0;
+		
 	}
 
 	if (m_ani_time > m_ani_max_time)

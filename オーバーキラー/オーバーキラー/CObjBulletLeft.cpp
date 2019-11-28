@@ -10,25 +10,25 @@
 using namespace GameL;
 
 //コントラクタ
-CObjBullet::CObjBullet(float x, float y)
+CObjBulletLeft::CObjBulletLeft(float x, float y)
 {
 	b_x = x;
 	b_y = y;
 }
 //イニシャライズ
-void CObjBullet::Init()
+void CObjBulletLeft::Init()
 {
 	b_vx = 0.0f;
-	
+
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, b_x, b_y, 32, 32, ELEMENT_PLAYER, OBJ_BULLET, 1);
 }
 
 //アクション
-void CObjBullet::Action()
+void CObjBulletLeft::Action()
 {
 
-	b_vx += 1.0f;
+	b_vx -= 1.0f;
 	b_x += b_vx;
 
 	//弾丸のHitBox更新用ポインター取得
@@ -63,7 +63,7 @@ void CObjBullet::Action()
 }
 
 //ドロー
-void CObjBullet::Draw()
+void CObjBulletLeft::Draw()
 {
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -78,9 +78,9 @@ void CObjBullet::Draw()
 	src.m_bottom = 64.0f;
 
 	//表示位置の設定
-	dst.m_top = 0.0f+b_y;
-	dst.m_left = 0.0f+b_x;
-	dst.m_right = 32.0f+b_x;
+	dst.m_top = 0.0f + b_y;
+	dst.m_left = 0.0f + b_x;
+	dst.m_right = 32.0f + b_x;
 	dst.m_bottom = 64.0f + b_y;
 
 	//描画

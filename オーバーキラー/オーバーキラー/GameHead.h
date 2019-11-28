@@ -10,6 +10,7 @@ enum OBJ_NAME
 	OBJ_BLOCK,
 	OBJ_ENEMY,
 	OBJ_BULLET,
+	OBJ_BULLET_LEFT,
 	OBJ_BOSS_ENEMY,
 	OBJ_STAGE,
 	OBJ_TITLE,
@@ -75,6 +76,7 @@ struct UserData
 #include "ObjRespoawn.h"
 #include "ObjClear.h"
 #include "ObjGameOver.h"
+#include "CObjBulletLeft.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
