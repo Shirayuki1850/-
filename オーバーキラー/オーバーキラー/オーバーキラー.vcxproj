@@ -136,6 +136,7 @@
     <ClCompile Include="ObjEnemy.cpp" />
     <ClCompile Include="ObjEnemyBoss.cpp" />
     <ClCompile Include="ObjGameOver.cpp" />
+    <ClCompile Include="ObjHealItem.cpp" />
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjRespoawn.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -143,10 +144,10 @@
     <ClCompile Include="ObjStage.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneClear.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="SceneGameOver.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="SceneRespoawn.cpp">
@@ -176,6 +177,7 @@
     <ClInclude Include="ObjEnemy.h" />
     <ClInclude Include="ObjEnemyBoss.h" />
     <ClInclude Include="ObjGameOver.h" />
+    <ClInclude Include="ObjHealItem.h" />
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjRespoawn.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -183,10 +185,10 @@
     <ClInclude Include="ObjStage.h" />
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneClear.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="SceneGameOver.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="SceneRespoawn.h">

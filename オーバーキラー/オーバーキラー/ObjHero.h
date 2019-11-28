@@ -33,6 +33,7 @@ public:
 	void SetDown(bool b) { m_hit_down = b; }
 	void SetLeft(bool b) { m_hit_left = b; }
 	void SetRight(bool b) { m_hit_right = b; }
+	void SetDamege(int d) { m_hp -= d; }
 private:
 	float m_px;//à íu
 	float m_py;
@@ -59,4 +60,7 @@ private:
 	bool m_f;	//íeä€ÇÃî≠éÀêßå‰óp
 
 	int m_hp;	//HP
+
+	int hit_time;
+	bool hit_flag;
 };

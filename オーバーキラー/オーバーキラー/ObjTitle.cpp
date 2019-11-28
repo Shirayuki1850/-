@@ -53,9 +53,8 @@ void CObjTitle::Draw()
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 
 
-	Font::StrDraw(L"Over Killer", 230, 250, 32, c);
+	Font::StrDraw(L"`“®‚­r‚ğ’´‚¦‚Äs‚¯`", 230, 250, 32, c);
 
 	Font::StrDraw(L"GameStart  :@PushEnterKey", 200, 400, 32, c);
-
 
 }

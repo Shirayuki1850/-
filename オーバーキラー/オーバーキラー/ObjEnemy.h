@@ -17,8 +17,6 @@ public:
 	void Draw();//ƒhƒ[
 
 	float GetVx() { return m_vx; }
-
-	
 private:
 	float m_px;//ˆÊ’u
 	float m_py;
@@ -43,5 +41,7 @@ private:
 
 	//HP
 	int m_hp;
+
+	bool hit_flag;
 	
 };

@@ -22,7 +22,7 @@ CSceneTitle::~CSceneTitle()
 
 void CSceneTitle::InitScene()
 {
-	Font::SetStrTex(L"Over Killer");
+	
 
 	//Music　loading
 	Audio::LoadAudio(0, L"BGMSE/ゲームタイトル.wav", SOUND_TYPE::BACK_MUSIC);

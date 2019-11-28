@@ -37,5 +37,9 @@ private:
 	bool m_move;
 
 	int m_hp;	//É{ÉXÇÃHP
+
+	bool hit_flag;
+
+	int dm;
 };
 
