@@ -22,7 +22,7 @@ CSceneTitle::~CSceneTitle()
 
 void CSceneTitle::InitScene()
 {
-	
+	Font::SetStrTex(L"動く屍を越えていけ");
 
 	//Music　loading
 	Audio::LoadAudio(0, L"BGMSE/ゲームタイトル.wav", SOUND_TYPE::BACK_MUSIC);

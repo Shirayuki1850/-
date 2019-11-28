@@ -29,14 +29,14 @@ void CSceneClear::InitScene()
 
 
 	//Music loading
-	Audio::LoadAudio(1, L"BJMSE/ゲームクリア.wav", BACK_MUSIC);
+	Audio::LoadAudio(1, L"BJMSE/ゲームクリア.wav",SOUND_TYPE::BACK_MUSIC);
 
 	//Volume 1.0 return
-	float v = Audio::VolumeMaster(0);
+	float v = Audio::VolumeMaster(-0.8f);
 	v = Audio::VolumeMaster((1 - v));
 
 	//Music Start
-	Audio::Start(0);
+	Audio::Start(1);
 
 		//clear object
 		CObjClear* obj = new CObjClear();

@@ -4,6 +4,7 @@
 
 #include "GameHead.h"
 #include "ObjGameOver.h"
+#include "GameL/Audio.h"
 
 using namespace GameL;
 
@@ -35,10 +36,10 @@ void CObjGameOver::Action()
 void CObjGameOver::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
-	//ゲームオーバー
-	Font::StrDraw(L"GAME OVER",0,0,32,c);
+
 	//リスポーン
-	Font::StrDraw(L"NEW GAME : RESPORN", 0, 0, 32, c);
+	Font::StrDraw(L"GAME　OVER : PUSH ENTERKEY RESPOAWN", 200, 250, 25, c);
 
 	
+
 }
