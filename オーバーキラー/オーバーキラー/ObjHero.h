@@ -60,6 +60,7 @@ private:
 	bool m_f;	//’eŠÛ‚Ì”­Ë§Œä—p
 
 	int m_hp;	//HP
+	int hp;
 
 	int hit_time;
 	bool hit_flag;

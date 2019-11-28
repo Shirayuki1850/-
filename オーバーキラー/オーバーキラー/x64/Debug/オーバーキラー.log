@@ -1,2 +1,39 @@
 ﻿  CObjBullet.cpp
+  CObjMediumBoss.cpp
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(22): warning C4552: '-': 式の結果が使用されていません
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(103): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(106): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+  CObjSpecialEnemy.cpp
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjspecialenemy.cpp(21): warning C4552: '-': 式の結果が使用されていません
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjspecialenemy.cpp(101): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjspecialenemy.cpp(104): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+  GameL_Main.cpp
+  ObjBlock.cpp
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objblock.cpp(153): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objblock.cpp(154): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objblock.cpp(125): warning C4101: 'src': ローカル変数は 1 度も使われていません。
+  ObjClear.cpp
+  ObjEnemy.cpp
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objenemy.cpp(103): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objenemy.cpp(106): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+  ObjEnemyBoss.cpp
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objenemyboss.cpp(21): warning C4552: '-': 式の結果が使用されていません
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objenemyboss.cpp(106): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objenemyboss.cpp(109): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objenemyboss.cpp(57): warning C4390: ';': 制御が空の文が見つかりました。意図した記述でしょうか?
+  ObjGameOver.cpp
+  ObjHealItem.cpp
+  ObjHero.cpp
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objhero.cpp(130): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objhero.cpp(133): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+  ObjTitle.cpp
+  SceneMain.cpp
+  SceneTitle.cpp
+  コードを生成中...
+  ObjRespoawn.cpp
+  SceneClear.cpp
+  SceneGameOver.cpp
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\scenegameover.cpp(37): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+  SceneRespoawn.cpp
+  コードを生成中...
   オーバーキラー.vcxproj -> C:\Users\GA1A\Desktop\マスターデータ\オーバーキラー\x64\Debug\オーバーキラー.exe

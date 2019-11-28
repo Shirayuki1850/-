@@ -3,7 +3,7 @@
 #include "GameL\DrawTexture.h"
 #include "GameL\WinInputs.h"
 #include "GameHead.h"
-#include "ObjHero.h"
+#include "ObjHealItem.h"
 #include "GameL\HitBoxManager.h"
 #include "CobjBullet.h"
 
