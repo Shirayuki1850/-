@@ -18,7 +18,7 @@ CObjSpecialEnemy::CObjSpecialEnemy(float x, float y)
 //イニシャライズ
 void CObjSpecialEnemy::Init()
 {
-	m_vx - 0.0f;
+	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_hp = 5;	//HP
 
@@ -186,7 +186,7 @@ void CObjSpecialEnemy::Draw()
 	RECT_F dst;	//描画先表示位置
 
 	//切り取り位置の設定
-	src.m_top = 0.0f;
+	src.m_top = 51.0f;
 	src.m_left = 32.0f;
 	src.m_right = 64.0f;
 	src.m_bottom = 32.0f;

@@ -36,27 +36,24 @@ void CObjBlock::Action()
 	//後方スクロール
 	if (hx < 80)
 	{
-
 		hero->SetX(80);//主人公はラインを超えないようにする
 		m_scroll -= hero->GetVX();//主人公が本来動くべき分の値をm_scrollに加える
-
 	}
 
 	//前方スクロール
 	if (hx > 300)
 	{
-
 		hero->SetX(300);//主人公はラインを超えないようにする。
 		m_scroll -= hero->GetVX();//主人公が本来働くべき分の値をm_scrollに加える
-
 	}
-
+	
 	//敵出現ライン
 	//主人公の位置+500を敵出現ラインにする
 	float line = hx + (-m_scroll) + 500;
 
 	//敵出現ラインを要素番号
 	int ex = ((int)line) / 64;
+
 
 	//敵出現ラインの列を検索
 	for(int i=0;i<10;i++)
@@ -81,7 +78,7 @@ void CObjBlock::Action()
 			m_map[i][ex] = 0;
 
 		}
-
+		
 		if (m_map[i][ex] == 6)
 		{
 			//6があれば中ボス出現
@@ -93,8 +90,8 @@ void CObjBlock::Action()
 
 
 		}
-
-		/*if(m_map[i][ex]==7)
+	/*
+		else if(m_map[i][ex]==7)
 		{
 			//7があればボス出現
 			CObjBoss*ObjB = new CObjBoss(ex*64.0f, i*64.0f);
@@ -105,8 +102,7 @@ void CObjBlock::Action()
 
 
 		}*/
-		
-
+	
 	
 
 

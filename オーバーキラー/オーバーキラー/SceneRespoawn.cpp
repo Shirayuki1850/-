@@ -12,6 +12,7 @@ using namespace GameL;
 //使用ヘッダー
 #include "SceneMain.h"
 #include "GameHead.h"
+#include"SceneRespoawn.h"
 
 //コントラクタ
 CSceneRespoawn::CSceneRespoawn()
