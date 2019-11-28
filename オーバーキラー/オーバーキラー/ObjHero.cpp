@@ -210,6 +210,8 @@ void CObjHero::Action()
 		{
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
+
+			Scene::SetScene(new CSceneGameOver());
 		}
 	}
 	//ˆÊ’u‚ÌÅV
