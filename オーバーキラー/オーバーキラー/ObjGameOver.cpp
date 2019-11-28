@@ -39,4 +39,6 @@ void CObjGameOver::Draw()
 	Font::StrDraw(L"GAME OVER",0,0,32,c);
 	//ÉäÉXÉ|Å[Éì
 	Font::StrDraw(L"NEW GAME : RESPORN", 0, 0, 32, c);
+
+	
 }
