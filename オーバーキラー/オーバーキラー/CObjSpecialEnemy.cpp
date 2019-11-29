@@ -21,7 +21,7 @@ void CObjSpecialEnemy::Init()
 {
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-	m_hp = 5;	//HP
+	m_hp = 3;	//HP
 
 	m_posture = 1.0f;//‰EŒü‚«0.0f¶1.0‚†
 
@@ -131,12 +131,7 @@ void CObjSpecialEnemy::Action()
 	CHitBox*hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px, m_py);*/
 
-	//’eŠÛ‚ÆÚG‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©’²‚×‚é
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
+
 
 	//’eŠÛ‚ÆÚG‚µ‚Ä‚¢‚½‚çHP‚ðŒ¸‚ç‚·
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)

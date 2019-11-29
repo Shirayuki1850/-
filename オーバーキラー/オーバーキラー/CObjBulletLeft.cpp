@@ -18,7 +18,7 @@ CObjBulletLeft::CObjBulletLeft(float x, float y)
 //イニシャライズ
 void CObjBulletLeft::Init()
 {
-	b_vx = 0.0f;
+	b_vx = -6.0f;
 
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, b_x, b_y, 32, 32, ELEMENT_PLAYER, OBJ_BULLET, 1);
@@ -28,7 +28,7 @@ void CObjBulletLeft::Init()
 void CObjBulletLeft::Action()
 {
 
-	b_vx -= 1.0f;
+
 	b_x += b_vx;
 
 	//弾丸のHitBox更新用ポインター取得
@@ -70,12 +70,11 @@ void CObjBulletLeft::Draw()
 
 	RECT_F src;	//描画元切り取り位置
 	RECT_F dst;	//描画先表示位置
-
 	//切り取り位置の設定
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 32.0f;
-	src.m_bottom = 32.0f;
+	src.m_top = 2.0f;
+	src.m_left = 2.0f;
+	src.m_right = 30.0f;
+	src.m_bottom = 30.0f;
 
 	//表示位置の設定
 	dst.m_top = 0.0f + b_y;

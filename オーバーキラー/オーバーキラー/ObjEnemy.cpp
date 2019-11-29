@@ -21,7 +21,7 @@ CObjEnemy::CObjEnemy(float x, float y)
 void CObjEnemy::Init()
 {
 
-	m_hp = 3;//HP
+	m_hp = 1;//HP
 	
 	m_vx = 0.0f;//ˆÚ“®ƒxƒNƒgƒ‹
 	m_vy = 0.0f;
