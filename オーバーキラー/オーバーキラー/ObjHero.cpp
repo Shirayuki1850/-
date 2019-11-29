@@ -46,6 +46,8 @@ void CObjHero::Init()
 	 m_f = true;
 
 	 move_flag = true;
+	 se_flag = true;
+	 se_flag2 = true;
 }
 //アクション
 void CObjHero::Action()
@@ -54,7 +56,7 @@ void CObjHero::Action()
 	if (m_py > 1000.0f)
 	{
 		//場外に出たらリスタート。
-		Scene::SetScene(new CSceneMain());
+		Scene::SetScene(new CSceneGameOver());
 	}
 
 	//↑キー入力でジャンプ

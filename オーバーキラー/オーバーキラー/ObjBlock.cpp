@@ -68,7 +68,7 @@ void CObjBlock::Action()
 			m_map[i][ex] = 0;
 		}
 
-		if (m_map[i][ex] == 5)
+		/*if (m_map[i][ex] == 5)
 		{
 			//5があれば特殊ゾンビ出現
 			CObjSpecialEnemy*ObjS = new CObjSpecialEnemy(ex*64.0f, i*64.0f);
@@ -77,7 +77,7 @@ void CObjBlock::Action()
 			//特殊ゾンビ出現
 			m_map[i][ex] = 0;
 
-		}
+		}*/
 		
 		if (m_map[i][ex] == 6)
 		{

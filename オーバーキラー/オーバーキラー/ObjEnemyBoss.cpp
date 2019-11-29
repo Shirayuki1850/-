@@ -1,6 +1,7 @@
 //使用するヘッダーファイル
 #include "GameL\DrawTexture.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL/Audio.h"
 
 #include "GameHead.h"
 #include "ObjEnemyBoss.h"
@@ -40,7 +41,7 @@ void CObjBoss::Init()
 
 	hit_flag = false;
 
-	dm = 5;
+	dm = 5;//ボスの攻撃力
 
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_px, m_py, 128, 128, ELEMENT_ENEMY, OBJ_BOSS_ENEMY, 1);
@@ -49,15 +50,17 @@ void CObjBoss::Init()
 //アクション
 void CObjBoss::Action()
 {
+	if (m_hp < 8)
+	{
+		dm = 7;
+	}
+
 	//落下
 	if (m_py > 1000.0f)
 	{
 		;
 	}
-	if (m_hp < 8);
-	{
 
-	}
 
 	//通常速度
 	m_speed_power = 0.5f;
@@ -152,10 +155,8 @@ void CObjBoss::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
-	}
-	*/
-
-
+	}*/
+	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	//弾丸と接触していたらHPを減らす
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
@@ -167,6 +168,7 @@ void CObjBoss::Action()
 		{
 			h->SetDamege(dm);
 			hit_flag = true;
+			Audio::Start(5);
 		}
 	}
 	else
