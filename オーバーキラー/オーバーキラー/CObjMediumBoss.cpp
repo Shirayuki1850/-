@@ -1,6 +1,7 @@
 //使用するヘッダーファイル
 #include "GameL\DrawTexture.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL/Audio.h"
 
 #include "GameHead.h"
 #include "CObjMediumBoss.h"
@@ -160,6 +161,7 @@ void CObjMediumBoss::Action()
 		{
 			h->SetDamege(1);
 			hit_flag = true;
+			Audio::Start(5);
 		}
 	}
 	else

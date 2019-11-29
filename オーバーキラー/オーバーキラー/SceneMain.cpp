@@ -7,6 +7,7 @@
 #include "GameL\DrawTexture.h"
 
 #include "GameL\UserData.h"
+#include"GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -69,7 +70,8 @@ void CSceneMain::InitScene()
 	//Draw::LoadImageW(L"夕方用弾丸.png", 6, TEX_SIZE_512);
 	//Draw::LoadImageW(L"夜用弾丸.png", 7, TEX_SIZE_512);
 	
-	
+	//Music loading
+	Audio::LoadAudio(5, L"BGMSE/ダメージ音.wav", SOUND_TYPE::EFFECT);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();
