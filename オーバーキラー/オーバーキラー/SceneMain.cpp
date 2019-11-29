@@ -83,8 +83,8 @@ void CSceneMain::InitScene()
 
 	/*//6オブジェクト作成
 	CObjMediumBoss*obj6 = new CObjMediumBoss(map);
-	Objs::InsertObj(obj6, OBJ_MEDIUM_BOSS, 15);*/
-
+	Objs::InsertObj(obj6, OBJ_MEDIUM_BOSS, 15);
+	*/
 	//背景作成
 	CObjStage* objs = new CObjStage();
 	Objs::InsertObj(objs, OBJ_STAGE, 0);
