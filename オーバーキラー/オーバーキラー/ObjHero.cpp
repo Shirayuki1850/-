@@ -46,6 +46,8 @@ void CObjHero::Init()
 	 m_f = true;
 
 	 move_flag = true;
+	 se_flag = true;
+	 se_flag2 = true;
 }
 //ƒAƒNƒVƒ‡ƒ“
 void CObjHero::Action()

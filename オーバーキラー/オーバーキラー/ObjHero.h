@@ -68,4 +68,6 @@ private:
 	bool hit_flag;
 
 	bool move_flag;
+	bool se_flag;
+	bool se_flag2;
 };

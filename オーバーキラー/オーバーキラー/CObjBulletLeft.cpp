@@ -74,16 +74,16 @@ void CObjBulletLeft::Draw()
 	//Ø‚èæ‚èˆÊ’u‚Ìİ’è
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 64.0f;
-	src.m_bottom = 64.0f;
+	src.m_right = 32.0f;
+	src.m_bottom = 32.0f;
 
 	//•\¦ˆÊ’u‚Ìİ’è
 	dst.m_top = 0.0f + b_y;
 	dst.m_left = 0.0f + b_x;
 	dst.m_right = 32.0f + b_x;
-	dst.m_bottom = 64.0f + b_y;
+	dst.m_bottom = 32.0f + b_y;
 
 	//•`‰æ
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::Draw(10, &src, &dst, c, 0.0f);
 
 }
