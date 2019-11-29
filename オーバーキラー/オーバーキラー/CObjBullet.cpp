@@ -51,7 +51,7 @@ void CObjBullet::Action()
 	};
 
 	//オブジェクト情報群と当たり判定を行い、当たっていれば削除
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		if (hit->CheckObjNameHit(data_base[i]) != nullptr)
 		{
