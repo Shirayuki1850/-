@@ -64,6 +64,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"‰æ‘œ/mob‚Ü‚Æ‚ß.png", 5, TEX_SIZE_512);
 	Draw::LoadImageW(L"‰æ‘œ/image.png", 8, TEX_SIZE_512);
 	Draw::LoadImageW(L"‰æ‘œ/image2.png", 10, TEX_SIZE_512);
+	Draw::LoadImageW(L"‰æ‘œ/“ÁŽêƒ]ƒ“ƒr‘OŒü‚«.png", 11, TEX_SIZE_512);
 
 	/*Draw::LoadImageW(L"‰æ‘œ/Title.png",9,TEX_SIZE_512);*/
 	//Draw::LoadImageW(L"’‹—p’eŠÛ.png", 5, TEX_SIZE_512);
