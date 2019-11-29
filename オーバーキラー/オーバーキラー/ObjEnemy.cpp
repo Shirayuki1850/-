@@ -125,12 +125,14 @@ void CObjEnemy::Action()
 	CHitBox*hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px+block->GetScroll(), m_py);
 
+
+
 	//’eŠÛ‚ÆÚG‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©’²‚×‚é
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+/*	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
-	}
+	}*/
 
 	//’eŠÛ‚ÆÚG‚µ‚Ä‚¢‚½‚çHP‚ðŒ¸‚ç‚·
 	if (hit ->CheckObjNameHit(OBJ_BULLET) != nullptr)

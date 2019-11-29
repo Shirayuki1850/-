@@ -90,7 +90,7 @@ void CObjBlock::Action()
 
 
 		}
-	/*
+	
 		else if(m_map[i][ex]==7)
 		{
 			//7Ç™Ç†ÇÍÇŒÉ{ÉXèoåª
@@ -101,7 +101,7 @@ void CObjBlock::Action()
 			m_map[i][ex] = 0;
 
 
-		}*/
+		}
 	
 	
 

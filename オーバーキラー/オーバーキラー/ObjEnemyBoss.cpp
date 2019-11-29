@@ -43,7 +43,7 @@ void CObjBoss::Init()
 	dm = 5;
 
 	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, m_px, m_py, 32, 32, ELEMENT_ENEMY, OBJ_BOSS_ENEMY, 1);
+	Hits::SetHitBox(this, m_px, m_py, 128, 128, ELEMENT_ENEMY, OBJ_BOSS_ENEMY, 1);
 }
 
 //アクション
@@ -122,6 +122,9 @@ void CObjBoss::Action()
 	m_py += m_vy;
 
 	//ブロック情報を持ってくる
+	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
+
 	
 	//移動方向
 	m_vx = -1.0f;
@@ -141,15 +144,18 @@ void CObjBoss::Action()
 
 	//HitBoxの内容を更新
 	CHitBox*hit = Hits::GetHitBox(this);
-	hit->SetPos(m_px, m_py);
 
-	//弾丸と接触しているかどうか調べる
+	hit->SetPos(m_px + block->GetScroll(), m_py);
+
+	/*弾丸と接触しているかどうか調べる
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
-	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
+	*/
+
+
 	//弾丸と接触していたらHPを減らす
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
@@ -188,7 +194,7 @@ void CObjBoss::Draw()
 
 	RECT_F src;	//描画元切り取り位置
 	RECT_F dst;	//描画先表示位置
-
+/*
 	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 32.0f;
@@ -205,5 +211,28 @@ void CObjBoss::Draw()
 	dst.m_bottom = 32.0f + m_py;
 
 	//〇番のグラフィックをsrc・dstの情報を元に描画
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::Draw(0, &src, &dst, c, 0.0f);*/
+
+	int AniData[4] =
+	{
+		1,0,2,0,
+	};
+
+	//切り取り位置の設定
+	src.m_top = 64.0f;
+	src.m_left = 0.0f + AniData[m_ani_frame] * 128;
+	src.m_right = 128.0f + AniData[m_ani_frame] * 128;
+	src.m_bottom = src.m_top + 192.0f;
+
+	//ブロック情報を持ってくる
+	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+
+	//表示位置の設定
+	dst.m_top = 0.0f + m_py;
+	dst.m_left = (64.0f    *   m_posture) + m_px + block->GetScroll();
+	dst.m_right = (64 - 64.0f *  m_posture) + m_px + block->GetScroll();
+	dst.m_bottom = 96.0f + m_py;
+
+	//描画
+	Draw::Draw(1, &src, &dst, c, 0.0f);
 }
