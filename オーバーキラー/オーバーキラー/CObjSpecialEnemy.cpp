@@ -42,7 +42,7 @@ void CObjSpecialEnemy::Init()
 	hit_flag = false;
 	
 	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, m_px, m_py, 32, 32, ELEMENT_ENEMY, OBJ_SPECIAL_ENEMY, 1);
+	Hits::SetHitBox(this, m_px, m_py, 64, 64, ELEMENT_ENEMY, OBJ_SPECIAL_ENEMY, 1);
 }
 
 //アクション
@@ -119,27 +119,17 @@ void CObjSpecialEnemy::Action()
 
 	//ブロック情報を持ってくる
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
 
-
-	//移動方向
-	m_vx = -1.0f;
-	m_vy = 0.0f;
-
-	//移動ベクトルの正規化
-
-
-
-	//速度を付ける
-	m_vx *= 1.5f;
-	m_vy *= 1.5f;
-
-	//移動ベクトルを座標に加算する
-	m_px += m_vx;
-	m_py += m_vy;
-
-	//HitBoxの内容を更新
+	//HitBoxの位置の変更
 	CHitBox*hit = Hits::GetHitBox(this);
-	hit->SetPos(m_px, m_py);
+	hit->SetPos(m_px + block->GetScroll(), m_py);
+
+
+
+	/*//HitBoxの内容を更新
+	CHitBox*hit = Hits::GetHitBox(this);
+	hit->SetPos(m_px, m_py);*/
 
 	//弾丸と接触しているかどうか調べる
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
@@ -153,7 +143,7 @@ void CObjSpecialEnemy::Action()
 	{
 		m_hp -= 1;
 	}
-	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
+
 	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
 	{
 		if (hit_flag == false)
@@ -187,21 +177,33 @@ void CObjSpecialEnemy::Draw()
 	RECT_F src;	//描画元切り取り位置
 	RECT_F dst;	//描画先表示位置
 
+
+	int AniData[4] =
+	{
+		1,0,2,0,
+	};
+
+	/*//描画カラー情報
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
+	RECT_F src;//描画元切り取り位置
+	RECT_F dst;//描画先表示位置*/
+
 	//切り取り位置の設定
-	src.m_top = 51.0f;
-	src.m_left = 32.0f;
-	src.m_right = 64.0f;
-	src.m_bottom = 32.0f;
+	src.m_top = 64.0f;
+	src.m_left = 0.0f + AniData[m_ani_frame] * 128;
+	src.m_right = 128.0f + AniData[m_ani_frame] * 128;
+	src.m_bottom = src.m_top + 192.0f;
 
 	//ブロック情報を持ってくる
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 
 	//表示位置の設定
 	dst.m_top = 0.0f + m_py;
-	dst.m_left = 32.0f + m_px;
-	dst.m_right = 0.0f + m_px;
-	dst.m_bottom = 32.0f + m_py;
+	dst.m_left = (64.0f    *   m_posture) + m_px + block->GetScroll();
+	dst.m_right = (64 - 64.0f *  m_posture) + m_px + block->GetScroll();
+	dst.m_bottom = 96.0f + m_py;
 
-	//〇番のグラフィックをsrc・dstの情報を元に描画
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	//描画
+	Draw::Draw(2, &src, &dst, c, 0.0f);
 }

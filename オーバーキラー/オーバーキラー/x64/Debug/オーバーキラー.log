@@ -1,16 +1,4 @@
-﻿  CObjMediumBoss.cpp
-c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(104): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(107): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-  CObjSpecialEnemy.cpp
-c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjspecialenemy.cpp(102): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjspecialenemy.cpp(105): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-  ObjEnemyBoss.cpp
-c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objenemyboss.cpp(107): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objenemyboss.cpp(110): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objenemyboss.cpp(58): warning C4390: ';': 制御が空の文が見つかりました。意図した記述でしょうか?
-  ObjHero.cpp
-c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objhero.cpp(158): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objhero.cpp(161): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-  SceneMain.cpp
-  コードを生成中...
+﻿  CObjSpecialEnemy.cpp
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjspecialenemy.cpp(101): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjspecialenemy.cpp(104): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
   オーバーキラー.vcxproj -> C:\Users\GA1A\Desktop\マスターデータ\オーバーキラー\x64\Debug\オーバーキラー.exe
