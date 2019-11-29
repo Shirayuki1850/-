@@ -28,11 +28,11 @@
     <Filter Include="ソース ファイル\Respoawn">
       <UniqueIdentifier>{3befffd3-8aa9-4192-b75a-47b310af8ffe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Bullet">
+      <UniqueIdentifier>{a4f4395a-83dd-48de-a75d-01a77fbfc3ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CObjBullet.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="ObjBlock.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -120,14 +120,14 @@
     <ClCompile Include="ObjGameOver.cpp">
       <Filter>ソース ファイル\GAMEOVER</Filter>
     </ClCompile>
+    <ClCompile Include="CObjBullet.cpp">
+      <Filter>ソース ファイル\Bullet</Filter>
+    </ClCompile>
     <ClCompile Include="CObjBulletLeft.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CobjBullet.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="ObjBlock.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
@@ -215,8 +215,11 @@
     <ClInclude Include="ObjGameOver.h">
       <Filter>ソース ファイル\GAMEOVER</Filter>
     </ClInclude>
+    <ClInclude Include="CobjBullet.h">
+      <Filter>ソース ファイル\Bullet</Filter>
+    </ClInclude>
     <ClInclude Include="CObjBulletLeft.h">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Bullet</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
