@@ -54,7 +54,7 @@ void CObjHero::Action()
 	if (m_py > 1000.0f)
 	{
 		//場外に出たらリスタート。
-		Scene::SetScene(new CSceneMain());
+		Scene::SetScene(new CSceneGameOver());
 	}
 
 	//↑キー入力でジャンプ
