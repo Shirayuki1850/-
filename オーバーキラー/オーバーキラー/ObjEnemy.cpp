@@ -50,6 +50,8 @@ void CObjEnemy::Init()
 //ƒAƒNƒVƒ‡ƒ“
 void CObjEnemy::Action()
 {
+
+
 	//—Ž‰º
 	if (m_py > 1000.0f)
 	{
