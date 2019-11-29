@@ -40,7 +40,7 @@ void CObjBoss::Init()
 
 	hit_flag = false;
 
-	dm = 5;
+	dm = 5;//ボスの攻撃力
 
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_px, m_py, 32, 32, ELEMENT_ENEMY, OBJ_BOSS_ENEMY, 1);
@@ -56,7 +56,7 @@ void CObjBoss::Action()
 	}
 	if (m_hp < 8);
 	{
-
+		dm =7;
 	}
 
 	//通常速度
