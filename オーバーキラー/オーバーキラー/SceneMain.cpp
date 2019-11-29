@@ -62,6 +62,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"画像/mobblock.png", 1, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/mobまとめ.png", 5, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/image.png", 8, TEX_SIZE_512);
+	Draw::LoadImageW(L"画像/image2.png", 10, TEX_SIZE_512);
 
 	/*Draw::LoadImageW(L"画像/Title.png",9,TEX_SIZE_512);*/
 	//Draw::LoadImageW(L"昼用弾丸.png", 5, TEX_SIZE_512);
@@ -84,7 +85,7 @@ void CSceneMain::InitScene()
 
 	//背景作成
 	CObjStage* objs = new CObjStage();
-	Objs::InsertObj(objs, OBJ_STAGE, 1);
+	Objs::InsertObj(objs, OBJ_STAGE, 0);
 
 	/*//敵オブジェクト作成
 	CObjEnemy*obje = new CObjEnemy();
