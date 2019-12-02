@@ -33,9 +33,9 @@ void CObjClear::Draw()			//ÉhÉçÅ[
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	Font::StrDraw(L"GAME CLEAR", 224, 250, 16, c);
+	Font::StrDraw(L"GAME CLEAR", 200, 220, 40, c);
 
-	Font::StrDraw(L"END", 340, 300, 64, c);
+	//Font::StrDraw(L"END", 340, 300, 32, c);
 
-	Font::StrDraw(L"NEXT CHALLENGE : ENTER_KEY", 230, 250, 32, c);
+	Font::StrDraw(L"NEXT CHALLENGE : ENTER_KEY", 200, 260, 30, c);
 }
