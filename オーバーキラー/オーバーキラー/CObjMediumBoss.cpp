@@ -189,10 +189,10 @@ void CObjMediumBoss::Draw()
 	RECT_F dst;	//描画先表示位置
 
 	//切り取り位置の設定
-	src.m_top = 435.0f;
-	src.m_left = 690.0f;
-	src.m_right = 687.0f;
-	src.m_bottom = 435.0f;
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 256.0f;
+	src.m_bottom = 256.0f;
 
 	//ブロック情報を持ってくる
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
@@ -204,5 +204,5 @@ void CObjMediumBoss::Draw()
 	dst.m_bottom = 435.0f + m_py;
 
 	//〇番のグラフィックをsrc・dstの情報を元に描画
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::Draw(12, &src, &dst, c, 0.0f);
 }

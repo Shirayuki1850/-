@@ -61,7 +61,6 @@ void CSceneMain::InitScene()
 	//Draw::LoadImageW(L"画像/銃,アーマーまとめ.png", 4, TEX_SIZE_512);
 	//Draw::LoadImageW(L"画像/アイテムまとめ.png", 3, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/mobblock.png", 1, TEX_SIZE_512);
-	Draw::LoadImageW(L"画像/mobまとめ.png", 5, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/image.png", 8, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/image2.png", 10, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/特殊ゾンビ前向き.png", 11, TEX_SIZE_512);
