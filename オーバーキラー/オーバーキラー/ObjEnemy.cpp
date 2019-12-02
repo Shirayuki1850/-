@@ -6,7 +6,8 @@
 #include "GameHead.h"
 #include "ObjEnemy.h"
 #include "GameL\HitBoxManager.h"
-#include"GameL/Audio.h"
+#include "GameL/Audio.h"
+
 //使用するネームスペース
 using namespace GameL;
 
@@ -148,7 +149,7 @@ void CObjEnemy::Action()
 		{
 			h->SetDamege(1);
 			hit_flag = true;
-			Audio::Start(5);
+			Audio::Start(6);
 		}
 	}
 	else
