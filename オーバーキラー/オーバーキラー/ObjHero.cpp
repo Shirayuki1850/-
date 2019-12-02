@@ -99,7 +99,7 @@ void CObjHero::Action()
 				//Music Start
 				Audio::Start(4);
 				//弾丸オブジェクト作成
-				CObjBullet*obj_b = new CObjBullet(m_px + 50.0f, m_py + 20.0f);	//弾丸オブジェクト作成
+				CObjBullet*obj_b = new CObjBullet(m_px + 50.0f, m_py + 5.0f);	//弾丸オブジェクト作成
 				Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
 				m_f = false;
 			}
