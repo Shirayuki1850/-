@@ -13,7 +13,7 @@ using namespace GameL;
 CObjBoss::CObjBoss(float x, float y)
 {
 	m_px = x;
-	m_py = y;
+	m_py = y-446;
 }
 
 //イニシャライズ
@@ -44,7 +44,7 @@ void CObjBoss::Init()
 	dm = 5;//ボスの攻撃力
 
 	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, m_px, m_py, 128, 128, ELEMENT_ENEMY, OBJ_BOSS_ENEMY, 1);
+	Hits::SetHitBox(this, m_px, m_py, 256, 512, ELEMENT_ENEMY, OBJ_BOSS_ENEMY, 1);
 }
 
 //アクション
@@ -63,7 +63,7 @@ void CObjBoss::Action()
 
 
 	//通常速度
-	m_speed_power = 0.5f;
+	m_speed_power = 0.1f;
 	m_ani_max_time = 4;
 
 	//ブロック衝突で向き変更
@@ -108,8 +108,7 @@ void CObjBoss::Action()
 	//摩擦
 	m_vx += -(m_vx * 0.098);
 
-	//自由落下運動
-	m_vy += 9.8 / (16.0f);
+	
 	//ブロックタイプ検知用の変数がないためのダミー
 	int d;
 	//ブロックとの当たり判定実行
@@ -196,45 +195,25 @@ void CObjBoss::Draw()
 
 	RECT_F src;	//描画元切り取り位置
 	RECT_F dst;	//描画先表示位置
-/*
+
+
 	//切り取り位置の設定
 	src.m_top = 0.0f;
-	src.m_left = 32.0f;
-	src.m_right = 64.0f;
-	src.m_bottom = 32.0f;
+	src.m_left = 0.0f;
+	src.m_right = 256.0f;
+	src.m_bottom = 512.0f;
 
 	//ブロック情報を持ってくる
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 
 	//表示位置の設定
-	dst.m_top = 0.0f + m_py;
-	dst.m_left = 32.0f + m_px;
-	dst.m_right = 0.0f + m_px;
-	dst.m_bottom = 32.0f + m_py;
-
-	//〇番のグラフィックをsrc・dstの情報を元に描画
-	Draw::Draw(0, &src, &dst, c, 0.0f);*/
-
-	int AniData[4] =
-	{
-		1,0,2,0,
-	};
-
-	//切り取り位置の設定
-	src.m_top = 64.0f;
-	src.m_left = 0.0f + AniData[m_ani_frame] * 128;
-	src.m_right = 128.0f + AniData[m_ani_frame] * 128;
-	src.m_bottom = src.m_top + 192.0f;
-
-	//ブロック情報を持ってくる
-	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
-
-	//表示位置の設定
-	dst.m_top = 0.0f + m_py;
-	dst.m_left = (64.0f    *   m_posture) + m_px + block->GetScroll();
-	dst.m_right = (64 - 64.0f *  m_posture) + m_px + block->GetScroll();
-	dst.m_bottom = 96.0f + m_py;
+	dst.m_top = m_py;
+	dst.m_left = (256.0f    *   m_posture) + m_px + block->GetScroll();
+	dst.m_right = (256 - 256.0f *  m_posture) + m_px + block->GetScroll();
+	dst.m_bottom = m_py+512;
 
 	//描画
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(12, &src, &dst, c, 0.0f);
+
+	//Git失せろ
 }

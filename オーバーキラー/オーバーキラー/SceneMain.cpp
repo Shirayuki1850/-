@@ -58,13 +58,16 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"画像/うーたん集合.png", 2,TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/背景昼間.jpg", 0, TEX_SIZE_512);
 
-	Draw::LoadImageW(L"画像/銃,アーマーまとめ.png", 4, TEX_SIZE_512);
-	Draw::LoadImageW(L"画像/アイテムまとめ.png", 3, TEX_SIZE_512);
+	//Draw::LoadImageW(L"画像/銃,アーマーまとめ.png", 4, TEX_SIZE_512);
+	//Draw::LoadImageW(L"画像/アイテムまとめ.png", 3, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/mobblock.png", 1, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/mobまとめ.png", 5, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/image.png", 8, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/image2.png", 10, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/特殊ゾンビ前向き.png", 11, TEX_SIZE_512);
+	Draw::LoadImageW(L"画像/ボス前向き.png",12,TEX_SIZE_512);
+	Draw::LoadImageW(L"画像/中ボス前向き.png", 13, TEX_SIZE_512);
+
 
 	/*Draw::LoadImageW(L"画像/Title.png",9,TEX_SIZE_512);*/
 	//Draw::LoadImageW(L"昼用弾丸.png", 5, TEX_SIZE_512);
@@ -72,7 +75,9 @@ void CSceneMain::InitScene()
 	//Draw::LoadImageW(L"夜用弾丸.png", 7, TEX_SIZE_512);
 	
 	//Music loading
-	Audio::LoadAudio(5, L"BGMSE/ゲームメイン.wav", SOUND_TYPE::EFFECT);
+	Audio::LoadAudio(5, L"BGMSE/ゲームメイン.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(6, L"BGMSE/ダメージ音.wav", SOUND_TYPE::EFFECT);
+	
 
 	//Volume 1.0 return
 	float v = Audio::VolumeMaster(-0.8f);
@@ -99,7 +104,7 @@ void CSceneMain::InitScene()
 	CObjEnemy*obje = new CObjEnemy();
 	Objs::InsertObj(obje, OBJ_ENEMY, 13);*/
 
-	
+	//Git滅べ
 
 }
 

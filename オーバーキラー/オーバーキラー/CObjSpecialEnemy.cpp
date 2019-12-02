@@ -145,7 +145,7 @@ void CObjSpecialEnemy::Action()
 		{
 			h->SetDamege(1);
 			hit_flag = true;
-			Audio::Start(5);
+			Audio::Start(6);
 		}
 	}
 	else
@@ -166,6 +166,7 @@ void CObjSpecialEnemy::Action()
 //ドロー
 void CObjSpecialEnemy::Draw()
 {
+
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
@@ -179,14 +180,15 @@ void CObjSpecialEnemy::Draw()
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 128.0f;
-	src.m_bottom = 64.0f;
+	src.m_bottom = src.m_top+64.0f;
 
 	//ブロック情報を持ってくる
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 
 	//表示位置の設定
+	
 	dst.m_top = 0.0f + m_py;
-	dst.m_left = (0.0f    *   m_posture) + m_px + block->GetScroll();
+	dst.m_left = (128.0f    *   m_posture) + m_px + block->GetScroll();
 	dst.m_right = (128 - 128.0f *  m_posture) + m_px + block->GetScroll();
 	dst.m_bottom = 64.0f + m_py;
 
