@@ -129,7 +129,7 @@ void CObjBoss::Action()
 
 	
 	//ˆÚ“®•ûŒü
-	m_vx = -1.0f;
+	m_vx = -0.5f;
 	m_vy = 0.0f;
 
 	//ˆÚ“®ƒxƒNƒgƒ‹‚Ì³‹K‰»

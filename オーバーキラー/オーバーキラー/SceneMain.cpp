@@ -56,7 +56,7 @@ void CSceneMain::InitScene()
 	
 	//グラフィック読み込み
 	Draw::LoadImageW(L"画像/うーたん集合.png", 2,TEX_SIZE_512);
-	Draw::LoadImageW(L"画像/背景昼間.jpg", 0, TEX_SIZE_512);
+	Draw::LoadImageW(L"画像/背景新.jpg", 0, TEX_SIZE_512);
 
 	Draw::LoadImageW(L"画像/銃,アーマーまとめ.png", 4, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/アイテムまとめ.png", 3, TEX_SIZE_512);
