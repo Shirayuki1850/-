@@ -9,10 +9,10 @@
 //使用するネームスペース
 using namespace GameL;
 
-CObjBlock::CObjBlock(int map[10][100])
+CObjBlock::CObjBlock(int map[10][200])
 {
 	//マップデータをコピー
-	memcpy(m_map, map, sizeof(int)*(10 * 100));
+	memcpy(m_map, map, sizeof(int)*(10 * 200));
 	//000
 }
 
@@ -136,7 +136,7 @@ void CObjBlock::Draw()
 	
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < 200; j++)
 		{
 			if(m_map[i][j]>0)
 			{
@@ -232,7 +232,7 @@ void CObjBlock::BlockHit(
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < 200; j++)
 		{
 			if (m_map[i][j] > 0&&m_map[i][j]!=5)
 			{
@@ -446,7 +446,7 @@ bool CObjBlock::HeroBlckCrossPoint(
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < 200; j++)
 		{
 			if (m_map[i][j] > 0 && m_map[i][j] != 4)
 			{
