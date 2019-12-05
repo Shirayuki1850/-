@@ -44,7 +44,7 @@ void CObjMediumBoss::Init()
 	hit_flag = false;
 
 	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, m_px, m_py, 32, 32, ELEMENT_ENEMY, OBJ_MEDIUM_BOSS, 1);
+	Hits::SetHitBox(this, m_px, m_py, 256, 256, ELEMENT_ENEMY, OBJ_MEDIUM_BOSS, 1);
 }
 
 //アクション
@@ -204,5 +204,5 @@ void CObjMediumBoss::Draw()
 	dst.m_bottom = 435.0f + m_py;
 
 	//〇番のグラフィックをsrc・dstの情報を元に描画
-	Draw::Draw(12, &src, &dst, c, 0.0f);
+	Draw::Draw(13, &src, &dst, c, 0.0f);
 }
