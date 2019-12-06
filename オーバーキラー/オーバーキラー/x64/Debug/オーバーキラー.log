@@ -1,4 +1,5 @@
-﻿  CObjMediumBoss.cpp
-c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(104): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(107): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+﻿  ObjBlock.cpp
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objblock.cpp(152): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objblock.cpp(153): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objblock.cpp(122): warning C4101: 'src': ローカル変数は 1 度も使われていません。
   オーバーキラー.vcxproj -> C:\Users\GA1A\Desktop\マスターデータ\オーバーキラー\x64\Debug\オーバーキラー.exe
