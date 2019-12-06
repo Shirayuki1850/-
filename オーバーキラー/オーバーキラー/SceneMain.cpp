@@ -76,12 +76,12 @@ void CSceneMain::InitScene()
 	
 	//Music loading
 	Audio::LoadAudio(5, L"BGMSE/ゲームメイン.wav", SOUND_TYPE::BACK_MUSIC);
-	Audio::LoadAudio(6, L"BGMSE/ダメージ音.wav", SOUND_TYPE::EFFECT);
+	Audio::LoadAudio(6, L"BGMSE/小パンチ.wav", SOUND_TYPE::EFFECT);
 	
 
-	//Volume 1.0 return
-	float v = Audio::VolumeMaster(-0.8f);
-	v = Audio::VolumeMaster((1 - v));
+	/*//Volume 1.0 return
+	float v = Audio::VolumeMaster(+0.5f);
+	v = Audio::VolumeMaster((1 + v));*/
 
 	Audio::Start(5);
 	//主人公オブジェクト作成

@@ -167,7 +167,6 @@ void CObjBoss::Action()
 		{
 			h->SetDamege(dm);
 			hit_flag = true;
-			Audio::Start(5);
 		}
 	}
 	else

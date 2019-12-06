@@ -33,8 +33,8 @@ void CSceneGameOver::InitScene()
 	Audio::LoadAudio(2, L"BGMSE/ゲームオーバー.wav", SOUND_TYPE::BACK_MUSIC);
 
 	//Volume 1.0 return
-	float v = Audio::VolumeMaster(-0.8f);
-	v = Audio::VolumeMaster((1.0 - v));
+/*	float v = Audio::VolumeMaster(+0.5f);
+	v = Audio::VolumeMaster((1 + v));*/
 
 	CObjGameOver* obj = new CObjGameOver();
 	Objs::InsertObj(obj, OBJ_GAMEOVER, 10);

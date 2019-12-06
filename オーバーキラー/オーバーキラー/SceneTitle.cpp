@@ -32,7 +32,7 @@ void CSceneTitle::InitScene()
 	Draw::LoadImageW(L"‰æ‘œ/ƒ^ƒCƒgƒ‹”wŒi.jpg", 0, TEX_SIZE_512);
 
 	//BackMusic Start
-	float Volume = Audio::VolumeMaster(-0.8f);		//MasterVolume 0.8down
+	//float Volume = Audio::VolumeMaster(+0.5f);		//MasterVolume 0.8down
 	Audio::Start(3);		//Music Start*/
 
 	CObjTitle*obj = new CObjTitle();
