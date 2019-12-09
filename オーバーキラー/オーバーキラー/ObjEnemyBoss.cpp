@@ -1,6 +1,7 @@
 //使用するヘッダーファイル
 #include "GameL\DrawTexture.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL/Audio.h"
 
 #include "GameHead.h"
 #include "ObjEnemyBoss.h"
@@ -45,6 +46,10 @@ void CObjBoss::Init()
 
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_px, m_py, 256, 512, ELEMENT_ENEMY, OBJ_BOSS_ENEMY, 1);
+
+	//Music Start
+	Audio::Start(9);
+
 }
 
 //アクション
@@ -182,6 +187,7 @@ void CObjBoss::Action()
 		Hits::DeleteHitBox(this);
 
 		Scene::SetScene(new CSceneClear());
+		Audio::Stop(9);
 	}
 }
 

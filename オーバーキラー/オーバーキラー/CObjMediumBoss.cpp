@@ -45,6 +45,14 @@ void CObjMediumBoss::Init()
 
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_px, m_py, 256, 256, ELEMENT_ENEMY, OBJ_MEDIUM_BOSS, 1);
+
+	/*Volume 1.0 return
+	float v = Audio::VolumeMaster(+0.5f);
+	v = Audio::VolumeMaster((1 + v));*/
+
+	//Music Start
+	Audio::Start(8);
+
 }
 
 //アクション
@@ -157,7 +165,6 @@ void CObjMediumBoss::Action()
 		{
 			h->SetDamege(1);
 			hit_flag = true;
-			Audio::Start(5);
 		}
 	}
 	else
@@ -171,6 +178,7 @@ void CObjMediumBoss::Action()
 		{
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
+			Audio::Stop(8);
 		}
 	}
 }
