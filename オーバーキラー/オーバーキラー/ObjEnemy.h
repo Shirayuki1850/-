@@ -17,12 +17,14 @@ public:
 	void Draw();//ドロー
 
 	float GetVx() { return m_vx; }
+
 private:
-	float m_px;//位置
-	float m_py;
+	float m_px;//位置X
+	float m_py;//位置Y
 	float m_vx;//移動ベクトル
 	float m_vy;
 	float m_posture;//姿勢
+	float RndNum;	//乱数
 
 	int m_ani_time;//アニメーションフレーム動作間隔
 	int m_ani_frame;//描画フレーム

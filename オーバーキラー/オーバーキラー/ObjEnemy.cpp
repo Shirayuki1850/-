@@ -1,22 +1,23 @@
-
 //GameLで使用するヘッダー
-#include "GameL\SceneObjManager.h"
 #include "GameL\DrawTexture.h"
 #include "GameL\WinInputs.h"
 #include "GameHead.h"
 #include "ObjEnemy.h"
 #include "GameL\HitBoxManager.h"
 #include "GameL/Audio.h"
+#include <stdlib.h>
+#include <time.h>
 
 //使用するネームスペース
 using namespace GameL;
 
 CObjEnemy::CObjEnemy(float x, float y)
-{
+{	
 	m_px = x;     //位置
 	m_py = y;
-
+	
 }
+//右側に弾が出ない
 
 //イニシャライズ
 void CObjEnemy::Init()
@@ -27,7 +28,7 @@ void CObjEnemy::Init()
 	m_vx = 0.0f;//移動ベクトル
 	m_vy = 0.0f;
 	m_posture = 1.0f;//右向き0.0f左1.0ｆ
-
+	
 	m_ani_time  = 0;
 	m_ani_frame = 1;//静止フレームを初期にする。
 
@@ -43,7 +44,8 @@ void CObjEnemy::Init()
 	 m_hit_right  =  false;
 
 	 hit_flag = false;
-
+	 RndNum = 0;
+	
 	 //当たり判定用のHitBoxを作成
 	 Hits::SetHitBox(this, m_px, m_py, 64, 64, ELEMENT_ENEMY, OBJ_ENEMY, 1);
 
@@ -51,7 +53,8 @@ void CObjEnemy::Init()
 //アクション
 void CObjEnemy::Action()
 {
-
+	srand(time(NULL));
+	RndNum = rand() % 5;
 
 	//落下
 	if (m_py > 1000.0f)
@@ -129,7 +132,7 @@ void CObjEnemy::Action()
 	CHitBox*hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px+block->GetScroll(), m_py);
 
-
+	
 
 	//弾丸と接触しているかどうか調べる
 /*	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
@@ -162,7 +165,12 @@ void CObjEnemy::Action()
 
 	//HPが0になったら破壊
 	if (m_hp <= 0)
-	{
+	{			
+		if (RndNum == 1)
+		{
+			CObjHealItem*ObjH = new CObjHealItem(m_px, m_py);
+			Objs::InsertObj(ObjH, OBJ_HEAL_ITEM, 14);
+		}
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
@@ -171,7 +179,6 @@ void CObjEnemy::Action()
 //ドロー
 void CObjEnemy::Draw()
 {
-
 	int AniData[4] =
 	{
 		1,0,2,0,
@@ -195,7 +202,7 @@ void CObjEnemy::Draw()
 	//表示位置の設定
 	dst.m_top = 0.0f+m_py;
 	dst.m_left = (64.0f    *   m_posture ) + m_px+ block->GetScroll();
-	dst.m_right =( 64-64.0f *  m_posture  )+ m_px+block->GetScroll();
+	dst.m_right =( 64-64.0f *  m_posture  )+ m_px+ block->GetScroll();
 	dst.m_bottom = 96.0f+m_py;
 
 	//描画
