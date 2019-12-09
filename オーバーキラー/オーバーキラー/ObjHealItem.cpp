@@ -9,24 +9,54 @@
 //使用するネームスペース
 using namespace GameL;
 
+CObjHealItem::CObjHealItem(float x, float y)
+{
+	m_ex = x;
+	m_ey = y;
+}
+
 //イニシャライズ
-void CObjHeal::Init()
+void CObjHealItem::Init()
 {
-	m_px = 70.0f;//位置
-	m_py = 64.0f;
-	   
-	hp = 10;	//HP
-
+	hp = 3;	//HP
 	//当たり判定用のHitBoxを作成
-	Hits::SetHitBox(this, m_px, m_py, 64, 64, ELEMENT_ITEM, OBJ_HEAL_ITEM, 1);
-
+	Hits::SetHitBox(this, m_ex, m_ey, 64, 85, ELEMENT_ITEM, OBJ_HEAL_ITEM, 0);
+	
 }
-void CObjHeal::Action()
+void CObjHealItem::Action()
 {
+	CObjBlock* pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	CHitBox*hit = Hits::GetHitBox(this);
 
+	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+	hit->SetPos(m_ex + pb->GetScroll(), m_ey);
 }
 
-void CObjHeal::Draw()
+void CObjHealItem::Draw()
 {
+	//描画カラー情報
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	
+	RECT_F src;//描画元切り取り位置
+	RECT_F dst;//描画先表示位置
+
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 64.0f;
+	src.m_bottom = 85.0f;
+
+	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+
+	//表示位置の設定
+	dst.m_top	 = 0.0f+m_ey;
+	dst.m_left	 = 0.0f+m_ex+block->GetScroll();
+	dst.m_right  = 64.0f+m_ex+block->GetScroll();
+	dst.m_bottom = 85.0f+m_ey;
+
+	Draw::Draw(4, &src, &dst, c, 0.0f);
 
 }

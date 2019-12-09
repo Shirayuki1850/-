@@ -5,15 +5,16 @@
 using namespace GameL;
 
 //オブジェクト：タイトル
-class CObjHeal :public CObj
+class CObjHealItem :public CObj
 {
 public:
-	CObjHeal(float x, float y);
-	~CObjHeal() {};
+	CObjHealItem(float x,float y);
+	~CObjHealItem() {};
 	void Init();
 	void Action();
 	void Draw();
-
+	float m_ex;
+	float m_ey;
 private:
 
 	int hp;

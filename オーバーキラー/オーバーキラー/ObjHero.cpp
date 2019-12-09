@@ -8,6 +8,7 @@
 #include "GameHead.h"
 #include "ObjHero.h"
 #include "GameL\HitBoxManager.h"
+#include"GameL/UserData.h"
 
 
 //使用するネームスペース
@@ -52,6 +53,11 @@ void CObjHero::Init()
 //アクション
 void CObjHero::Action()
 {
+
+	if(m_hp>20)
+	{
+		m_hp = 20;
+	}
 	//落下によるゲームオーバー＆リスタート
 	if (m_py > 1000.0f)
 	{
@@ -94,14 +100,19 @@ void CObjHero::Action()
 		{
 			if (move_flag == true)
 			{
-				//Music loading
-				Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
-				//Music Start
-				Audio::Start(4);
-				//弾丸オブジェクト作成
-				CObjBullet*obj_b = new CObjBullet(m_px + 50.0f, m_py + 20.0f);	//弾丸オブジェクト作成
-				Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
-				m_f = false;
+				Save::Open();
+				if (((UserData*)Save::GetData())->BulletData>0)
+				{	//Music loading
+					Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
+					//Music Start
+					Audio::Start(4);
+					//弾丸オブジェクト作成
+					CObjBullet*obj_b = new CObjBullet(m_px + 50.0f, m_py + 20.0f);	//弾丸オブジェクト作成
+					Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
+					m_f = false;
+					Save::Seve();
+					((UserData*)Save::GetData())->BulletData--;
+				}
 			}
 			else if(move_flag==false)
 			{

@@ -29,6 +29,7 @@ void CSceneTitle::InitScene()
 
 	// image loading
 	Draw::LoadImageW(L"‰æ‘œ/ƒ^ƒCƒgƒ‹”wŒi.jpg", 0, TEX_SIZE_512);
+	Draw::LoadImageW(L"‰æ‘œ/‰ñ•œ–ò.png", 1, TEX_SIZE_512);
 
 	//BackMusic Start
 	float Volume = Audio::VolumeMaster(-0.8f);		//MasterVolume 0.8down

@@ -48,7 +48,8 @@ enum HIT_ELEMENTS
 struct UserData
 {
 	int mSeveData;	//サンプルセーブデータ
-	
+	int BulletData;	//弾の数
+
 };
 //------------------------------------------------
 
@@ -77,6 +78,7 @@ struct UserData
 #include "ObjClear.h"
 #include "ObjGameOver.h"
 #include "CObjBulletLeft.h"
+#include "ObjHealItem.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
