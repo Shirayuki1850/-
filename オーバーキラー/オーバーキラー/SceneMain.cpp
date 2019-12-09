@@ -76,6 +76,9 @@ void CSceneMain::InitScene()
 	
 	//Music loading
 	Audio::LoadAudio(5, L"BGMSE/ゲームメイン.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(8, L"BGMSE/中ボス.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(9, L"BGMSE/ラスボス.wav", SOUND_TYPE::BACK_MUSIC);
+
 	Audio::LoadAudio(6, L"BGMSE/小パンチ.wav", SOUND_TYPE::EFFECT);
 	Audio::LoadAudio(7, L"大パンチ.wav", SOUND_TYPE::EFFECT);
 	
