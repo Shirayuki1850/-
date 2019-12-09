@@ -47,15 +47,16 @@ void CObjBulletLeft::Action()
 
 
 	//当たり判定オブジェクト情報群
-	int data_base[4] =
+	int data_base[5] =
 	{
 		OBJ_ENEMY,
 		OBJ_SPECIAL_ENEMY,
 		OBJ_MEDIUM_BOSS,
 		OBJ_BOSS_ENEMY,
+		OBJ_BLOCK,
 	};
 	//オブジェクト情報群と当たり判定を行い、当たっていれば削除
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		if (hit->CheckObjNameHit(data_base[i]) != nullptr)
 		{
