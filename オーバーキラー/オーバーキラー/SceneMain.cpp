@@ -64,7 +64,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"画像/mobまとめ.png", 5, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/image.png", 8, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/image2.png", 10, TEX_SIZE_512);
-	Draw::LoadImageW(L"画像/特殊ゾンビ前向き.png", 11, TEX_SIZE_512);
+	Draw::LoadImageW(L"画像/特殊ゾンビ.png", 11, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/ボス前向き.png",12,TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/中ボス前向き.png", 13, TEX_SIZE_512);
 
@@ -77,6 +77,7 @@ void CSceneMain::InitScene()
 	//Music loading
 	Audio::LoadAudio(5, L"BGMSE/ゲームメイン.wav", SOUND_TYPE::BACK_MUSIC);
 	Audio::LoadAudio(6, L"BGMSE/小パンチ.wav", SOUND_TYPE::EFFECT);
+	Audio::LoadAudio(7, L"大パンチ.wav", SOUND_TYPE::EFFECT);
 	
 
 	/*//Volume 1.0 return
