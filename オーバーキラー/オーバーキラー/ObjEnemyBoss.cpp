@@ -67,16 +67,15 @@ void CObjBoss::Action()
 	m_ani_max_time = 4;
 
 	//ブロック衝突で向き変更
-	if (m_hit_left == true)
+
+	if (m_px >= 12475)
 	{
 		m_move = true;
 	}
-	if (m_hit_right == true)
+	if (m_px <= 12230)
 	{
-
 		m_move = false;
 	}
-
 	//方向
 	if (m_move == false)
 	{
@@ -128,7 +127,7 @@ void CObjBoss::Action()
 	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
 
 	
-	//移動方向
+/*	//移動方向
 	m_vx = -0.5f;
 	m_vy = 0.0f;
 
@@ -139,7 +138,7 @@ void CObjBoss::Action()
 	//速度を付ける
 	m_vx *= 1.5f;
 	m_vy *= 1.5f;
-
+	*/
 	//移動ベクトルを座標に加算する
 	m_px += m_vx;
 	m_py += m_vy;
@@ -214,5 +213,5 @@ void CObjBoss::Draw()
 	//描画
 	Draw::Draw(12, &src, &dst, c, 0.0f);
 
-	//Git失せろ
+	
 }

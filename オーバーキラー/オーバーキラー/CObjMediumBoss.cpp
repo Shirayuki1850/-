@@ -14,7 +14,7 @@ using namespace GameL;
 CObjMediumBoss::CObjMediumBoss(float x, float y)
 {
 	m_px = x;
-	m_py = y;
+	m_py = y-200;
 }
 
 //イニシャライズ
@@ -58,20 +58,19 @@ void CObjMediumBoss::Action()
 
 
 	//通常速度
-	m_speed_power = 0.5f;
+	m_speed_power = 0.1f;
 	m_ani_max_time = 4;
 
-	//ブロック衝突で向き変更
-	if (m_hit_left == true)
+
+
+	if (m_px >= 8300)
 	{
 		m_move = true;
 	}
-	if (m_hit_right == true)
+	if (m_px <= 7500) 
 	{
-
 		m_move = false;
 	}
-
 	//方向
 	if (m_move == false)
 	{
@@ -85,6 +84,7 @@ void CObjMediumBoss::Action()
 		m_posture = 0.0f;
 		m_ani_time += 1;
 	}
+
 
 
 	if (m_ani_time > m_ani_max_time)
@@ -104,7 +104,7 @@ void CObjMediumBoss::Action()
 	m_vx += -(m_vx * 0.098);
 
 	//自由落下運動
-	m_vy += 9.8 / (16.0f);
+	//m_vy += 9.8 / (16.0f);
 	//ブロックタイプ検知用の変数がないためのダミー
 	int d;
 	//ブロックとの当たり判定実行
@@ -121,7 +121,9 @@ void CObjMediumBoss::Action()
 
 	//ブロック情報を持ってくる
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
 
+/*
 	//移動方向
 	m_vx = -1.0f;
 	m_vy = 0.0f;
@@ -133,28 +135,22 @@ void CObjMediumBoss::Action()
 	//速度を付ける
 	m_vx *= 1.5f;
 	m_vy *= 1.5f;
-
+	*/
 	//移動ベクトルを座標に加算する
 	m_px += m_vx;
 	m_py += m_vy;
 
 	//HitBoxの内容を更新
 	CHitBox*hit = Hits::GetHitBox(this);
-	hit->SetPos(m_px, m_py);
+	hit->SetPos(m_px +block->GetScroll(), m_py);
 
-	//弾丸と接触しているかどうか調べる
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
+
 
 	//弾丸と接触していたらHPを減らす
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		m_hp -= 1;
 	}
-	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
 	{
 		if (hit_flag == false)
@@ -198,10 +194,10 @@ void CObjMediumBoss::Draw()
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 
 	//表示位置の設定
-	dst.m_top = 435.0f + m_py;
-	dst.m_left = 690.0f + m_px;
-	dst.m_right = 687.0f + m_px;
-	dst.m_bottom = 435.0f + m_py;
+	dst.m_top = m_py;
+	dst.m_left =/*0.0f + m_px; */(256.0f    *   m_posture) + m_px + block->GetScroll();
+	dst.m_right =/* 256.0f + m_px; */(256 - 256.0f *  m_posture) + m_px + block->GetScroll();
+	dst.m_bottom = m_py+256;
 
 	//〇番のグラフィックをsrc・dstの情報を元に描画
 	Draw::Draw(13, &src, &dst, c, 0.0f);

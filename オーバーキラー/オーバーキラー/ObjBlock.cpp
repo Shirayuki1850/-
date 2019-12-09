@@ -80,7 +80,7 @@ void CObjBlock::Action()
 
 		}
 		
-		/*if (m_map[i][ex] == 6)
+		if (m_map[i][ex] == 6)
 		{
 			//6Ç™Ç†ÇÍÇŒíÜÉ{ÉXèoåª
 			CObjMediumBoss*ObjM = new CObjMediumBoss(ex*64.0f, i*64.0f);
@@ -90,7 +90,7 @@ void CObjBlock::Action()
 			m_map[i][ex] = 0;
 
 
-		}*/
+		}
 	
 		else if(m_map[i][ex]==7)
 		{

@@ -26,6 +26,14 @@ void CObjGameOver::Action()
 			m_key_flag = false;
 		}
 	}
+	if (Input::GetVKey('O') == true)
+	{
+		if (m_key_flag == true)
+		{
+			Scene::SetScene(new CSceneMain());
+			m_key_flag = false;
+		}
+	}
 	else
 	{
 		m_key_flag = true;
@@ -38,8 +46,10 @@ void CObjGameOver::Draw()
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	//リスポーン
-	Font::StrDraw(L"GAME　OVER : PUSH ENTERKEY RESPOAWN", 200, 250, 25, c);
+	Font::StrDraw(L"GAME　OVER : PUSH ENTERKEY ", 200, 250, 25, c);
 
+	//リスポーン
+	Font::StrDraw(L"Retry: PUSH O KEY ", 200, 450, 40, c);
 	
 
 }

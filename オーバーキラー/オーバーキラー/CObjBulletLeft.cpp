@@ -41,6 +41,10 @@ void CObjBulletLeft::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
+	//ブロック情報を持ってくる
+	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+
+
 
 	//当たり判定オブジェクト情報群
 	int data_base[4] =
@@ -50,7 +54,6 @@ void CObjBulletLeft::Action()
 		OBJ_MEDIUM_BOSS,
 		OBJ_BOSS_ENEMY,
 	};
-
 	//オブジェクト情報群と当たり判定を行い、当たっていれば削除
 	for (int i = 0; i < 4; i++)
 	{

@@ -27,7 +27,7 @@ CSceneGameOver::~CSceneGameOver()
 //初期化
 void CSceneGameOver::InitScene()
 {
-	Font::SetStrTex(L"GAME　OVER :PUSH ENTERKEY RESPOAWN");
+	Font::SetStrTex(L"GAME　OVER :PUSH ENTERKEY ");
 
 	//Music loading
 	Audio::LoadAudio(2, L"BGMSE/ゲームオーバー.wav", SOUND_TYPE::BACK_MUSIC);
