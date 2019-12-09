@@ -13,12 +13,13 @@ CObjBullet::CObjBullet(float x, float y)
 {
 	b_x = x;
 	b_y = y;
+	
 }
 //イニシャライズ
 void CObjBullet::Init()
 {
 	b_vx = 6.0f;
-	
+		
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, b_x, b_y, 32, 32, ELEMENT_PLAYER, OBJ_BULLET, 1);
 }
@@ -26,7 +27,6 @@ void CObjBullet::Init()
 //アクション
 void CObjBullet::Action()
 {
-
 	b_vx += 0.0f;
 	b_x += b_vx;
 

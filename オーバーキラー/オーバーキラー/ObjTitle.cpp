@@ -6,12 +6,17 @@
 
 #include "GameHead.h"
 #include "ObjTitle.h"
+#include "GameL/UserData.h"
 
 using namespace GameL;
 
 void CObjTitle::Init()
 {
 	m_key_flag = false;
+
+	Save::Seve();
+	((UserData*)Save::GetData())->BulletData = 12;
+
 }
 
 void CObjTitle::Action()
@@ -51,7 +56,7 @@ void CObjTitle::Draw()
 	dst.m_bottom = 600.0f;
 	//•`‰æ
 	Draw::Draw(0, &src, &dst, c, 0.0f);
-
+	
 
 	Font::StrDraw(L"`“®‚­r‚ğ’´‚¦‚Äs‚¯`", 230, 250, 32, c);
 

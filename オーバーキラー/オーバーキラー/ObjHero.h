@@ -34,7 +34,7 @@ public:
 	void SetLeft(bool b) { m_hit_left = b; }
 	void SetRight(bool b) { m_hit_right = b; }
 	void SetDamege(int d) { m_hp -= d; }
-
+	int BN;
 
 private:
 	float m_px;//ˆÊ’u
