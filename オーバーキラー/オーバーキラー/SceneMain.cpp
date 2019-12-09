@@ -58,7 +58,6 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"画像/うーたん集合.png", 2,TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/背景新.jpg", 0, TEX_SIZE_512);
 
-	Draw::LoadImageW(L"画像/銃,アーマーまとめ.png", 4, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/アイテムまとめ.png", 3, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/mobblock.png", 1, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/mobまとめ.png", 5, TEX_SIZE_512);
@@ -67,7 +66,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"画像/特殊ゾンビ.png", 11, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/ボス前向き.png",12,TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/中ボス前向き.png", 13, TEX_SIZE_512);
-
+	Draw::LoadImageW(L"画像/回復薬.png", 4, TEX_SIZE_512);
 
 	/*Draw::LoadImageW(L"画像/Title.png",9,TEX_SIZE_512);*/
 	//Draw::LoadImageW(L"昼用弾丸.png", 5, TEX_SIZE_512);

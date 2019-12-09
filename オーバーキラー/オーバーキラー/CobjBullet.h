@@ -13,10 +13,12 @@ public:
 	void Init();	//イニシャライズ
 	void Action();	//アクション
 	void Draw();	//ドロー0
+	int BulNum; //弾丸数
 
 private:
 	float b_x;	//弾丸のX方向の位置用変数
 	float b_y;	//弾丸のY方向の位置用変数
 	float b_vx;	//弾丸のX方向の速度用変数
+
 
 };
