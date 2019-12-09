@@ -36,11 +36,15 @@ void CObjBulletLeft::Action()
 	hit->SetPos(b_x, b_y);	//HitBoxの位置を弾丸の位置に更新
 
 	//領域外に出たら弾丸を破壊する
-	if (b_x > 800.0f)
+	if (b_x < -60.0f)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
+	//ブロック情報を持ってくる
+	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+
+
 
 	//当たり判定オブジェクト情報群
 	int data_base[4] =
@@ -50,7 +54,6 @@ void CObjBulletLeft::Action()
 		OBJ_MEDIUM_BOSS,
 		OBJ_BOSS_ENEMY,
 	};
-
 	//オブジェクト情報群と当たり判定を行い、当たっていれば削除
 	for (int i = 0; i < 4; i++)
 	{

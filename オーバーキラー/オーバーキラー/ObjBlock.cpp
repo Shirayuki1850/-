@@ -6,13 +6,14 @@
 #include "GameL\WinInputs.h"
 #include "GameHead.h"
 #include "ObjBlock.h"
+#include "GameL\DrawFont.h"
 //使用するネームスペース
 using namespace GameL;
 
-CObjBlock::CObjBlock(int map[10][100])
+CObjBlock::CObjBlock(int map[10][200])
 {
 	//マップデータをコピー
-	memcpy(m_map, map, sizeof(int)*(10 * 100));
+	memcpy(m_map, map, sizeof(int)*(10 * 200));
 	//000
 }
 
@@ -79,7 +80,7 @@ void CObjBlock::Action()
 
 		}
 		
-		/*if (m_map[i][ex] == 6)
+		if (m_map[i][ex] == 6)
 		{
 			//6があれば中ボス出現
 			CObjMediumBoss*ObjM = new CObjMediumBoss(ex*64.0f, i*64.0f);
@@ -89,7 +90,7 @@ void CObjBlock::Action()
 			m_map[i][ex] = 0;
 
 
-		}*/
+		}
 	
 		else if(m_map[i][ex]==7)
 		{
@@ -121,11 +122,13 @@ void CObjBlock::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 	
-	//背景表示
-	
-	
 
-
+	//遊び方説明
+	Font::StrDraw(L"左キー:左移動", 20,100, 32, c);
+	Font::StrDraw(L"右キー:右移動", 20,130, 32, c);
+	Font::StrDraw(L"移動時+Aキー:ダッシュ", 20, 160, 32, c);
+	Font::StrDraw(L"Zキー:弾丸発射", 20, 190, 32, c);
+	Font::StrDraw(L"上キー:ジャンプ", 20, 220, 32, c);
 	
 
 
@@ -136,7 +139,7 @@ void CObjBlock::Draw()
 	
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < 200; j++)
 		{
 			if(m_map[i][j]>0)
 			{
@@ -232,7 +235,7 @@ void CObjBlock::BlockHit(
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < 200; j++)
 		{
 			if (m_map[i][j] > 0&&m_map[i][j]!=5)
 			{
@@ -446,7 +449,7 @@ bool CObjBlock::HeroBlckCrossPoint(
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < 200; j++)
 		{
 			if (m_map[i][j] > 0 && m_map[i][j] != 4)
 			{

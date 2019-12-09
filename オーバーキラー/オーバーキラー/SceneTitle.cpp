@@ -5,6 +5,7 @@
 #include "GameL\DrawFont.h"
 #include "GameL\Audio.h"
 
+
 using namespace GameL;
 
 #include "SceneMain.h"
@@ -32,7 +33,7 @@ void CSceneTitle::InitScene()
 	Draw::LoadImageW(L"‰æ‘œ/‰ñ•œ–ò.png", 1, TEX_SIZE_512);
 
 	//BackMusic Start
-	float Volume = Audio::VolumeMaster(-0.8f);		//MasterVolume 0.8down
+	//float Volume = Audio::VolumeMaster(+0.5f);		//MasterVolume 0.8down
 	Audio::Start(3);		//Music Start*/
 
 	CObjTitle*obj = new CObjTitle();

@@ -40,6 +40,10 @@ void CObjBullet::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
+	//ブロック情報を持ってくる
+	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+
+
 
 	//当たり判定オブジェクト情報群
 	int data_base[4] =
