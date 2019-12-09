@@ -6,6 +6,7 @@
 #include "GameL\WinInputs.h"
 #include "GameHead.h"
 #include "ObjBlock.h"
+#include "GameL\DrawFont.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -121,11 +122,13 @@ void CObjBlock::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 	
-	//背景表示
-	
-	
 
-
+	//遊び方説明
+	Font::StrDraw(L"左キー:左移動", 20,100, 32, c);
+	Font::StrDraw(L"右キー:右移動", 20,130, 32, c);
+	Font::StrDraw(L"移動時+Aキー:ダッシュ", 20, 160, 32, c);
+	Font::StrDraw(L"Zキー:弾丸発射", 20, 190, 32, c);
+	Font::StrDraw(L"上キー:ジャンプ", 20, 220, 32, c);
 	
 
 
