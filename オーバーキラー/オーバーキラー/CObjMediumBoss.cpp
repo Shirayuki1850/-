@@ -52,7 +52,7 @@ void CObjMediumBoss::Init()
 
 	//Music Start
 	Audio::Start(8);
-
+	Audio::Stop(5);
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -179,6 +179,7 @@ void CObjMediumBoss::Action()
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 			Audio::Stop(8);
+			Audio::Start(5);
 		}
 	}
 }
