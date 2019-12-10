@@ -30,7 +30,7 @@ void CObjHero::Init()
     m_ani_max_time = 10;//アニメーション間隔幅
 
 	m_hp = 20;	//HP
-	
+	BN = 12;
 
 	//blockとの衝突状態確認用
 	 m_hit_up     =  false;
@@ -49,6 +49,7 @@ void CObjHero::Init()
 	 move_flag = true;
 	 se_flag = true;
 	 se_flag2 = true;
+
 }
 //アクション
 void CObjHero::Action()
@@ -100,8 +101,8 @@ void CObjHero::Action()
 		{
 			if (move_flag == true)
 			{
-				Save::Open();
-				if (((UserData*)Save::GetData())->BulletData>0)
+
+				if (BN>0)
 				{	//Music loading
 					Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
 					//Music Start
@@ -110,20 +111,22 @@ void CObjHero::Action()
 					CObjBullet*obj_b = new CObjBullet(m_px + 50.0f, m_py + 20.0f);	//弾丸オブジェクト作成
 					Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
 					m_f = false;
-					Save::Seve();
-					((UserData*)Save::GetData())->BulletData--;
+					BN --;
 				}
 			}
 			else if(move_flag==false)
 			{
-				//Music loading
-				Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
-				//Music Start
-				Audio::Start(4);
-				//弾丸オブジェクト作成
-				CObjBulletLeft*obj_b = new CObjBulletLeft(m_px - 50.0f, m_py +20.0f);	//弾丸オブジェクト作成
-				Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
-				m_f = false;
+				if (BN > 0)
+				{	//Music loading
+					Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
+					//Music Start
+					Audio::Start(4);
+					//弾丸オブジェクト作成
+					CObjBulletLeft*obj_b = new CObjBulletLeft(m_px - 50.0f, m_py + 20.0f);	//弾丸オブジェクト作成
+					Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
+					m_f = false;
+					BN--;
+				}
 			}
 			
 		}

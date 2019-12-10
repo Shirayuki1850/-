@@ -26,7 +26,7 @@ void CObjGameOver::Action()
 			m_key_flag = false;
 		}
 	}
-	if (Input::GetVKey('O') == true)
+	if (Input::GetVKey('V') == true)
 	{
 		if (m_key_flag == true)
 		{
@@ -49,7 +49,7 @@ void CObjGameOver::Draw()
 	Font::StrDraw(L"GAME　OVER : PUSH ENTERKEY ", 200, 250, 25, c);
 
 	//リスポーン
-	Font::StrDraw(L"Retry: PUSH O KEY ", 200, 450, 40, c);
+	Font::StrDraw(L"Retry: PUSH V KEY ", 200, 450, 40, c);
 	
 
 }

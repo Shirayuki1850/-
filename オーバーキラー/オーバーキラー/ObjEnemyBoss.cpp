@@ -49,6 +49,7 @@ void CObjBoss::Init()
 
 	//Music Start
 	Audio::Start(9);
+	Audio::Stop(5);
 
 }
 
