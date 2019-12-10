@@ -19,7 +19,7 @@ CObjBullet::CObjBullet(float x, float y)
 void CObjBullet::Init()
 {
 	b_vx = 6.0f;
-		
+
 	//“–‚½‚è”»’è—pHitBox‚ğì¬
 	Hits::SetHitBox(this, b_x, b_y, 32, 32, ELEMENT_PLAYER, OBJ_BULLET, 1);
 }
