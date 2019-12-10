@@ -30,7 +30,7 @@ void CObjHero::Init()
     m_ani_max_time = 10;//アニメーション間隔幅
 
 	m_hp = 20;	//HP
-	BN = 12;
+	BN = 100;	//弾丸の数
 
 	//blockとの衝突状態確認用
 	 m_hit_up     =  false;
@@ -332,7 +332,7 @@ void CObjHero::Draw()
 	float c2[4] = { 1.0f,0.0f,0.0f,1.0f };
 
 	swprintf_s(str, L"HP:%d", m_hp);
-
 	Font::StrDraw(str, 20, 20, 40, c2);
-
+	swprintf_s(str, L"残弾数:%d", BN);
+	Font::StrDraw(str, 20, 60, 40, c2);
 }
