@@ -67,6 +67,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"画像/ボス前向き.png",12,TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/中ボス前向き.png", 13, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/回復薬.png", 4, TEX_SIZE_512);
+	Draw::LoadImageW(L"画像/image3.png", 14, TEX_SIZE_512);
 
 	/*Draw::LoadImageW(L"画像/Title.png",9,TEX_SIZE_512);*/
 	//Draw::LoadImageW(L"昼用弾丸.png", 5, TEX_SIZE_512);
