@@ -35,8 +35,8 @@ void CSceneMain::InitScene()
 	unique_ptr<wchar_t>p;//ステージ情報ポインター
 	int size;
 	p = Save::ExternalDataOpen(L"マップデータ/マップ1.csv", &size);//外部データの読み込み
-	//p = Save::ExternalDataOpen(L"マップNomal.csv", &size);//外部データの読み込み
-	//p = Save::ExternalDataOpen(L"マップ.Hard.csv", &size);//外部データの読み込み
+	//p = Save::ExternalDataOpen(L"マップデータ/マップ2.csv", &size);//外部データの読み込み
+	
 
 	int map[10][200];
 	int count = 1;
@@ -69,10 +69,6 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"画像/回復薬.png", 4, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/image3.png", 14, TEX_SIZE_512);
 
-	/*Draw::LoadImageW(L"画像/Title.png",9,TEX_SIZE_512);*/
-	//Draw::LoadImageW(L"昼用弾丸.png", 5, TEX_SIZE_512);
-	//Draw::LoadImageW(L"夕方用弾丸.png", 6, TEX_SIZE_512);
-	//Draw::LoadImageW(L"夜用弾丸.png", 7, TEX_SIZE_512);
 	
 	//Music loading
 	Audio::LoadAudio(5, L"BGMSE/ゲームメイン.wav", SOUND_TYPE::BACK_MUSIC);
