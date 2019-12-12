@@ -25,6 +25,7 @@ public:
 		bool*up, bool*down, bool*left, bool*right,
 		float* vx, float*vy, int*bt
 	);
+	
 	//ålŒö‚Æ•Ç‚ÌŒğ·”»’è
 	bool HeroBlckCrossPoint(
 		float x, float y, float vx, float vy,

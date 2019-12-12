@@ -48,6 +48,7 @@ void CObjBoss::Init()
 	Hits::SetHitBox(this, m_px, m_py, 256, 512, ELEMENT_ENEMY, OBJ_BOSS_ENEMY, 1);
 
 	//Music Start
+	Audio::Stop(8);
 	Audio::Start(9);
 	Audio::Stop(5);
 

@@ -152,7 +152,7 @@ void CObjMediumBoss::Action()
 	CHitBox*hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px +block->GetScroll(), m_py);
 
-
+	
 
 	//’eŠÛ‚ÆÚG‚µ‚Ä‚¢‚½‚çHP‚ðŒ¸‚ç‚·
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
@@ -178,8 +178,6 @@ void CObjMediumBoss::Action()
 		{
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
-			Audio::Stop(8);
-			Audio::Start(5);
 		}
 	}
 }

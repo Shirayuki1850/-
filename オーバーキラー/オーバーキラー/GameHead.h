@@ -21,6 +21,9 @@ enum OBJ_NAME
 	OBJ_GAMEOVER,
 	OBJ_CLEAR,
 	OBJ_HEAL_ITEM,
+	OBJ_STAGECHANGE,
+	OBJ_STAGE2,
+	OBJ_BULLET_ITEM,
 };
 //------------------------------------------------
 
@@ -79,6 +82,9 @@ struct UserData
 #include "ObjGameOver.h"
 #include "CObjBulletLeft.h"
 #include "ObjHealItem.h"
+#include "ObjStageChange.h"
+#include "ObjStage2.h"
+#include "ObjBulletItem.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -87,6 +93,7 @@ struct UserData
 #include "SceneRespoawn.h"
 #include "SceneGameOver.h"
 #include "SceneClear.h"
+#include "SceneStageChange.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

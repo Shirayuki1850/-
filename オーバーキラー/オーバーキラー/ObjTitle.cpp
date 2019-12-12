@@ -32,6 +32,12 @@ void CObjTitle::Action()
 			Scene::SetScene(new CSceneMain());
 			m_key_flag = false;
 		}
+		/*if (m_key_flag == true)
+		{
+			Scene::SetScene(new CSceneMain());
+			m_key_flag = false;
+		}*/
+	
 	}
 	else
 	{
@@ -61,5 +67,7 @@ void CObjTitle::Draw()
 	Font::StrDraw(L"`“®‚­r‚ğ’´‚¦‚Äs‚¯`", 230, 250, 32, c);
 
 	Font::StrDraw(L"GameStart  :@PushEnterKey", 200, 400, 32, c);
+	//Font::StrDraw(L"Next Difficulty : Push Q Key", 200, 400, 32, c);
+
 
 }

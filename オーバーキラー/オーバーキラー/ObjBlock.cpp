@@ -326,6 +326,7 @@ void CObjBlock::BlockHit(
 
 
 }
+//幼女LOVE
 //内積関数
 //引数1,2　float   ax , ay   :Aベクトル  
 //引数3,4  float   bx , by   :Bベクトル

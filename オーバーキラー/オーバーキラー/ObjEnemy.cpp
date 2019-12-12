@@ -44,7 +44,6 @@ void CObjEnemy::Init()
 	 m_hit_right  =  false;
 
 	 hit_flag = false;
-	 RndNum = 0;
 	
 	 //当たり判定用のHitBoxを作成
 	 Hits::SetHitBox(this, m_px, m_py, 64, 64, ELEMENT_ENEMY, OBJ_ENEMY, 1);
@@ -54,7 +53,6 @@ void CObjEnemy::Init()
 void CObjEnemy::Action()
 {
 	srand(time(NULL));
-	RndNum = rand() % 5;
 
 	//落下
 	if (m_py > 1000.0f)
@@ -166,10 +164,20 @@ void CObjEnemy::Action()
 	//HPが0になったら破壊
 	if (m_hp <= 0)
 	{			
-		if (RndNum == 1)
+		
+
+		RndNum = rand() % 100+1;	// アイテムドロップ全体の確率
+		if (1<=RndNum&& RndNum<=40) //40％の確率で回復アイテムドロップ
 		{
 			CObjHealItem*ObjH = new CObjHealItem(m_px, m_py);
 			Objs::InsertObj(ObjH, OBJ_HEAL_ITEM, 14);
+		}
+
+		if (41 <= RndNum && RndNum <= 100)//60％の確率で弾薬ドロップ
+		{
+			CObjBulletItem*ObjB = new CObjBulletItem(m_px, m_py);
+			Objs::InsertObj(ObjB, OBJ_BULLET_ITEM, 14);
+			int BN ;
 		}
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
