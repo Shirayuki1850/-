@@ -45,5 +45,5 @@ private:
 	int m_hp;
 
 	bool hit_flag;
-	
+	int enemy;
 };

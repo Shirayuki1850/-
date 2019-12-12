@@ -30,7 +30,7 @@ void CObjHero::Init()
     m_ani_max_time = 10;//アニメーション間隔幅
 
 	m_hp = 20;	//HP
-	BN = 100;	//弾丸の数
+	BN = 150;	//弾丸の数
 
 	//blockとの衝突状態確認用
 	 m_hit_up     =  false;
@@ -264,7 +264,10 @@ void CObjHero::Action()
 	{
 		m_hp += 5;
 	}
-
+	if (hit->CheckObjNameHit(OBJ_BULLET_ITEM) != nullptr)
+	{
+		BN += 10;
+	}
 	//位置の最新
 	m_px += m_vx;
 	m_py += m_vy;

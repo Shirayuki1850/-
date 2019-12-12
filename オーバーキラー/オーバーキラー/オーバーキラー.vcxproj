@@ -133,6 +133,7 @@
     <ClCompile Include="GameL\UserData.cpp" />
     <ClCompile Include="GameL\WinInputs.cpp" />
     <ClCompile Include="ObjBlock.cpp" />
+    <ClCompile Include="ObjBulletItem.cpp" />
     <ClCompile Include="ObjClear.cpp" />
     <ClCompile Include="ObjEnemy.cpp" />
     <ClCompile Include="ObjEnemyBoss.cpp" />
@@ -177,6 +178,7 @@
     <ClInclude Include="ObjGameOver.h" />
     <ClInclude Include="ObjHealItem.h" />
     <ClInclude Include="ObjHero.h" />
+    <ClInclude Include="ObjBulletItem.h" />
     <ClInclude Include="ObjRespoawn.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>

@@ -21,6 +21,7 @@ enum OBJ_NAME
 	OBJ_GAMEOVER,
 	OBJ_CLEAR,
 	OBJ_HEAL_ITEM,
+	OBJ_BULLET_ITEM,
 };
 //------------------------------------------------
 
@@ -79,6 +80,7 @@ struct UserData
 #include "ObjGameOver.h"
 #include "CObjBulletLeft.h"
 #include "ObjHealItem.h"
+#include "ObjBulletItem.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
