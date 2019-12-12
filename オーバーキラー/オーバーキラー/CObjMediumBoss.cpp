@@ -51,13 +51,15 @@ void CObjMediumBoss::Init()
 	v = Audio::VolumeMaster((1 + v));*/
 
 	//Music Start
-	Audio::Start(8);
 	Audio::Stop(5);
+	Audio::Start(8);
 }
 
 //ƒAƒNƒVƒ‡ƒ“
 void CObjMediumBoss::Action()
 {
+
+
 	//—Ž‰º
 	if (m_py > 1000.0f)
 	{
@@ -176,6 +178,9 @@ void CObjMediumBoss::Action()
 		//HP‚ª‚O‚É‚È‚Á‚½‚ç”j‰ó
 		if (m_hp <= 0)
 		{
+			Audio::Start(5);
+			Audio::Stop(8);
+			
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 		}
