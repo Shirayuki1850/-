@@ -31,15 +31,18 @@
     <Filter Include="ソース ファイル\Bullet">
       <UniqueIdentifier>{a4f4395a-83dd-48de-a75d-01a77fbfc3ca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\StageChange">
+      <UniqueIdentifier>{e6c77b25-b405-49c9-a8f0-2359153aad1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Stage">
+      <UniqueIdentifier>{4ccdcbf3-476c-486c-839c-97c2abe3771a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ObjBlock.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="ObjHero.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStage.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="SceneMain.cpp">
@@ -129,15 +132,24 @@
     <ClCompile Include="ObjHealItem.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="ObjStageChange.cpp">
+      <Filter>ソース ファイル\StageChange</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStageChange.cpp">
+      <Filter>ソース ファイル\StageChange</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStage.cpp">
+      <Filter>ソース ファイル\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStage2.cpp">
+      <Filter>ソース ファイル\Stage</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ObjBlock.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjHero.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStage.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="SceneMain.h">
@@ -226,6 +238,18 @@
     </ClInclude>
     <ClInclude Include="ObjHealItem.h">
       <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStageChange.h">
+      <Filter>ソース ファイル\StageChange</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStageChange.h">
+      <Filter>ソース ファイル\StageChange</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStage.h">
+      <Filter>ソース ファイル\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStage2.h">
+      <Filter>ソース ファイル\Stage</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

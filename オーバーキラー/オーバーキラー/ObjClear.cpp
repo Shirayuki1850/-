@@ -19,7 +19,7 @@ void CObjClear::Action()			//ƒAƒNƒVƒ‡ƒ“
 	{
 		if (m_key_flag == true)
 		{
-			Scene::SetScene(new CSceneTitle());
+			Scene::SetScene(new CSceneStageChange());
 			m_key_flag = false;
 		}
 	}
