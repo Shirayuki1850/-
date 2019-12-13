@@ -20,7 +20,7 @@ void CObjBulletItem::Init()
 {
 	hp = 3;	//HP
 	//“–‚½‚è”»’è—p‚ÌHitBox‚ðì¬
-	Hits::SetHitBox(this, m_ex, m_ey, 64, 85, ELEMENT_ITEM, OBJ_BULLET_ITEM, 0);
+	Hits::SetHitBox(this, m_ex, m_ey, 32, 32, ELEMENT_ITEM, OBJ_BULLET_ITEM, 0);
 
 }
 void CObjBulletItem::Action()
@@ -47,16 +47,16 @@ void CObjBulletItem::Draw()
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 32.0f;
-	src.m_bottom = 85.0f;
+	src.m_bottom = 32.0f;
 
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 
 	//•\Ž¦ˆÊ’u‚ÌÝ’è
 	dst.m_top = 0.0f + m_ey;
 	dst.m_left = 0.0f + m_ex + block->GetScroll();
-	dst.m_right = 64.0f + m_ex + block->GetScroll();
-	dst.m_bottom = 85.0f + m_ey;
+	dst.m_right = 32.0f + m_ex + block->GetScroll();
+	dst.m_bottom = 32.0f + m_ey;
 
-	Draw::Draw(4, &src, &dst, c, 0.0f);
+	Draw::Draw(14, &src, &dst, c, 0.0f);
 
 }

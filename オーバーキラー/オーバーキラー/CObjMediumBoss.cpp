@@ -43,6 +43,9 @@ void CObjMediumBoss::Init()
 
 	hit_flag = false;
 
+	dm = 5;//’†ƒ{ƒX‚ÌUŒ‚—Í
+
+
 	//“–‚½‚è”»’è—pHitBox‚ðì¬
 	Hits::SetHitBox(this, m_px, m_py, 256, 256, ELEMENT_ENEMY, OBJ_MEDIUM_BOSS, 1);
 
@@ -51,13 +54,15 @@ void CObjMediumBoss::Init()
 	v = Audio::VolumeMaster((1 + v));*/
 
 	//Music Start
-	Audio::Start(8);
 	Audio::Stop(5);
+	Audio::Start(8);
 }
 
 //ƒAƒNƒVƒ‡ƒ“
 void CObjMediumBoss::Action()
 {
+
+
 	//—Ž‰º
 	if (m_py > 1000.0f)
 	{
@@ -163,7 +168,7 @@ void CObjMediumBoss::Action()
 	{
 		if (hit_flag == false)
 		{
-			h->SetDamege(1);
+			h->SetDamege(dm);
 			hit_flag = true;
 		}
 	}
@@ -176,6 +181,9 @@ void CObjMediumBoss::Action()
 		//HP‚ª‚O‚É‚È‚Á‚½‚ç”j‰ó
 		if (m_hp <= 0)
 		{
+			Audio::Start(5);
+			Audio::Stop(8);
+			
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 		}

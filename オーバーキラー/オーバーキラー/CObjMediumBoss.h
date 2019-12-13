@@ -38,5 +38,8 @@ private:
 
 	int m_hp;	//É{ÉXÇÃHP
 
+	int dm;
+
+
 	bool hit_flag;
 };

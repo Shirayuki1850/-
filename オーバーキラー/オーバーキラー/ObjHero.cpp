@@ -72,7 +72,7 @@ void CObjHero::Action()
 		if (m_hit_down == true)
 		{
 
-			m_vy = -13;
+			m_vy = -15;
 
 		}
 
@@ -262,7 +262,7 @@ void CObjHero::Action()
 
 	if (hit->CheckObjNameHit(OBJ_HEAL_ITEM) != nullptr)
 	{
-		m_hp += 5;
+		m_hp += 3;
 	}
 	if (hit->CheckObjNameHit(OBJ_BULLET_ITEM) != nullptr)
 	{

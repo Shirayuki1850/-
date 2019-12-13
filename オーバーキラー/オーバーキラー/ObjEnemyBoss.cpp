@@ -22,14 +22,14 @@ void CObjBoss::Init()
 	bool flag = false;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-	m_hp = 20;	//HP
+	m_hp = 30;	//HP
 
 	m_posture = 1.0f;//右向き0.0f左1.0ｆ
 
 	m_ani_time = 0;
 	m_ani_frame = 1;//静止フレームを初期にする。
 
-	m_speed_power = 0.5f;//通常速度
+	m_speed_power = 0.0f;//通常速度
 	m_ani_max_time = 4;//アニメーション間隔幅
 
 	m_move = true;//true=右　false=左
@@ -42,7 +42,7 @@ void CObjBoss::Init()
 
 	hit_flag = false;
 
-	dm = 5;//ボスの攻撃力
+	dm = 8;//ボスの攻撃力
 
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_px, m_py, 256, 512, ELEMENT_ENEMY, OBJ_BOSS_ENEMY, 1);
@@ -70,7 +70,7 @@ void CObjBoss::Action()
 
 
 	//通常速度
-	m_speed_power = 0.1f;
+	m_speed_power = 0.3f;
 	m_ani_max_time = 4;
 
 	//ブロック衝突で向き変更
@@ -79,7 +79,7 @@ void CObjBoss::Action()
 	{
 		m_move = true;
 	}
-	if (m_px <= 12230)
+	if (m_px <= 11700)
 	{
 		m_move = false;
 	}
