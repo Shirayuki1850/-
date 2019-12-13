@@ -42,7 +42,7 @@ void CObjBoss::Init()
 
 	hit_flag = false;
 
-	dm = 5;//ボスの攻撃力
+	dm = 8;//ボスの攻撃力
 
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_px, m_py, 256, 512, ELEMENT_ENEMY, OBJ_BOSS_ENEMY, 1);
