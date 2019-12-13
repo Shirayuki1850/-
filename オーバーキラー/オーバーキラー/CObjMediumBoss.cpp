@@ -43,6 +43,9 @@ void CObjMediumBoss::Init()
 
 	hit_flag = false;
 
+	dm = 5;//’†ƒ{ƒX‚ÌUŒ‚—Í
+
+
 	//“–‚½‚è”»’è—pHitBox‚ðì¬
 	Hits::SetHitBox(this, m_px, m_py, 256, 256, ELEMENT_ENEMY, OBJ_MEDIUM_BOSS, 1);
 
@@ -165,7 +168,7 @@ void CObjMediumBoss::Action()
 	{
 		if (hit_flag == false)
 		{
-			h->SetDamege(1);
+			h->SetDamege(dm);
 			hit_flag = true;
 		}
 	}
