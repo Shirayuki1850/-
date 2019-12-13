@@ -17,9 +17,9 @@ using namespace GameL;
 #include "GameHead.h"
 
 //コントラクタ
-CSceneMain::CSceneMain()
+CSceneMain::CSceneMain(int x)
 {
-
+	map_num = x;
 }
 
 //デストラクタ
@@ -35,7 +35,7 @@ void CSceneMain::InitScene()
 	unique_ptr<wchar_t>p;//ステージ情報ポインター
 	int size;
 	p = Save::ExternalDataOpen(L"マップデータ/マップ001.csv", &size);//外部データの読み込み
-	//p = Save::ExternalDataOpen(L"マップデータ/マップ002.csv", &size);//外部データの読み込み
+
 	
 
 	int map[10][200];
@@ -50,6 +50,27 @@ void CSceneMain::InitScene()
 
 			map[i][j] = w;
 			count += 2;
+		}
+	}
+	//外部データの読み込み（ステージ情報）
+	unique_ptr<wchar_t>p2;//ステージ情報ポインター
+	int size2;
+	p2 = Save::ExternalDataOpen(L"マップデータ/マップ002.csv", &size2);//外部データの読み込み
+
+
+
+	int map2[10][200];
+	int count2 = 1;
+	for (int i = 0; i < 10; i++)
+	{
+
+		for (int j = 0; j < 200; j++)
+		{
+			int w = 0;
+			swscanf_s(&p2.get()[count2], L"%d", &w);
+
+			map2[i][j] = w;
+			count2 += 2;
 		}
 	}
 
@@ -85,12 +106,21 @@ void CSceneMain::InitScene()
 
 	Audio::Start(5);
 	//主人公オブジェクト作成
-	CObjHero* obj = new CObjHero();
+	CObjHero* obj = new CObjHero(map_num);
 	Objs::InsertObj(obj, OBJ_HERO,12);
 
 	//ブロックオブジェクト作成
-	CObjBlock* objb = new CObjBlock(map);
-	Objs::InsertObj(objb, OBJ_BLOCK, 10);
+	if(map_num==1)
+	{
+		CObjBlock* objb = new CObjBlock(map);
+		Objs::InsertObj(objb, OBJ_BLOCK, 10);
+	}
+	if (map_num == 2)
+	{
+		CObjBlock* objb = new CObjBlock(map2);
+		Objs::InsertObj(objb, OBJ_BLOCK, 10);
+	}
+	
 
 	/*//6オブジェクト作成
 	CObjMediumBoss*obj6 = new CObjMediumBoss(map);

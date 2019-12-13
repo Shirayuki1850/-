@@ -14,6 +14,11 @@
 //使用するネームスペース
 using namespace GameL;
 
+CObjHero::CObjHero(int x)
+{
+	map_num = x;
+}
+
 //イニシャライズ
 void CObjHero::Init()
 {
@@ -63,7 +68,7 @@ void CObjHero::Action()
 	if (m_py > 1000.0f)
 	{
 		//場外に出たらリスタート。
-		Scene::SetScene(new CSceneGameOver());
+		Scene::SetScene(new CSceneGameOver(map_num));
 	}
 
 	//↑キー入力でジャンプ
@@ -255,7 +260,7 @@ void CObjHero::Action()
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 
-			Scene::SetScene(new CSceneGameOver());
+			Scene::SetScene(new CSceneGameOver(map_num));
 		}
 	}
 	

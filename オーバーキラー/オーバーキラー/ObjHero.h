@@ -10,7 +10,7 @@ using namespace GameL;
 class CObjHero :public CObj
 {
 public:
-	CObjHero() {};
+	CObjHero(int x);
 	~CObjHero() {};
 	void Init();//イニシャライズ
 	void Action();//アクション
@@ -70,4 +70,6 @@ private:
 	bool move_flag;
 	bool se_flag;
 	bool se_flag2;
+
+	int map_num;
 };

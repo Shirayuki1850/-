@@ -9,11 +9,11 @@ using namespace GameL;
 class CSceneMain :public CScene
 {
 public:
-	CSceneMain() ;
+	CSceneMain(int x);
 	~CSceneMain() ;
 	void InitScene();//初期化メッソド
 	void Scene();//実行中メソッド
 private:
-
+	int map_num;
 
 };
