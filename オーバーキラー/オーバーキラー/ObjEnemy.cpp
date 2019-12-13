@@ -167,13 +167,18 @@ void CObjEnemy::Action()
 		
 
 		RndNum = rand() % 100+1;	// アイテムドロップ全体の確率
-		if (1<=RndNum&& RndNum<=40) //40％の確率で回復アイテムドロップ
+		if (((1<=RndNum&& RndNum<10) && RndNum % 3 == 2)|| (11 <= RndNum && RndNum <= 15)|| (31 <= RndNum && RndNum <= 35)
+			||(56<=RndNum && RndNum<=60)|| (76 <= RndNum && RndNum <= 80)|| (96 <= RndNum && RndNum <= 100)) //30％の確率で回復アイテムドロップ
 		{
 			CObjHealItem*ObjH = new CObjHealItem(m_px, m_py);
 			Objs::InsertObj(ObjH, OBJ_HEAL_ITEM, 14);
 		}
-
-		if (41 <= RndNum && RndNum <= 100)//60％の確率で弾薬ドロップ
+		/*
+			10%3=1
+			9%3=0
+			8%3=2
+			*/
+		if (((1 <= RndNum && RndNum <= 10)&&RndNum%3==1)|| (46 <= RndNum && RndNum <= 50)||(66<=RndNum && RndNum<=70)|| (86 <= RndNum && RndNum <= 90))//20％の確率で弾薬ドロップ
 		{
 			CObjBulletItem*ObjB = new CObjBulletItem(m_px, m_py);
 			Objs::InsertObj(ObjB, OBJ_BULLET_ITEM, 14);

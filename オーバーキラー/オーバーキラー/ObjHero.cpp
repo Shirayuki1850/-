@@ -266,7 +266,7 @@ void CObjHero::Action()
 	}
 	if (hit->CheckObjNameHit(OBJ_BULLET_ITEM) != nullptr)
 	{
-		BN += 10;
+		BN += 5;//ドロップする弾薬数
 	}
 	//位置の最新
 	m_px += m_vx;
