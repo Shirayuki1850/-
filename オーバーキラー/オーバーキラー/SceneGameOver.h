@@ -6,9 +6,10 @@ using namespace GameL;
 class CSceneGameOver :public CScene
 {
 public :
-	CSceneGameOver() ;
+	CSceneGameOver(int x) ;
 	~CSceneGameOver() ;
 	void InitScene();
 	void Scene();
 private:
+	int map_num;
 };

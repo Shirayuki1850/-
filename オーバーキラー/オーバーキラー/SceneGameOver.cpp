@@ -11,9 +11,9 @@ using namespace GameL;
 #include "GameHead.h"
 
 //コンスト
-CSceneGameOver::CSceneGameOver()
+CSceneGameOver::CSceneGameOver(int x)
 {
-
+	map_num = x;
 }
 
 //デスト
@@ -36,7 +36,7 @@ void CSceneGameOver::InitScene()
 /*	float v = Audio::VolumeMaster(+0.5f);
 	v = Audio::VolumeMaster((1 + v));*/
 
-	CObjGameOver* obj = new CObjGameOver();
+	CObjGameOver* obj = new CObjGameOver(map_num);
 	Objs::InsertObj(obj, OBJ_GAMEOVER, 10);
 
 	//Music Start

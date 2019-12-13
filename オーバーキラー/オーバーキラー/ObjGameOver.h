@@ -5,7 +5,7 @@ using namespace GameL;
 class CObjGameOver :public CObj
 {
 public :
-	CObjGameOver() {};
+	CObjGameOver(int x);
 	~CObjGameOver() {};
 
 	void Init();
@@ -13,4 +13,5 @@ public :
 	void Draw();
 private:
 	bool m_key_flag;
+	int map_num;
 };
