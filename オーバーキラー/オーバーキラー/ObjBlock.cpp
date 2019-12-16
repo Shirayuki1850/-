@@ -272,7 +272,7 @@ void CObjBlock::BlockHit(
 							//‰E
 							*right=true;//ŽålŒö‚Ì¶‚Ì•”•ª‚ªÕ“Ë‚µ‚Ä‚¢‚é
 						    *x=bx+64.0f+(scroll);//ƒuƒƒbƒN‚ÌˆÊ’u+ŽålŒö‚Ì•
-							*vx = -(*vx)*0.1f;;//|vx*”½”­ŒW”
+							*vx = 0;//|vx*”½”­ŒW”
 
 
 						}
@@ -291,7 +291,7 @@ void CObjBlock::BlockHit(
 							//¶
 							*left=true;//ŽålŒö‚Ì‰º‚Ì•”•ª‚ªÕ“Ë‚µ‚Ä‚¢‚é
 							*x=bx - 64.0f+(scroll);//ƒuƒƒbƒN‚ÌˆÊ’u+ŽålŒö‚Ì•
-							*vx= -(*vx)* 0.1f;//|vx*”½”­ŒW”
+							*vx= 0;//|vx*”½”­ŒW”
 						}
 						if (r > 225 && r < 315)
 						{
