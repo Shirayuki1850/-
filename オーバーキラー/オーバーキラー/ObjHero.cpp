@@ -54,229 +54,256 @@ void CObjHero::Init()
 	 move_flag = true;
 	 se_flag = true;
 	 se_flag2 = true;
-
+	 damege_count = 0;
+	 damege_flag = false;
+	 count = 0;
 }
 //アクション
 void CObjHero::Action()
 {
-
-	if(m_hp>20)
-	{
-		m_hp = 20;
-	}
-	//落下によるゲームオーバー＆リスタート
-	if (m_py > 1000.0f)
-	{
-		//場外に出たらリスタート。
-		Scene::SetScene(new CSceneGameOver(map_num));
-	}
-
-	//↑キー入力でジャンプ
-	if (Input::GetVKey(VK_UP) == true )
-	{
-		if (m_hit_down == true)
-		{
-
-			m_vy = -15;
-
-		}
-
-
-
-	}
-
-	//SPACEキー入力で速度アップ
-	if (Input::GetVKey('A') == true)
-	{
-       //ダッシュ時の速度
-		m_speed_power = 0.8f;
-		m_ani_max_time = 5;
-	}
-	else
-	{
-		//通常速度
-		m_speed_power = 0.5f;
-		m_ani_max_time = 10;
-
-	}
-	//主人公弾丸発射
-	if (Input::GetVKey('Z') == true)
-	{
-		if (m_f == true)
-		{
-			if (move_flag == true)
-			{
-
-				if (BN>0)
-				{	//Music loading
-					Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
-					//Music Start
-					Audio::Start(4);
-					//弾丸オブジェクト作成
-					CObjBullet*obj_b = new CObjBullet(m_px + 50.0f, m_py + 20.0f);	//弾丸オブジェクト作成
-					Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
-					m_f = false;
-					BN --;
-				}
-			}
-			else if(move_flag==false)
-			{
-				if (BN > 0)
-				{	//Music loading
-					Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
-					//Music Start
-					Audio::Start(4);
-					//弾丸オブジェクト作成
-					CObjBulletLeft*obj_b = new CObjBulletLeft(m_px - 50.0f, m_py + 20.0f);	//弾丸オブジェクト作成
-					Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
-					m_f = false;
-					BN--;
-				}
-			}
-			
-		}
-	}
-	else
-	{
-		m_f = true;
-	}
-	//キーの入力方向
-	if (Input::GetVKey(VK_RIGHT) == true)
-	{
-		m_vx += m_speed_power;
-		m_posture = 1.0f;
-		m_ani_time += 1;
-		move_flag = true;
-	}
-	else if (Input::GetVKey(VK_LEFT) == true)
-	{
-		m_vx -= m_speed_power;
-		m_posture = 0.0f;
-		m_ani_time += 1;
-		move_flag = false;
-	}
-	else
-	{
-		m_ani_frame = 0;//キー入力がない場合は静止フレームにする
-		m_ani_time =  0;
-		
-	}
-
-	if (m_ani_time > m_ani_max_time)
-	{
-		m_ani_frame += 1;
-		m_ani_time = 0;
-	}
-
-	if (m_ani_frame == 2)
-	{
-		m_ani_frame = 0;
-	}
-
-	//摩擦
-	m_vx += -(m_vx * 0.098);
-
-	//自由落下運動
-	m_vy += 9.8 / (16.0f);
-
-	//高速移動によるBlock判定
-	bool b;
-	float pxx, pyy, r;
-	CObjBlock*pbb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
-
-	if (pbb->GetScroll() > 0)
-		pbb->SetScroll(0);
-
-	//移動方向にレイを飛ばす
-	float vx;
-	if (m_vx > 0)
-		vx = 500;
-	else
-		vx = -500;
-//レイ判定
-	b = pbb->HeroBlckCrossPoint(m_px - pbb->GetScroll() + 32, m_py + 32, m_vx * 100, m_vy * 100, &pxx, &pyy, &r);
-
-	if (b == true)
-	{
-		px = pxx + pbb->GetScroll();
-		py = pyy;
-
-		float aa = (m_px)         -px;//  A(交点→主人公の位置)ベクトル      
-		float bb = (m_px + m_vx) - px;//　B（交点→主人公の移動先位置）ベクトル
-
-		//主人公の幅分のオフセット
-		if (vx > 0)
-			px += -64;
-		else
-			px += +2;
-
-		//AとBが逆を向いている（主人公が移動先が壁を超える）
-		if (aa*bb < 0)
-		{
-			//移動ベクトルを（交点→主人公の位置）ベクトルにする
-			m_vx = px - m_px;
-
-		}
-
-
-	}
-	else
-	{
-
-		px=0.0f  ;
-		py = 0.0f;
-	}
-
-
-	//ブロックとの当たり判定実行
-	CObjBlock* pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
-	pb->BlockHit(&m_px, &m_py, true,
-		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
-		&m_block_type
-	);
 	//自身のHitBoxをもってくる
 	CHitBox*hit = Hits::GetHitBox(this);
-
-	//当たり判定を行うオブジェクト情報群
-	int data_base[4] =
+	CObjBlock* pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	if (damege_count >= 3)
 	{
-		OBJ_ENEMY,
-		OBJ_SPECIAL_ENEMY,
-		OBJ_MEDIUM_BOSS,
-		OBJ_BOSS_ENEMY,
-	};
-
-	//オブジェクト情報群と当たり判定を行い、当たっていればHPを減らす
-	for (int i = 0; i < 2; i++)
-	{
-		if (hit->CheckObjNameHit(data_base[i]) != nullptr)
+		count++;
+		if (damege_flag == false)
 		{
-			
+			m_vx = -3.0f;
+		}
+		if (damege_flag == true)
+		{
+			m_vx = 3.0f;
 		}
 
-		//HPが０になったら破壊
-		if (m_hp <= 0)
+		if (count > 30)
 		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
+			count = 0;
+			damege_count = 0;
+		}
+	}
+	if (damege_count < 3)
+	{
 
+
+		if (m_hp > 20)
+		{
+			m_hp = 20;
+		}
+		//落下によるゲームオーバー＆リスタート
+		if (m_py > 1000.0f)
+		{
+			//場外に出たらリスタート。
 			Scene::SetScene(new CSceneGameOver(map_num));
 		}
-	}
-	
 
-	if (hit->CheckObjNameHit(OBJ_HEAL_ITEM) != nullptr)
-	{
-		m_hp += 3;
-	}
-	if (hit->CheckObjNameHit(OBJ_BULLET_ITEM) != nullptr)
-	{
-		BN += 5;//ドロップする弾薬数
+		//↑キー入力でジャンプ
+		if (Input::GetVKey(VK_UP) == true)
+		{
+			if (m_hit_down == true)
+			{
+
+				m_vy = -15;
+
+			}
+
+
+
+		}
+
+		//SPACEキー入力で速度アップ
+		if (Input::GetVKey('A') == true)
+		{
+			//ダッシュ時の速度
+			m_speed_power = 0.8f;
+			m_ani_max_time = 5;
+		}
+		else
+		{
+			//通常速度
+			m_speed_power = 0.5f;
+			m_ani_max_time = 10;
+
+		}
+		//主人公弾丸発射
+		if (Input::GetVKey('Z') == true)
+		{
+			if (m_f == true)
+			{
+				if (move_flag == true)
+				{
+
+					if (BN > 0)
+					{	//Music loading
+						Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
+						//Music Start
+						Audio::Start(4);
+						//弾丸オブジェクト作成
+						CObjBullet*obj_b = new CObjBullet(m_px + 50.0f, m_py + 20.0f);	//弾丸オブジェクト作成
+						Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
+						m_f = false;
+						BN--;
+					}
+				}
+				else if (move_flag == false)
+				{
+					if (BN > 0)
+					{	//Music loading
+						Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
+						//Music Start
+						Audio::Start(4);
+						//弾丸オブジェクト作成
+						CObjBulletLeft*obj_b = new CObjBulletLeft(m_px - 50.0f, m_py + 20.0f);	//弾丸オブジェクト作成
+						Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
+						m_f = false;
+						BN--;
+					}
+				}
+
+			}
+		}
+		else
+		{
+			m_f = true;
+		}
+		//キーの入力方向
+		if (Input::GetVKey(VK_RIGHT) == true)
+		{
+			m_vx += m_speed_power;
+			m_posture = 1.0f;
+			m_ani_time += 1;
+			move_flag = true;
+		}
+		else if (Input::GetVKey(VK_LEFT) == true)
+		{
+			m_vx -= m_speed_power;
+			m_posture = 0.0f;
+			m_ani_time += 1;
+			move_flag = false;
+		}
+		else
+		{
+			m_ani_frame = 0;//キー入力がない場合は静止フレームにする
+			m_ani_time = 0;
+
+		}
+
+		if (m_ani_time > m_ani_max_time)
+		{
+			m_ani_frame += 1;
+			m_ani_time = 0;
+		}
+
+		if (m_ani_frame == 2)
+		{
+			m_ani_frame = 0;
+		}
+
+		//摩擦
+		m_vx += -(m_vx * 0.098);
+
+		//自由落下運動
+		m_vy += 9.8 / (16.0f);
+
+		//高速移動によるBlock判定
+		bool b;
+		float pxx, pyy, r;
+		CObjBlock*pbb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+
+		if (pbb->GetScroll() > 0)
+			pbb->SetScroll(0);
+
+		//移動方向にレイを飛ばす
+		float vx;
+		if (m_vx > 0)
+			vx = 500;
+		else
+			vx = -500;
+		//レイ判定
+		b = pbb->HeroBlckCrossPoint(m_px - pbb->GetScroll() + 32, m_py + 32, m_vx * 100, m_vy * 100, &pxx, &pyy, &r);
+
+		if (b == true)
+		{
+			px = pxx + pbb->GetScroll();
+			py = pyy;
+
+			float aa = (m_px)-px;//  A(交点→主人公の位置)ベクトル      
+			float bb = (m_px + m_vx) - px;//　B（交点→主人公の移動先位置）ベクトル
+
+			//主人公の幅分のオフセット
+			if (vx > 0)
+				px += -64;
+			else
+				px += +2;
+
+			//AとBが逆を向いている（主人公が移動先が壁を超える）
+			if (aa*bb < 0)
+			{
+				//移動ベクトルを（交点→主人公の位置）ベクトルにする
+				m_vx = px - m_px;
+
+			}
+
+
+		}
+		else
+		{
+
+			px = 0.0f;
+			py = 0.0f;
+		}
+
+
+		
+		
+
+		//当たり判定を行うオブジェクト情報群
+		int data_base[4] =
+		{
+			OBJ_ENEMY,
+			OBJ_SPECIAL_ENEMY,
+			OBJ_MEDIUM_BOSS,
+			OBJ_BOSS_ENEMY,
+		};
+
+		//オブジェクト情報群と当たり判定を行い、当たっていればHPを減らす
+		for (int i = 0; i < 2; i++)
+		{
+			if (hit->CheckObjNameHit(data_base[i]) != nullptr)
+			{
+
+			}
+
+			//HPが０になったら破壊
+			if (m_hp <= 0)
+			{
+				this->SetStatus(false);
+				Hits::DeleteHitBox(this);
+
+				Scene::SetScene(new CSceneGameOver(map_num));
+			}
+		}
+
+
+		if (hit->CheckObjNameHit(OBJ_HEAL_ITEM) != nullptr)
+		{
+			m_hp += 3;
+		}
+		if (hit->CheckObjNameHit(OBJ_BULLET_ITEM) != nullptr)
+		{
+			BN += 5;//ドロップする弾薬数
+		}
+
 	}
 	//位置の最新
 	m_px += m_vx;
 	m_py += m_vy;
-
+	//ブロックとの当たり判定実行
+	
+	pb->BlockHit(&m_px, &m_py, true,
+		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
+		&m_block_type
+	);
 	//HitBoxの位置の変更
 	hit->SetPos(m_px, m_py);
 }

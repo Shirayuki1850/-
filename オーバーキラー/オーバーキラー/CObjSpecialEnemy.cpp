@@ -143,8 +143,16 @@ void CObjSpecialEnemy::Action()
 	{
 		if (hit_flag == false)
 		{
-			h->SetDamege(1);
 			hit_flag = true;
+			if (h->GetX() - pb->GetScroll() > m_px + 128)
+				h->DamegeFlag(true);
+			if (h->GetX() - pb->GetScroll() + 64 < m_px)
+				h->DamegeFlag(false);
+			if (h->GetDamegeflag() < 3)
+			{
+				h->SetDamege(1);
+				h->SetDamegeCount();
+			}
 			Audio::Start(6);
 		}
 	}
@@ -152,7 +160,7 @@ void CObjSpecialEnemy::Action()
 	{
 		if (hit_flag == true)
 		{
-			hit_flag = false;
+				hit_flag = false;
 		}
 	}
 	//HP‚ª‚O‚É‚È‚Á‚½‚ç”j‰ó

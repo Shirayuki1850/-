@@ -1,4 +1,9 @@
-﻿  ObjTitle.cpp
-  SceneMain.cpp
+﻿  CObjMediumBoss.cpp
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(117): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+  CObjSpecialEnemy.cpp
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjspecialenemy.cpp(102): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjspecialenemy.cpp(105): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+  ObjEnemyBoss.cpp
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\objenemyboss.cpp(115): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
   コードを生成中...
   オーバーキラー.vcxproj -> C:\Users\GA1A\Desktop\マスターデータ\オーバーキラー\x64\Debug\オーバーキラー.exe
