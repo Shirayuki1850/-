@@ -35,7 +35,5 @@ void CObjClear::Draw()			//ÉhÉçÅ[
 
 	Font::StrDraw(L"GAME CLEAR", 200, 220, 40, c);
 
-	//Font::StrDraw(L"END", 340, 300, 32, c);
-
-	Font::StrDraw(L"NEXT CHALLENGE : ENTER_KEY", 200, 260, 30, c);
+	Font::StrDraw(L"END", 340, 300, 32, c);
 }
