@@ -148,7 +148,16 @@ void CObjEnemy::Action()
 	{
 		if (hit_flag == false)
 		{
-			h->SetDamege(1);
+			if (h->GetX() - pb->GetScroll() > m_px + 64)
+				h->DamegeFlag(true);
+			if (h->GetX() - pb->GetScroll()+64 < m_px)
+				h->DamegeFlag(false);
+			if (h->GetDamegeflag() < 3)
+			{
+				h->SetDamege(1);
+				h->SetDamegeCount();
+			}
+				
 			hit_flag = true;
 			Audio::Start(6);
 		}

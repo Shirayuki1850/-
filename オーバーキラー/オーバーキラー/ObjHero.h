@@ -34,6 +34,11 @@ public:
 	void SetLeft(bool b) { m_hit_left = b; }
 	void SetRight(bool b) { m_hit_right = b; }
 	void SetDamege(int d) { m_hp -= d; }
+	void SetDamegeCount() { damege_count ++; }
+
+	void DamegeFlag(bool f) { damege_flag = f; }
+
+	int GetDamegeflag() { return damege_count; }
 	int BN; //íeä€ÇÃêî
 
 private:
@@ -72,4 +77,10 @@ private:
 	bool se_flag2;
 
 	int map_num;
+
+	int damege_count;
+
+	bool damege_flag;
+
+	int count;
 };

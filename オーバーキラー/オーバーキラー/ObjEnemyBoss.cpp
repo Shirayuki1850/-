@@ -171,8 +171,17 @@ void CObjBoss::Action()
 	{
 		if (hit_flag == false)
 		{
-			h->SetDamege(dm);
+			if (h->GetX() - pb->GetScroll() > m_px + 256)
+				h->DamegeFlag(true);
+			if (h->GetX() - pb->GetScroll() + 64 < m_px)
+				h->DamegeFlag(false);
+			if (h->GetDamegeflag() < 3)
+			{
+				h->SetDamege(dm);
+				h->SetDamegeCount();
+			}
 			hit_flag = true;
+			
 		}
 	}
 	else

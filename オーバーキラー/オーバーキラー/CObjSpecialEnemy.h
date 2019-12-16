@@ -39,5 +39,6 @@ private:
 	int m_hp;	//HP
 
 	bool hit_flag;
+	int hit_count;
 
 };
