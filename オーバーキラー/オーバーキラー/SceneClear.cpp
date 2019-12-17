@@ -32,8 +32,8 @@ void CSceneClear::InitScene()
 	Audio::LoadAudio(1, L"BGMSE/ÉQÅ[ÉÄÉNÉäÉA.wav",SOUND_TYPE::BACK_MUSIC);
 
 	//Volume 1.0 return
-	float v = Audio::VolumeMaster(+0.5f);
-	v = Audio::VolumeMaster((1 + v));
+	//float v = Audio::VolumeMaster(+0.5f);
+	//v = Audio::VolumeMaster((1 + v));
 
 	//Music Start
 	Audio::Start(1);
