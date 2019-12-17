@@ -168,7 +168,12 @@ void CObjSpecialEnemy::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+
+		CObjBulletItem*ObjB = new CObjBulletItem(m_px, m_py);
+		Objs::InsertObj(ObjB, OBJ_BULLET_ITEM, 14);
+		int BN;
 	}
+
 }
 
 //ÉhÉçÅ[

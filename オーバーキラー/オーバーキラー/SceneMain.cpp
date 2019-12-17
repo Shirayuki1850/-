@@ -134,7 +134,6 @@ void CSceneMain::InitScene()
 	CObjEnemy*obje = new CObjEnemy();
 	Objs::InsertObj(obje, OBJ_ENEMY, 13);*/
 
-
 }
 
 //実行中メソッド
