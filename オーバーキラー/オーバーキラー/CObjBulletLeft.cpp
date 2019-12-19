@@ -19,7 +19,10 @@ CObjBulletLeft::CObjBulletLeft(float x, float y)
 void CObjBulletLeft::Init()
 {
 	b_vx = -6.0f;
-
+	m_hit_up = false;
+	m_hit_down = false;
+	m_hit_left = false;
+	m_hit_right = false;
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, b_x, b_y, 32, 32, ELEMENT_PLAYER, OBJ_BULLET, 1);
 }
@@ -27,8 +30,6 @@ void CObjBulletLeft::Init()
 //アクション
 void CObjBulletLeft::Action()
 {
-
-
 	b_x += b_vx;
 
 	//弾丸のHitBox更新用ポインター取得
@@ -43,7 +44,14 @@ void CObjBulletLeft::Action()
 	}
 	//ブロック情報を持ってくる
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	
+	block->BulletHit(&b_x, &b_y, true, &m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right);
 
+	if (m_hit_down == true || m_hit_left == true || m_hit_right == true || m_hit_up == true)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 
 
 	//当たり判定オブジェクト情報群

@@ -15,11 +15,19 @@ void CObjClear::Init()			//イニシャライズ
 void CObjClear::Action()			//アクション
 {
 	//EnterKey push:tereport
-	if (Input::GetVKey(VK_RETURN) == true)
+	if (Input::GetVKey('C') == true)
 	{
 		if (m_key_flag == true)
 		{
 			Scene::SetScene(new CSceneMain(2));
+			m_key_flag = false;
+		}
+	}
+	if (Input::GetVKey(VK_RETURN) == true)
+	{
+		if (m_key_flag == true)
+		{
+			Scene::SetScene(new CSceneTitle());
 			m_key_flag = false;
 		}
 	}

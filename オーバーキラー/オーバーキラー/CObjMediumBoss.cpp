@@ -71,7 +71,7 @@ void CObjMediumBoss::Action()
 
 
 	//í èÌë¨ìx
-	m_speed_power = 0.1f;
+	m_speed_power = 0.3f;
 	m_ani_max_time = 4;
 
 

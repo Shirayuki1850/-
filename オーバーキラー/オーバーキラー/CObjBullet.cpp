@@ -4,22 +4,33 @@
 #include "GameL\DrawTexture.h"
 #include "GameL\HitBoxManager.h"
 #include "GameL/Audio.h"
+#include"GameL/WinInputs.h"
 
 //使用するネームスペース
 using namespace GameL;
 
 //コントラクタ
-CObjBullet::CObjBullet(float x, float y)
+CObjBullet::CObjBullet(float x, float y,bool f)
 {
 	b_x = x;
 	b_y = y;
-	
+	move_flag = f;
 }
 //イニシャライズ
 void CObjBullet::Init()
 {
-	b_vx = 6.0f;
-
+	if (move_flag == true)
+	{
+		b_vx = 6.0f;
+	}
+	if (move_flag == false)
+	{
+		b_vx = -6.0f;
+	}
+	m_hit_up = false;
+	m_hit_down=false;
+	m_hit_left=false;
+	m_hit_right=false;
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, b_x, b_y, 32, 32, ELEMENT_PLAYER, OBJ_BULLET, 1);
 }
@@ -27,7 +38,7 @@ void CObjBullet::Init()
 //アクション
 void CObjBullet::Action()
 {
-	b_vx += 0.0f;
+	
 	b_x += b_vx;
 
 	//弾丸のHitBox更新用ポインター取得
@@ -41,10 +52,15 @@ void CObjBullet::Action()
 		Hits::DeleteHitBox(this);
 	}
 	//ブロック情報を持ってくる
+
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	block->BulletHit(&b_x, &b_y, true, &m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right);
 
-
-
+	if (m_hit_down == true || m_hit_left == true || m_hit_right == true || m_hit_up == true)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 	//当たり判定オブジェクト情報群
 	int data_base[5] =
 	{
@@ -54,7 +70,7 @@ void CObjBullet::Action()
 		OBJ_BOSS_ENEMY,
 		OBJ_BLOCK,
 	};
-
+	
 	//オブジェクト情報群と当たり判定を行い、当たっていれば削除
 	for (int i = 0; i < 5; i++)
 	{
@@ -89,6 +105,14 @@ void CObjBullet::Draw()
 	dst.m_bottom = 32.0f + b_y;
 
 	//描画
-	Draw::Draw(8, &src, &dst, c, 0.0f);
+	if (move_flag == false)
+	{
+		Draw::Draw(8, &src, &dst, c, 180.0f);
+	}
+	if (move_flag == true)
+	{
+		Draw::Draw(8, &src, &dst, c, 0.0f);
+	}
+	
 
 }

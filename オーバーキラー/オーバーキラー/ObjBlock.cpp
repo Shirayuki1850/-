@@ -496,3 +496,93 @@ bool CObjBlock::HeroBlckCrossPoint(
 
 
 }
+
+//BlocHit関数
+//引数1　　flost* x           :判定を行うobjectのX位置
+//引数2　　float* y           :判定を行うobjectのY位置
+//引数3　　bool   scroll_on   :判定を行うobjectはスクロールの影響与えているかどうか（true=与える　false=与えない）
+//引数4    bool*  up          :上下左右判定の上部分に当たっているかどうかを返す
+//引数5    bool*  down        :上下左右判定の下部分に当たっているかどうかを返す
+//引数6    bool*  left        :上下左右判定の左部分に当たっているかどうかを返す
+//引数7    bool*  right       :上下左右判定の右部分に当たっているかどうかを返す
+//引数8    float* vx          :左右判定時の反発による移動方向.力の値を変えて返す
+//引数9    float* vy          :上下判定による自由落下運動の移動方向.力の値を変えて返す
+//引数10   int*   bt          :下部分判定時、特殊なブロックのタイプを返す
+//判定を行うobjectとブロック64×64限定で、当たり判定と左右判定を行う
+//その結果は引数4～10に返す
+void CObjBlock::BulletHit(
+	float *x, float *y, bool scroll_on,
+	bool*up, bool*down, bool*left, bool*right
+)
+{
+
+	//衝突状態確認用フラグの初期化
+
+	*up = false;
+	*down = false;
+	*left = false;
+	*right = false;
+	//m_mapの全要素にアクセス
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 200; j++)
+		{
+			if (m_map[i][j] > 0 && m_map[i][j] != 5)
+			{
+				//要素番号を座標に変更
+				float bx = j * 64.0f;
+				float by = i * 64.0f;
+
+				//スクロールの影響
+				float scroll = scroll_on ? m_scroll : 0;
+
+				//主人公とブロックのあたり判定
+				if ((*x + (-scroll) + 32.0f > bx) && (*x + (-scroll) < bx + 32.0f) && (*y + 32.0f > by) && (*y < by + 32.0f))
+				{
+					//上下左右判定
+
+					//vectorの作成
+					float rvx = (*x + (-scroll)) - bx;
+					float rvy = *y - by;
+					//長さを求zzめる
+					float len = sqrt(rvx*rvx + rvy * rvy);
+					//角度を求める
+					float r = atan2(rvy, rvx);
+					r = r * 180.0f / 3.14f;
+
+					if (r <= 0.0f)
+						r = abs(r);
+					else
+						r = 360.0f - abs(r);
+					if (len < 88.0f)
+					{
+						//角度で上下左右を判定
+						if ((r < 45 && r>0) || r > 315)
+						{
+							//右
+							*right = true;//主人公の左の部分が衝突している
+						}
+						if (r > 45 && r < 135)
+						{
+							//上
+							*down = true;//主人公の下の部分が衝突している
+						}
+						if (r > 135 && r < 225)
+						{
+							//左
+							*left = true;//主人公の下の部分が衝突している
+						}
+						if (r > 225 && r < 315)
+						{
+							//下
+							*up = true;//主人公の上の部分が衝突している。
+						}
+					}
+				}
+
+			}
+
+		}
+
+	}
+}

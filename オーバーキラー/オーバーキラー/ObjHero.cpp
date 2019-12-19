@@ -142,36 +142,26 @@ void CObjHero::Action()
 		{
 			if (m_f == true)
 			{
-				if (move_flag == true)
-				{
-
 					if (BN > 0)
 					{	//Music loading
 						Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
 						//Music Start
 						Audio::Start(4);
 						//弾丸オブジェクト作成
-						CObjBullet*obj_b = new CObjBullet(m_px + 50.0f, m_py + 20.0f);	//弾丸オブジェクト作成
-						Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
+						if (move_flag == false)
+						{
+							CObjBullet*obj_b = new CObjBullet(m_px-32.0f, m_py + 20.0f, move_flag);	//弾丸オブジェクト作成
+							Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
+						}
+						if (move_flag == true)
+						{
+							CObjBullet*obj_b = new CObjBullet(m_px+64.0f, m_py + 20.0f, move_flag);	//弾丸オブジェクト作成
+							Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
+						}
+						
 						m_f = false;
 						BN--;
 					}
-				}
-				else if (move_flag == false)
-				{
-					if (BN > 0)
-					{	//Music loading
-						Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
-						//Music Start
-						Audio::Start(4);
-						//弾丸オブジェクト作成
-						CObjBulletLeft*obj_b = new CObjBulletLeft(m_px - 50.0f, m_py + 20.0f);	//弾丸オブジェクト作成
-						Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
-						m_f = false;
-						BN--;
-					}
-				}
-
 			}
 		}
 		else
@@ -301,7 +291,7 @@ void CObjHero::Action()
 		}
 		if (hit->CheckObjNameHit(OBJ_BULLET_ITEM) != nullptr)
 		{
-			BN += 15;//ドロップする弾薬数
+			BN += 5;//ドロップする弾薬数
 		}
 	}
 	if (m_hit_left == true)
