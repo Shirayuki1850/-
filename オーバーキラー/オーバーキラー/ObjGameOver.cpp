@@ -51,10 +51,10 @@ void CObjGameOver::Draw()
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	//リスポーン
-	Font::StrDraw(L"GAME　OVER : PUSH ENTERKEY ", 200, 225, 30, c);
+	Font::StrDraw(L"GAME　OVER : PUSH ENTERKEY ", 200, 220, 30, c);
 
 	//リスポーン
-	Font::StrDraw(L"Retry: PUSH V KEY ", 200, 400, 40, c);
+	Font::StrDraw(L"Retry: PUSH V KEY ", 250, 260, 30, c);
 	
 
 }

@@ -41,9 +41,9 @@ void CObjClear::Draw()			//ÉhÉçÅ[
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	Font::StrDraw(L"GAME CLEAR", 200, 225, 40, c);
+	Font::StrDraw(L"GAME CLEAR", 250, 230, 60, c);
 
-	Font::StrDraw(L"END", 200, 400, 40, c);
+	Font::StrDraw(L"PUSH ENTERKEY BACK TO TITLE", 200, 350, 30, c);
 
-	Font::StrDraw(L"PUSH C KEY  NEXT 2STAGE", 200, 450, 40, c);
+	Font::StrDraw(L"PUSH C KEY  NEXT STAGE2", 220, 420, 30, c);
 }
