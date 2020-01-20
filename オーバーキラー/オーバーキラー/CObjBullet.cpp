@@ -27,6 +27,7 @@ void CObjBullet::Init()
 	{
 		b_vx = -6.0f;
 	}
+	f = 0;
 	m_hit_up = false;
 	m_hit_down=false;
 	m_hit_left=false;

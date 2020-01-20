@@ -9,6 +9,7 @@
 #include "ObjHero.h"
 #include "GameL\HitBoxManager.h"
 #include"GameL/UserData.h"
+#include"Windows.h"
 
 
 //使用するネームスペース
@@ -50,7 +51,8 @@ void CObjHero::Init()
 	 //当たり判定用のHitBoxを作成
 	 Hits::SetHitBox(this, m_px, m_py, 64, 64, ELEMENT_PLAYER, OBJ_HERO, 1);
 	 m_f = true;
-
+	 m_f2 = true;
+	 f = 0;
 	 move_flag = true;
 	 se_flag = true;
 	 se_flag2 = true;
@@ -168,6 +170,56 @@ void CObjHero::Action()
 		{
 			m_f = true;
 		}
+		if (Input::GetVKey('X') == true)
+		{
+			
+				if (BN > 0)
+				{	
+					//弾丸オブジェクト作成
+					if (move_flag == false&&m_f2==true)
+					{
+						CObjBullet*obj_b = new CObjBullet(m_px - 32.0f, m_py + 20.0f, move_flag);	//弾丸オブジェクト作成
+						Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
+						m_f2 = false;
+						BN--;
+						//Music loading
+						Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
+						//Music Start
+						Audio::Start(4);
+					}
+					if (move_flag == true&&m_f2==true)
+					{
+						CObjBullet*obj_b = new CObjBullet(m_px + 64.0f, m_py + 20.0f, move_flag);	//弾丸オブジェクト作成
+						Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
+						m_f2 = false;
+						BN--;
+						//Music loading
+						Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
+						//Music Start
+						Audio::Start(4);
+					}
+					
+					
+					if (m_f2 == false)
+					{
+						if (f <= 5)
+							f++;
+						if (f >= 5)
+						{
+							m_f2 = true;
+							f = 0;
+						}
+					}
+					
+				}
+			
+			
+		}
+		else
+		{
+			f = 5;
+		}
+
 		//キーの入力方向
 		if (Input::GetVKey(VK_RIGHT) == true)
 		{

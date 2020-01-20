@@ -1,2 +1,6 @@
-﻿  ObjGameOver.cpp
+﻿  ObjHero.cpp
+c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objhero.cpp(90): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objhero.cpp(92): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objhero.cpp(257): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objhero.cpp(260): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
   オーバーキラー.vcxproj -> C:\Users\GA1A\Desktop\死ね\オーバーキラー\x64\Debug\オーバーキラー.exe
