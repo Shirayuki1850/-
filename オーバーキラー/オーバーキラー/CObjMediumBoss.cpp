@@ -222,6 +222,6 @@ void CObjMediumBoss::Draw()
 	dst.m_right =/* 256.0f + m_px; */(256 - 256.0f *  m_posture) + m_px + block->GetScroll();
 	dst.m_bottom = m_py+256;
 
-	//〇番のグラフィックをsrc・dstの情報を元に描画
+	//13番のグラフィックをsrc・dstの情報を元に描画
 	Draw::Draw(13, &src, &dst, c, 0.0f);
 }

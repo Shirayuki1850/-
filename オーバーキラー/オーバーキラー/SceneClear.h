@@ -6,7 +6,7 @@ using namespace GameL;
 class CSceneClear :public CScene
 {
 public:
-	CSceneClear();
+	CSceneClear();	//コントラクタ
 	~CSceneClear();
 	void InitScene();
 	void Scene();

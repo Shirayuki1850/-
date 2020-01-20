@@ -38,7 +38,7 @@ private:
 
 	int m_hp;	//ボスのHP
 
-	int dm;
+	int dm;	//ボスの攻撃力
 
 
 	bool hit_flag;
