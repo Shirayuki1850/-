@@ -6,11 +6,11 @@ using namespace GameL;
 class CObjClear :public CObj
 {
 public:
-	CObjClear() {};
-	~CObjClear() {};
-	void Init();
-	void Action();
-	void Draw();
+	CObjClear() {};		//コントラクタ
+	~CObjClear() {};	
+	void Init();	//イニシャライズ
+	void Action();	//アクション
+	void Draw();	//ドロー
 private:
 	bool m_key_flag;
 };

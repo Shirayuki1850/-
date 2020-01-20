@@ -8,16 +8,16 @@ using namespace GameL;
 class CObjHealItem :public CObj
 {
 public:
-	CObjHealItem(float x,float y);
+	CObjHealItem(float x,float y);	//コントラクタ
 	~CObjHealItem() {};
-	void Init();
-	void Action();
-	void Draw();
+	void Init();	//イニシャライズ
+	void Action();	//アクション
+	void Draw();	//ドロー
 	float m_ex;
 	float m_ey;
 private:
 
-	int hp;
+	int hp;	//HP
 
 	float m_px;
 	float m_py;

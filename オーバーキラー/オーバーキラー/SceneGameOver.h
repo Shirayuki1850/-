@@ -6,7 +6,7 @@ using namespace GameL;
 class CSceneGameOver :public CScene
 {
 public :
-	CSceneGameOver(int x) ;
+	CSceneGameOver(int x) ;	//コントラクタ
 	~CSceneGameOver() ;
 	void InitScene();
 	void Scene();

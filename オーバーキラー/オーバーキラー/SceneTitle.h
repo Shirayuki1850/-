@@ -5,7 +5,7 @@ using namespace GameL;
 class CSceneTitle :public CScene
 {
 public:
-	CSceneTitle();
+	CSceneTitle();	//コントラクタ
 	~CSceneTitle();
 	void InitScene();
 	void Scene();

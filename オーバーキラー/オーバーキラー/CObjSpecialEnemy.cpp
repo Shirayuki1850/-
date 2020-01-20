@@ -153,6 +153,7 @@ void CObjSpecialEnemy::Action()
 				h->SetDamege(1);
 				h->SetDamegeCount();
 			}
+			//Music Start
 			Audio::Start(6);
 		}
 	}

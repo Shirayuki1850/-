@@ -5,11 +5,11 @@ using namespace GameL;
 class CObjTitle :public CObj
 {
 public:
-	CObjTitle() {};
+	CObjTitle() {};	//コントラクタ
 	~CObjTitle() {};
-	void Init();
-	void Action();
-	void Draw();
+	void Init();	//イニシャライズ
+	void Action();	//アクション
+	void Draw();	//ドロー
 private:
 	bool m_key_flag;
 };
