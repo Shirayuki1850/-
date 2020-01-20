@@ -14,7 +14,7 @@ void CObjClear::Init()			//イニシャライズ
 
 void CObjClear::Action()			//アクション
 {
-	//EnterKey push:tereport
+	//Ｃキー押したらゲームメイン２に移行
 	if (Input::GetVKey('C') == true)
 	{
 		if (m_key_flag == true)
@@ -23,6 +23,7 @@ void CObjClear::Action()			//アクション
 			m_key_flag = false;
 		}
 	}
+	//エンターキー押したらタイトルに移行
 	if (Input::GetVKey(VK_RETURN) == true)
 	{
 		if (m_key_flag == true)

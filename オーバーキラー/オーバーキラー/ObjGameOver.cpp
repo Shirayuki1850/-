@@ -22,7 +22,7 @@ void CObjGameOver::Init()
 //アクション
 void CObjGameOver::Action()
 {
-	//EnterKey push:tereport	エンター押したら
+	//エンターキー押したらタイトルに移行
 	if (Input::GetVKey(VK_RETURN) == true)
 	{
 		if (m_key_flag == true)
@@ -31,6 +31,7 @@ void CObjGameOver::Action()
 			m_key_flag = false;
 		}
 	}
+	//Ｖキー押したらゲームメインに移行
 	if (Input::GetVKey('V') == true)
 	{
 		if (m_key_flag == true)
