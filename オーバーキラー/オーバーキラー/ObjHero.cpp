@@ -170,7 +170,7 @@ void CObjHero::Action()
 		{
 			m_f = true;
 		}
-		if (Input::GetVKey('X') == true)
+		if (Input::GetVKey('X') == true)//’e˜AŽË
 		{
 			
 				if (BN > 0)

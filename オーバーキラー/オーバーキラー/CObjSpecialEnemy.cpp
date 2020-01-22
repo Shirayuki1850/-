@@ -21,7 +21,7 @@ void CObjSpecialEnemy::Init()
 {
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-	m_hp = 2;	//HP
+	m_hp = 3;	//HP
 
 	m_posture = 1.0f;//‰EŒü‚«0.0f¶1.0‚†
 
