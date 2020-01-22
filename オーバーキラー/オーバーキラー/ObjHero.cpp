@@ -125,8 +125,8 @@ void CObjHero::Action()
 
 		}
 
-		//SPACEキー入力で速度アップ
-		if (Input::GetVKey('A') == true)
+		//Bキー入力で速度アップ
+		if (Input::GetVKey('B') == true)
 		{
 			//ダッシュ時の速度
 			m_speed_power = 0.8f;
