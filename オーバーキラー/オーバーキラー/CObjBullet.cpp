@@ -47,7 +47,7 @@ void CObjBullet::Action()
 	hit->SetPos(b_x, b_y);	//HitBox‚ÌˆÊ’u‚ð’eŠÛ‚ÌˆÊ’u‚ÉXV
 
 	//—ÌˆæŠO‚Éo‚½‚ç’eŠÛ‚ð”j‰ó‚·‚é
-	if (b_x > 600.0f)
+	if (b_x > 600.0f || b_x < 5.0f)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);

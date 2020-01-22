@@ -116,7 +116,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CObjBullet.cpp" />
-    <ClCompile Include="CObjBulletLeft.cpp" />
+    <ClCompile Include="CObjBulletLeft.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="CObjMediumBoss.cpp" />
     <ClCompile Include="CObjSpecialEnemy.cpp" />
     <ClCompile Include="GameL\Audio.cpp" />
@@ -157,7 +159,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CobjBullet.h" />
-    <ClInclude Include="CObjBulletLeft.h" />
+    <ClInclude Include="CObjBulletLeft.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="CObjMediumBoss.h" />
     <ClInclude Include="CObjSpecialEnemy.h" />
     <ClInclude Include="GameHead.h" />
