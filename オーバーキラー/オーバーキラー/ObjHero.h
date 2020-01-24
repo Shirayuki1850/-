@@ -83,4 +83,6 @@ private:
 	bool damege_flag;
 
 	int count;
+	int f;
+	bool m_f2;
 };

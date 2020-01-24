@@ -40,6 +40,6 @@ private:
 
 	bool hit_flag;
 
-	int dm;
+	int dm;	//ƒ{ƒX‚ÌUŒ‚—Í
 };
 

@@ -17,7 +17,7 @@ CObjEnemy::CObjEnemy(float x, float y)
 	m_py = y;
 	
 }
-//右側に弾が出ない
+
 
 //イニシャライズ
 void CObjEnemy::Init()

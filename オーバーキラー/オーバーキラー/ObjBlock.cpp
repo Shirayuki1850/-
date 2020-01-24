@@ -128,7 +128,9 @@ void CObjBlock::Draw()
 	Font::StrDraw(L"右キー:右移動", 20,130, 32, c);
 	Font::StrDraw(L"移動時+Aキー:ダッシュ", 20, 160, 32, c);
 	Font::StrDraw(L"Zキー:弾丸発射", 20, 190, 32, c);
-	Font::StrDraw(L"上キー:ジャンプ", 20, 220, 32, c);
+	Font::StrDraw(L"Xキー:連射", 20, 220, 32, c);
+	Font::StrDraw(L"上キー:ジャンプ", 20, 250, 32, c);
+
 	
 
 
