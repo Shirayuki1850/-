@@ -37,7 +37,7 @@ void CObjBulletLeft::Action()
 	hit->SetPos(b_x, b_y);	//HitBoxの位置を弾丸の位置に更新
 
 	//領域外に出たら弾丸を破壊する
-	if (b_x < -60.0f)
+	if (b_x==0.0f)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
