@@ -126,7 +126,7 @@ void CObjHero::Action()
 		}
 
 		//Bキー入力で速度アップ
-		if (Input::GetVKey('B') == true)
+		if (Input::GetVKey('A') == true)
 		{
 			//ダッシュ時の速度
 			m_speed_power = 0.8f;
@@ -140,7 +140,7 @@ void CObjHero::Action()
 
 		}
 		//主人公弾丸発射
-		if (Input::GetVKey('Z') == true)
+		if (Input::GetVKey('S') == true)
 		{
 			if (m_f == true)
 			{
