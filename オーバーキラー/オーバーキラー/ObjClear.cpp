@@ -23,6 +23,15 @@ void CObjClear::Action()			//アクション
 			m_key_flag = false;
 		}
 	}
+
+	if (Input::GetVKey('P') == true)
+	{
+		if (m_key_flag == true)
+		{
+			Scene::SetScene(new CSceneMain(1));
+			m_key_flag = false;
+		}
+	}
 	//エンターキー押したらタイトルに移行
 	if (Input::GetVKey(VK_RETURN) == true)
 	{
@@ -45,6 +54,8 @@ void CObjClear::Draw()			//ドロー
 	Font::StrDraw(L"GAME CLEAR", 250, 230, 60, c);
 
 	Font::StrDraw(L"PUSH ENTERKEY BACK TO TITLE", 200, 350, 30, c);
+
+	Font::StrDraw(L"PUSH P KEY  BACK STAGE1", 220, 390, 30, c);
 
 	Font::StrDraw(L"PUSH C KEY  NEXT STAGE2", 220, 420, 30, c);
 }
