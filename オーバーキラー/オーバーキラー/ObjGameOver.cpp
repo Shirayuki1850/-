@@ -22,7 +22,7 @@ void CObjGameOver::Init()
 //アクション
 void CObjGameOver::Action()
 {
-	//エンターキー押したらタイトルに移行
+	//EnterKey push:tereport	エンター押したら
 	if (Input::GetVKey(VK_RETURN) == true)
 	{
 		if (m_key_flag == true)
@@ -31,8 +31,7 @@ void CObjGameOver::Action()
 			m_key_flag = false;
 		}
 	}
-	//Ｖキー押したらゲームメインに移行
-	if (Input::GetVKey('V') == true)
+	if (Input::GetVKey('R') == true)
 	{
 		if (m_key_flag == true)
 		{
@@ -55,7 +54,7 @@ void CObjGameOver::Draw()
 	Font::StrDraw(L"GAME　OVER : PUSH ENTERKEY ", 200, 220, 30, c);
 
 	//リスポーン
-	Font::StrDraw(L"Retry: PUSH V KEY ", 250, 260, 30, c);
+	Font::StrDraw(L"Retry: PUSH R KEY ", 250, 260, 30, c);
 	
 
 }
