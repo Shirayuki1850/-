@@ -197,7 +197,7 @@ void CObjBoss::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 
-		Scene::SetScene(new CSceneClear());
+		Scene::SetScene(new CSceneClear);
 		Audio::Stop(9);
 	}
 }
