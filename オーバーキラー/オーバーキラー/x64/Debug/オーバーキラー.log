@@ -1,3 +1,5 @@
 ﻿  CObjMediumBoss.cpp
-c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(117): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
-  オーバーキラー.vcxproj -> C:\Users\GA1A\Desktop\マスターデータ\オーバーキラー\x64\Debug\オーバーキラー.exe
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(121): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(129): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(146): error C2374: 'h': 再定義されています。2 回以上初期化されています。
+  c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(126): note: 'h' の宣言を確認してください
