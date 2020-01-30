@@ -40,6 +40,7 @@ public:
 
 	int GetDamegeflag() { return damege_count; }
 	int BN; //’eŠÛ‚Ì”
+	int GetMapnum() { return map_num; }
 
 private:
 	float m_px;//ˆÊ’u

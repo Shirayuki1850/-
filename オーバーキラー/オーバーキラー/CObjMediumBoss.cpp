@@ -22,7 +22,7 @@ void CObjMediumBoss::Init()
 {
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-	m_hp = 10;		//HP
+	m_hp = 15;		//HP
 
 	m_posture = 1.0f;//右向き0.0f左1.0ｆ
 
@@ -43,7 +43,7 @@ void CObjMediumBoss::Init()
 
 	hit_flag = false;
 
-	dm = 5;//中ボスの攻撃力
+	dm = 15;//中ボスの攻撃力
 
 
 	//当たり判定用HitBoxを作成
@@ -70,13 +70,14 @@ void CObjMediumBoss::Action()
 	}
 
 
+
 	//通常速度
 	m_speed_power = 0.3f;
 	m_ani_max_time = 4;
 
 
 
-	if (m_px >= 8300)
+	/*if (m_px >= 8300)
 	{
 		m_move = true;
 	}
@@ -84,6 +85,9 @@ void CObjMediumBoss::Action()
 	{
 		m_move = false;
 	}
+	*/
+	
+
 	//方向
 	if (m_move == false)
 	{
@@ -117,7 +121,13 @@ void CObjMediumBoss::Action()
 	m_vx += -(m_vx * 0.098);
 
 	//自由落下運動
-	//m_vy += 9.8 / (16.0f);
+	
+	
+	CObjHero* h = (CObjHero*)Objs::GetObj(OBJ_HERO);
+	if (m_px < 103 * 64&&h->GetMapnum()==1)
+	{
+		m_vy += 9.8 / (16.0f);
+	}
 	//ブロックタイプ検知用の変数がないためのダミー
 	int d;
 	//ブロックとの当たり判定実行
@@ -126,7 +136,6 @@ void CObjMediumBoss::Action()
 		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
 		&d
 	);
-
 
 	//位置の最新
 	m_px += m_vx;
@@ -196,6 +205,17 @@ void CObjMediumBoss::Action()
 			Hits::DeleteHitBox(this);
 		}
 	}
+	//落下による破棄
+	if (m_py > 1000.0f)
+	{
+		//音楽ストップ
+		Audio::Start(5);
+		Audio::Stop(8);
+
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+	
 }
 
 //ドロー

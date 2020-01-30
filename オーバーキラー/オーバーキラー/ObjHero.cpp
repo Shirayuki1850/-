@@ -420,6 +420,11 @@ void CObjHero::Draw()
 	wchar_t str[10];
 	float c2[4] = { 1.0f,0.0f,0.0f,1.0f };
 
+	if (m_hp <= 0)
+	{
+		m_hp = 0;
+	}
+
 	swprintf_s(str, L"HP:%d", m_hp);
 	Font::StrDraw(str, 20, 20, 40, c2);
 	swprintf_s(str, L"Žc’e”:%d", BN);
