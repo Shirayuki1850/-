@@ -100,8 +100,8 @@ void CObjHero::Action()
 	if (damege_count < 3)
 	{
 
-		if (m_hp > 20)
-		{
+		if (m_hp >= 20)
+		{                      //マイナス表記なくしたい
 			m_hp = 20;
 		}
 		//落下によるゲームオーバー＆リスタート
@@ -144,8 +144,8 @@ void CObjHero::Action()
 		{
 			if (m_f == true)
 			{
-					if (BN > 0)
-					{	//Music loading
+					//if (BN > 0)
+					//{	//Music loading
 						Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
 						//Music Start
 						Audio::Start(4);
@@ -162,8 +162,8 @@ void CObjHero::Action()
 						}
 						
 						m_f = false;
-						BN--;
-					}
+						//BN--;
+					//}
 			}
 		}
 		else
