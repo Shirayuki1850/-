@@ -33,7 +33,7 @@ void CObjBullet::Init()
 	m_hit_left=false;
 	m_hit_right=false;
 	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, b_x, b_y, 32, 32, ELEMENT_PLAYER, OBJ_BULLET, 1);
+	Hits::SetHitBox(this, b_x, b_y, 32, 32, ELEMENT_BULLET, OBJ_BULLET, 1);
 }
 
 //アクション
@@ -44,8 +44,13 @@ void CObjBullet::Action()
 
 	//弾丸のHitBox更新用ポインター取得
 	CHitBox*hit = Hits::GetHitBox(this);
+	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	hit->SetPos(b_x, b_y);	//HitBoxの位置を弾丸の位置に更新
-
+	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 	//領域外に出たら弾丸を破壊する
 	if (b_x > 600.0f || b_x < 5.0f)
 	{
@@ -65,7 +70,7 @@ void CObjBullet::Action()
 	//当たり判定オブジェクト情報群
 	int data_base[5] =
 	{
-		OBJ_ENEMY,
+		ELEMENT_ENEMY,
 		OBJ_SPECIAL_ENEMY,
 		OBJ_MEDIUM_BOSS,
 		OBJ_BOSS_ENEMY,
@@ -73,14 +78,10 @@ void CObjBullet::Action()
 	};
 	
 	//オブジェクト情報群と当たり判定を行い、当たっていれば削除
-	for (int i = 0; i < 5; i++)
-	{
-		if (hit->CheckObjNameHit(data_base[i]) != nullptr)
-		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-		}
-	}
+/*	for (int i = 0; i < 5; i++)
+	{*/
+			
+	//}
 
 }
 

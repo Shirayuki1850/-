@@ -28,7 +28,7 @@ void CObjHealItem::Action()
 	CObjBlock* pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	CHitBox*hit = Hits::GetHitBox(this);
 
-	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+	if (hit->CheckElementHit(ELEMENT_PLAYER) == true)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);

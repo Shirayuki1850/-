@@ -172,7 +172,7 @@ void CObjHero::Action()
 		}
 		if (Input::GetVKey('X') == true)//弾連射
 		{
-			
+			//
 				if (BN > 0)
 				{	
 					//弾丸オブジェクト作成
@@ -202,9 +202,9 @@ void CObjHero::Action()
 					
 					if (m_f2 == false)
 					{
-						if (f <= 5)
+						if (f <= 10)
 							f++;
-						if (f >= 5)
+						if (f >= 10)
 						{
 							m_f2 = true;
 							f = 0;
@@ -217,7 +217,7 @@ void CObjHero::Action()
 		}
 		else
 		{
-			f = 5;
+			f = 10;
 		}
 
 		//キーの入力方向
@@ -319,13 +319,7 @@ void CObjHero::Action()
 		};
 
 		//オブジェクト情報群と当たり判定を行い、当たっていればHPを減らす
-		for (int i = 0; i < 2; i++)
-		{
-			if (hit->CheckObjNameHit(data_base[i]) != nullptr)
-			{
-
-			}
-
+		
 			//HPが０になったら破壊
 			if (m_hp <= 0)
 			{
@@ -334,17 +328,20 @@ void CObjHero::Action()
 
 				Scene::SetScene(new CSceneGameOver(map_num));
 			}
-		}
+		
 
-
-		if (hit->CheckObjNameHit(OBJ_HEAL_ITEM) != nullptr)
-		{
-			m_hp += 3;
-		}
-		if (hit->CheckObjNameHit(OBJ_BULLET_ITEM) != nullptr)
-		{
-			BN += 5;//ドロップする弾薬数
-		}
+			if (m_hp > 0)
+			{
+				if (hit->CheckObjNameHit(OBJ_HEAL_ITEM) != nullptr)
+				{
+					m_hp += 3;
+				}
+				if (hit->CheckObjNameHit(OBJ_BULLET_ITEM) != nullptr)
+				{
+					BN += 5;//ドロップする弾薬数
+				}
+			}
+		
 	}
 	if (m_hit_left == true)
 	{

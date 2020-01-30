@@ -167,7 +167,7 @@ void CObjBoss::Action()
 	{
 		m_hp -= 1;
 	}
-	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+	if (hit->CheckElementHit(ELEMENT_PLAYER) == true)
 	{
 		if (hit_flag == false)
 		{

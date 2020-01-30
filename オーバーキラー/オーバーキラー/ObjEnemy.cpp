@@ -140,11 +140,15 @@ void CObjEnemy::Action()
 	}*/
 
 	//弾丸と接触していたらHPを減らす
-	if (hit ->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	if (m_hp > 0)
 	{
-		m_hp -= 1;
+		if (hit->CheckElementHit(ELEMENT_BULLET) == true)
+		{
+			m_hp -= 1;
+		}
 	}
-	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+
+	if (hit->CheckElementHit(ELEMENT_PLAYER) == true)
 	{
 		if (hit_flag == false)
 		{
@@ -173,8 +177,6 @@ void CObjEnemy::Action()
 	//HPが0になったら破壊
 	if (m_hp <= 0)
 	{			
-		
-
 		RndNum = rand() % 100+1;	// アイテムドロップ全体の確率
 		if (((1<=RndNum&& RndNum<10) && RndNum % 3 == 2)|| (11 <= RndNum && RndNum <= 15)|| (31 <= RndNum && RndNum <= 35)
 			||(56<=RndNum && RndNum<=60)|| (76 <= RndNum && RndNum <= 80)|| (96 <= RndNum && RndNum <= 100)) //30％の確率で回復アイテムドロップ
@@ -193,8 +195,9 @@ void CObjEnemy::Action()
 			Objs::InsertObj(ObjB, OBJ_BULLET_ITEM, 14);
 			int BN ;
 		}
-		this->SetStatus(false);
+		
 		Hits::DeleteHitBox(this);
+		this->SetStatus(false);
 	}
 	
 }

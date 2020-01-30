@@ -143,7 +143,7 @@ void CObjMediumBoss::Action()
 
 	//ƒuƒƒbƒNî•ñ‚ðŽ‚Á‚Ä‚­‚é
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
-	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
+	//CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
 
 /*
 	//ˆÚ“®•ûŒü
@@ -173,7 +173,7 @@ void CObjMediumBoss::Action()
 	{
 		m_hp -= 1;
 	}
-	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+	if (hit->CheckElementHit(ELEMENT_PLAYER) == true)
 	{
 		if (hit_flag == false)
 		{
