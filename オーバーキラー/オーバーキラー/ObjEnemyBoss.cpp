@@ -12,8 +12,8 @@ using namespace GameL;
 //コントラクタ
 CObjBoss::CObjBoss(float x, float y)
 {
-	m_px = x;
-	m_py = y-446;
+	m_px = x;    //ボスのX方向の位置
+	m_py = y-446;  //ボスのYから446引いた値
 }
 
 //イニシャライズ
@@ -172,7 +172,7 @@ void CObjBoss::Action()
 		if (hit_flag == false)
 		{
 			if (h->GetX() - pb->GetScroll() > m_px + 256)
-				h->DamegeFlag(true);
+				h->DamegeFlag(true); 
 			if (h->GetX() - pb->GetScroll() + 64 < m_px)
 				h->DamegeFlag(false);
 			if (h->GetDamegeflag() < 3)
@@ -195,10 +195,10 @@ void CObjBoss::Action()
 	if (m_hp <= 0)
 	{
 		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+		Hits::DeleteHitBox(this);//HPが0になったら削除
 
-		Scene::SetScene(new CSceneClear);
-		Audio::Stop(9);
+		Scene::SetScene(new CSceneClear);//HPが0になったらシーン移行
+		Audio::Stop(9);//HPが0になったら9番を止める
 	}
 }
 

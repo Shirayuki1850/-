@@ -184,11 +184,7 @@ void CObjEnemy::Action()
 			CObjHealItem*ObjH = new CObjHealItem(m_px, m_py);
 			Objs::InsertObj(ObjH, OBJ_HEAL_ITEM, 14);
 		}
-		/*
-			10%3=1
-			9%3=0
-			8%3=2
-			*/
+		
 		if (((1 <= RndNum && RndNum <= 10)&&RndNum%3==1)|| (46 <= RndNum && RndNum <= 50)||(66<=RndNum && RndNum<=70)|| (86 <= RndNum && RndNum <= 90))//20％の確率で弾薬ドロップ
 		{
 			CObjBulletItem*ObjB = new CObjBulletItem(m_px, m_py);
@@ -196,7 +192,7 @@ void CObjEnemy::Action()
 			int BN ;
 		}
 		
-		Hits::DeleteHitBox(this);
+		Hits::DeleteHitBox(this);    //主人公がアイテムに当たれば入手したこととし削除する
 		this->SetStatus(false);
 	}
 	
