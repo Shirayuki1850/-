@@ -43,7 +43,7 @@ void CObjMediumBoss::Init()
 
 	hit_flag = false;
 
-	dm = 10;//中ボスの攻撃力
+	dm = 15;//中ボスの攻撃力
 
 
 	//当たり判定用HitBoxを作成
