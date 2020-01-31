@@ -21,7 +21,7 @@ void CObjSpecialEnemy::Init()
 {
 	m_vx = 0.0f;    //移動ベクトルX
 	m_vy = 0.0f;    //移動ベクトルY
-	m_hp = 3;	//HP
+	m_hp = 3;		//HP
 
 	m_posture = 1.0f;//右向き0.0f左1.0ｆ
 
