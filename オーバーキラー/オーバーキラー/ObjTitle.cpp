@@ -44,7 +44,7 @@ void CObjTitle::Action()
 		m_key_flag = true;
 	}
 }
-
+//タイトルの表示
 void CObjTitle::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -63,7 +63,7 @@ void CObjTitle::Draw()
 	//描画
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 	
-
+	//サブタイトルの表示
 	Font::StrDraw(L"～動く屍を超えて行け～", 230, 250, 32, c);
 
 	Font::StrDraw(L"GameStart  :　PushEnterKey", 200, 400, 32, c);

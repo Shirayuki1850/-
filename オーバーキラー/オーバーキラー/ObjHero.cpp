@@ -91,6 +91,7 @@ void CObjHero::Action()
 		//自由落下運動
 		m_vy += 9.8 / (16.0f);
 	}
+	//ブロックと主人公のHitBox
 	CObjBlock* pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	pb->BlockHit(&m_px, &m_py, true,
 		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
@@ -100,8 +101,8 @@ void CObjHero::Action()
 	if (damege_count < 3)
 	{
 
-		if (m_hp >= 20)
-		{                      //マイナス表記なくしたい
+		if (m_hp >= 20)          //主人公の体力が規定の２０よりも上がらないようにする
+		{                      
 			m_hp = 20;
 		}
 		//落下によるゲームオーバー＆リスタート
@@ -202,9 +203,9 @@ void CObjHero::Action()
 					
 					if (m_f2 == false)
 					{
-						if (f <= 10)
+						if (f <= 5)
 							f++;
-						if (f >= 10)
+						if (f >= 5)
 						{
 							m_f2 = true;
 							f = 0;
@@ -421,7 +422,7 @@ void CObjHero::Draw()
 	{
 		m_hp = 0;
 	}
-
+	//主人公の状態を表示
 	swprintf_s(str, L"HP:%d", m_hp);
 	Font::StrDraw(str, 20, 20, 40, c2);
 	swprintf_s(str, L"残弾数:%d", BN);
