@@ -1,9 +1,9 @@
-﻿  CObjMediumBoss.cpp
-c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(111): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1a\desktop\マスターデータ\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(119): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+﻿  Audio.cpp
+c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\gamel\audio.cpp(357): warning C4267: '初期化中': 'size_t' から 'unsigned int' に変換しました。データが失われているかもしれません。
+c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\gamel\audio.cpp(357): warning C4267: '初期化中': 'size_t' から 'const unsigned int' に変換しました。データが失われているかもしれません。
   コード生成しています。
   0 of 1040 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
-  オーバーキラー.vcxproj -> C:\Users\GA1A\Desktop\マスターデータ\オーバーキラー\x64\Release\オーバーキラー.exe
+  オーバーキラー.vcxproj -> C:\Users\GA1A\Desktop\死ね\オーバーキラー\x64\Release\オーバーキラー.exe

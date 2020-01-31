@@ -63,7 +63,7 @@ void CAudio::Init(int max_audio)
 		//ミックスボイス作成
 		m_pXAudio2->CreateSubmixVoice(&m_AudioData[i]->m_pSFXSubmixVoice,1,44100,0,0,0,0);
 	}
-
+	//
 	//マスターボリューム
 	m_pMasteringVoice->SetVolume(1.0f,0);
 }
