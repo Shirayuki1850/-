@@ -28,14 +28,14 @@ void CSceneClear::InitScene()
 	Font::SetStrTex(L"GAME CLEAR");
 
 
-	//Music loading
+	//サウンド1番にゲームクリアbgmを登録する
 	Audio::LoadAudio(1, L"BGMSE/ゲームクリア.wav",SOUND_TYPE::BACK_MUSIC);
 
 	//Volume 1.0 return
 	//float v = Audio::VolumeMaster(+0.5f);
 	//v = Audio::VolumeMaster((1 + v));
 
-	//Music Start
+	//サウンド1番を再生させる
 	Audio::Start(1);
 
 	//clear object

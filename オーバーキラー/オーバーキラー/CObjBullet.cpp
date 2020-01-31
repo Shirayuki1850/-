@@ -12,9 +12,11 @@ using namespace GameL;
 //コントラクタ
 CObjBullet::CObjBullet(float x, float y,bool f)
 {
-	b_x = x;
-	b_y = y;
+
+	b_x = x;//弾丸のX方向の位置用変数
+	b_y = y;//弾丸のY方向の位置用変数
 	move_flag = f;
+
 }
 //イニシャライズ
 void CObjBullet::Init()
@@ -28,10 +30,13 @@ void CObjBullet::Init()
 		b_vx = -6.0f;
 	}
 	f = 0;
+
+	//blockとの衝突状態確認用
 	m_hit_up = false;
 	m_hit_down=false;
 	m_hit_left=false;
 	m_hit_right=false;
+
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, b_x, b_y, 32, 32, ELEMENT_BULLET, OBJ_BULLET, 1);
 }
@@ -45,7 +50,8 @@ void CObjBullet::Action()
 	//弾丸のHitBox更新用ポインター取得
 	CHitBox*hit = Hits::GetHitBox(this);
 	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
-	hit->SetPos(b_x, b_y);	//HitBoxの位置を弾丸の位置に更新
+	hit->SetPos(b_x, b_y);	
+	//HitBoxの位置を弾丸の位置に更新
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
 		this->SetStatus(false);
