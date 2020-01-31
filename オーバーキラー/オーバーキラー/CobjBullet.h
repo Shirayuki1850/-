@@ -22,6 +22,7 @@ private:
 
 	bool move_flag;
 
+	//block‚Æ‚ÌÕ“Ëó‘ÔŠm”F—p
 	bool m_hit_up;
 	bool m_hit_down;
 	bool m_hit_left;
