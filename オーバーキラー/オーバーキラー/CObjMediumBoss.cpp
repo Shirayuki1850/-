@@ -22,7 +22,7 @@ void CObjMediumBoss::Init()
 {
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-	m_hp = 15;		//HP
+	m_hp = 10;		//HP
 
 	m_posture = 1.0f;//右向き0.0f左1.0ｆ
 
@@ -43,7 +43,7 @@ void CObjMediumBoss::Init()
 
 	hit_flag = false;
 
-	dm = 15;//中ボスの攻撃力
+	dm = 10;//中ボスの攻撃力
 
 
 	//当たり判定用HitBoxを作成

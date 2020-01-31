@@ -20,8 +20,8 @@ CObjBoss::CObjBoss(float x, float y)
 void CObjBoss::Init()
 {
 	bool flag = false;
-	m_vx = 0.0f;
-	m_vy = 0.0f;
+	m_vx = 0.0f;//移動ベクトルX
+	m_vy = 0.0f;//移動ベクトルY
 	m_hp = 30;	//HP
 
 	m_posture = 1.0f;//右向き0.0f左1.0ｆ
@@ -42,7 +42,7 @@ void CObjBoss::Init()
 
 	hit_flag = false;
 
-	dm = 8;//ボスの攻撃力
+	dm = 10;//ボスの攻撃力
 
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_px, m_py, 256, 512, ELEMENT_ENEMY, OBJ_BOSS_ENEMY, 1);
@@ -134,18 +134,7 @@ void CObjBoss::Action()
 	CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
 
 	
-/*	//移動方向
-	m_vx = -0.5f;
-	m_vy = 0.0f;
 
-	//移動ベクトルの正規化
-
-
-
-	//速度を付ける
-	m_vx *= 1.5f;
-	m_vy *= 1.5f;
-	*/
 	//移動ベクトルを座標に加算する
 	m_px += m_vx;
 	m_py += m_vy;
