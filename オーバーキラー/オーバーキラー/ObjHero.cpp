@@ -39,10 +39,10 @@ void CObjHero::Init()
 	BN = 200;	//弾丸の数
 
 	//blockとの衝突状態確認用
-	 m_hit_up     =  false;
-	 m_hit_down   =  false;
-	 m_hit_left   =  false;
-	 m_hit_right  =  false;
+	 m_hit_up     =  false;//上の当たり判定
+	 m_hit_down   =  false;//下の当たり判定
+	 m_hit_left   =  false;//左の当たり判定
+	 m_hit_right  =  false;//右の当たり判定
 
 	 m_block_type = 0;//踏んでいるBlockの種類を確認用
 
@@ -118,7 +118,7 @@ void CObjHero::Action()
 			if (m_hit_down == true)
 			{
 
-				m_vy = -15;
+				m_vy = -15;//ジャンプに高さ
 
 			}
 
@@ -423,8 +423,8 @@ void CObjHero::Draw()
 		m_hp = 0;
 	}
 	//主人公の状態を表示
-	swprintf_s(str, L"HP:%d", m_hp);
+	swprintf_s(str, L"HP:%d", m_hp);//HP表示
 	Font::StrDraw(str, 20, 20, 40, c2);
-	swprintf_s(str, L"残弾数:%d", BN);
+	swprintf_s(str, L"残弾数:%d", BN);//残弾数表示
 	Font::StrDraw(str, 20, 60, 40, c2);
 }
