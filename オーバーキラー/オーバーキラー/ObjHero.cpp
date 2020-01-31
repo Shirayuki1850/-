@@ -140,7 +140,7 @@ void CObjHero::Action()
 			m_ani_max_time = 10;
 
 		}
-		//主人公弾丸発射
+		//主人公単発弾発射
 		if (Input::GetVKey('S') == true)
 		{
 			if (m_f == true)
@@ -163,7 +163,7 @@ void CObjHero::Action()
 						}
 						
 						m_f = false;
-						//BN--;
+						//BN--;//無限弾
 					//}
 			}
 		}
@@ -171,7 +171,7 @@ void CObjHero::Action()
 		{
 			m_f = true;
 		}
-		if (Input::GetVKey('X') == true)//弾連射
+		if (Input::GetVKey('X') == true)//連射弾
 		{
 			//
 				if (BN > 0)
@@ -182,10 +182,10 @@ void CObjHero::Action()
 						CObjBullet*obj_b = new CObjBullet(m_px - 32.0f, m_py + 20.0f, move_flag);	//弾丸オブジェクト作成
 						Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
 						m_f2 = false;
-						BN--;
-						//Music loading
+						BN--;//連射したときBNから残弾数を減らす
+						//弾丸発射時に指定のSEを読み込む
 						Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
-						//Music Start
+						//弾丸発射時にSEを鳴らす
 						Audio::Start(4);
 					}
 					if (move_flag == true&&m_f2==true)
@@ -194,9 +194,9 @@ void CObjHero::Action()
 						Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
 						m_f2 = false;
 						BN--;
-						//Music loading
+						//弾丸発射時に指定のSEを読み込む
 						Audio::LoadAudio(4, L"BGMSE/銃.wav", SOUND_TYPE::EFFECT);
-						//Music Start
+						//弾丸発射時にSEを鳴らす
 						Audio::Start(4);
 					}
 					
@@ -330,16 +330,16 @@ void CObjHero::Action()
 				Scene::SetScene(new CSceneGameOver(map_num));
 			}
 		
-
+			//HPが０になったら破壊
 			if (m_hp > 0)
 			{
 				if (hit->CheckObjNameHit(OBJ_HEAL_ITEM) != nullptr)
 				{
-					m_hp += 3;
+					m_hp += 3;//HealItemが回復させる量
 				}
 				if (hit->CheckObjNameHit(OBJ_BULLET_ITEM) != nullptr)
 				{
-					BN += 5;//ドロップする弾薬数
+					BN += 5;//BulletItemがドロップする弾薬数
 				}
 			}
 		

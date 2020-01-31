@@ -18,7 +18,7 @@ CObjBulletItem::CObjBulletItem(float x, float y)
 //イニシャライズ
 void CObjBulletItem::Init()
 {
-	hp = 3;	//HP
+
 	//当たり判定用のHitBoxを作成
 	Hits::SetHitBox(this, m_ex, m_ey, 32, 32, ELEMENT_ITEM, OBJ_BULLET_ITEM, 0);
 
