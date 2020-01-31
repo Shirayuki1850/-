@@ -13,8 +13,8 @@ using namespace GameL;
 
 CObjEnemy::CObjEnemy(float x, float y)
 {	
-	m_px = x;     //位置
-	m_py = y;
+	m_px = x;   //位置X
+	m_py = y;	//位置Y
 	
 }
 
@@ -25,8 +25,8 @@ void CObjEnemy::Init()
 
 	m_hp = 1;//HP
 	
-	m_vx = 0.0f;//移動ベクトル
-	m_vy = 0.0f;
+	m_vx = 0.0f;//移動ベクトルX
+	m_vy = 0.0f;//移動ベクトルY
 	m_posture = 1.0f;//右向き0.0f左1.0ｆ
 	
 	m_ani_time  = 0;

@@ -20,8 +20,8 @@ CObjMediumBoss::CObjMediumBoss(float x, float y)
 //イニシャライズ
 void CObjMediumBoss::Init()
 {
-	m_vx = 0.0f;
-	m_vy = 0.0f;
+	m_vx = 0.0f;	// ボス移動ベクトルX
+	m_vy = 0.0f;	//ボス移動ベクトルY
 	m_hp = 15;		//HP
 
 	m_posture = 1.0f;//右向き0.0f左1.0ｆ

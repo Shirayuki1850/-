@@ -13,8 +13,8 @@ using namespace GameL;
 CObjBullet::CObjBullet(float x, float y,bool f)
 {
 
-	b_x = x;
-	b_y = y;
+	b_x = x;//弾丸のX方向の位置用変数
+	b_y = y;//弾丸のY方向の位置用変数
 	move_flag = f;
 
 }
