@@ -20,16 +20,20 @@ void CObjHealItem::Init()
 {
 	hp = 3;	//HP
 	//当たり判定用のHitBoxを作成
+	//								   x   y 
 	Hits::SetHitBox(this, m_ex, m_ey, 64, 85, ELEMENT_ITEM, OBJ_HEAL_ITEM, 0);
 	
 }
 void CObjHealItem::Action()
 {
+	//hitboxの作成
 	CObjBlock* pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	CHitBox*hit = Hits::GetHitBox(this);
 
+	//プレイヤーが当たった時、trueにする
 	if (hit->CheckElementHit(ELEMENT_PLAYER) == true)
 	{
+		//プレイヤーに当たってtrueになったらfalseにし、消す
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
