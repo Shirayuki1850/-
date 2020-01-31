@@ -12,15 +12,15 @@ using namespace GameL;
 //コントラクタ
 CObjSpecialEnemy::CObjSpecialEnemy(float x, float y)
 {
-	m_px = x;
-	m_py = y;
+	m_px = x;    //X方向の位置
+	m_py = y;    //Y方向の位置
 }
 
 //イニシャライズ
 void CObjSpecialEnemy::Init()
 {
-	m_vx = 0.0f;
-	m_vy = 0.0f;
+	m_vx = 0.0f;    //移動ベクトルX
+	m_vy = 0.0f;    //移動ベクトルY
 	m_hp = 3;	//HP
 
 	m_posture = 1.0f;//右向き0.0f左1.0ｆ
@@ -56,8 +56,8 @@ void CObjSpecialEnemy::Action()
 	}
 	
 	//通常速度
-	m_speed_power = 0.5f;
-	m_ani_max_time = 4;
+	m_speed_power = 0.5f;     //特殊ゾンビの速度
+	m_ani_max_time = 4;       //アニメーション動作間隔最大値
 
 	//ブロック衝突で向き変更
 	if (m_hit_left == true)

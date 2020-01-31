@@ -100,10 +100,7 @@ void CSceneMain::InitScene()
 	Audio::LoadAudio(7, L"大パンチ.wav", SOUND_TYPE::EFFECT);
 	
 
-	/*//Volume 1.0 return
-	float v = Audio::VolumeMaster(+0.5f);
-	v = Audio::VolumeMaster((1 + v));*/
-
+	
 	Audio::Start(5);
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(map_num);
@@ -122,18 +119,12 @@ void CSceneMain::InitScene()
 	}
 	
 
-	/*//6オブジェクト作成
-	CObjMediumBoss*obj6 = new CObjMediumBoss(map);
-	Objs::InsertObj(obj6, OBJ_MEDIUM_BOSS, 15);
-	*/
+	
 	//背景作成
 	CObjStage* objs = new CObjStage();
 	Objs::InsertObj(objs, OBJ_STAGE, 0);
 
-	/*//敵オブジェクト作成
-	CObjEnemy*obje = new CObjEnemy();
-	Objs::InsertObj(obje, OBJ_ENEMY, 13);*/
-
+	
 }
 
 //実行中メソッド

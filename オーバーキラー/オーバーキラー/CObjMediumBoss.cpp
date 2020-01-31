@@ -13,8 +13,8 @@ using namespace GameL;
 //コントラクタ
 CObjMediumBoss::CObjMediumBoss(float x, float y)
 {
-	m_px = x;
-	m_py = y-200;
+	m_px = x;           //ボスのX方向の位置
+	m_py = y-200;       //ボスのY方向から200引いた位置
 }
 
 //イニシャライズ
@@ -49,13 +49,11 @@ void CObjMediumBoss::Init()
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_px, m_py, 256, 256, ELEMENT_ENEMY, OBJ_MEDIUM_BOSS, 1);
 
-	/*Volume 1.0 return
-	float v = Audio::VolumeMaster(+0.5f);
-	v = Audio::VolumeMaster((1 + v));*/
+
 
 	//Music Start
-	Audio::Stop(5);
-	Audio::Start(8);
+	Audio::Stop(5);//中ボス出現で5番を止める
+	Audio::Start(8);//中ボス出現で8番スタート
 }
 
 //アクション
@@ -77,15 +75,7 @@ void CObjMediumBoss::Action()
 
 
 
-	/*if (m_px >= 8300)
-	{
-		m_move = true;
-	}
-	if (m_px <= 7500) 
-	{
-		m_move = false;
-	}
-	*/
+	
 	
 
 	//方向
@@ -143,21 +133,9 @@ void CObjMediumBoss::Action()
 
 	//ブロック情報を持ってくる
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
-	//CObjHero*h = (CObjHero*)Objs::GetObj(OBJ_HERO);
-
-/*
-	//移動方向
-	m_vx = -1.0f;
-	m_vy = 0.0f;
-
-	//移動ベクトルの正規化
 
 
 
-	//速度を付ける
-	m_vx *= 1.5f;
-	m_vy *= 1.5f;
-	*/
 	//移動ベクトルを座標に加算する
 	m_px += m_vx;
 	m_py += m_vy;
@@ -238,8 +216,8 @@ void CObjMediumBoss::Draw()
 
 	//表示位置の設定
 	dst.m_top = m_py;
-	dst.m_left =/*0.0f + m_px; */(256.0f    *   m_posture) + m_px + block->GetScroll();
-	dst.m_right =/* 256.0f + m_px; */(256 - 256.0f *  m_posture) + m_px + block->GetScroll();
+	dst.m_left =(256.0f    *   m_posture) + m_px + block->GetScroll();
+	dst.m_right =(256 - 256.0f *  m_posture) + m_px + block->GetScroll();
 	dst.m_bottom = m_py+256;
 
 	//13番のグラフィックをsrc・dstの情報を元に描画
