@@ -37,7 +37,8 @@ void CSceneMain::InitScene()
 	p = Save::ExternalDataOpen(L"マップデータ/マップ001.csv", &size);//外部データの読み込み
 
 	
-
+	//マップ１の情報
+	//10×200
 	int map[10][200];
 	int count = 1;
 	for (int i = 0; i < 10; i++)
@@ -59,6 +60,8 @@ void CSceneMain::InitScene()
 
 
 
+	//マップ２の情報
+	//10×200
 	int map2[10][200];
 	int count2 = 1;
 	for (int i = 0; i < 10; i++)
@@ -91,16 +94,17 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"画像/image3.png", 14, TEX_SIZE_512);
 
 	
-	//Music loading
+	//サウンド登録　読み込み
 	Audio::LoadAudio(5, L"BGMSE/ゲームメイン.wav", SOUND_TYPE::BACK_MUSIC);
 	Audio::LoadAudio(8, L"BGMSE/中ボス.wav", SOUND_TYPE::BACK_MUSIC);
 	Audio::LoadAudio(9, L"BGMSE/ラスボス.wav", SOUND_TYPE::BACK_MUSIC);
 
+	//エフェクト登録　読み込み
 	Audio::LoadAudio(6, L"BGMSE/小パンチ.wav", SOUND_TYPE::EFFECT);
 	Audio::LoadAudio(7, L"大パンチ.wav", SOUND_TYPE::EFFECT);
 	
 
-	
+	//シーンメインに移行したらサウンド5番を再生
 	Audio::Start(5);
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(map_num);
@@ -109,11 +113,13 @@ void CSceneMain::InitScene()
 	//ブロックオブジェクト作成
 	if(map_num==1)
 	{
+		//マップ２オブジェクト
 		CObjBlock* objb = new CObjBlock(map);
 		Objs::InsertObj(objb, OBJ_BLOCK, 10);
 	}
 	if (map_num == 2)
 	{
+		//マップ２オブジェクト
 		CObjBlock* objb = new CObjBlock(map2);
 		Objs::InsertObj(objb, OBJ_BLOCK, 10);
 	}
