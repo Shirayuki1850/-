@@ -20,19 +20,19 @@ CSceneTitle::~CSceneTitle()
 {
 
 }
-
+//タイトル画面のUIを表示
 void CSceneTitle::InitScene()
 {
 	Font::SetStrTex(L"動く屍を越えていけ");
 
-	//Music　loading
+	//音楽をロード
 	Audio::LoadAudio(3, L"BGMSE/ゲームタイトル.wav", SOUND_TYPE::BACK_MUSIC);
 
-	// image loading
+	//オブジェクトのグラフィックをロード
 	Draw::LoadImageW(L"画像/タイトル背景.jpg", 0, TEX_SIZE_512);
 	Draw::LoadImageW(L"画像/回復薬.png", 1, TEX_SIZE_512);
 
-	//BackMusic Start
+	//BGMを鳴らす
 	//float Volume = Audio::VolumeMaster(+0.5f);		//MasterVolume 0.8down
 	Audio::Start(3);		//Music Start*/
 
