@@ -1,6 +1,8 @@
-﻿  ObjBulletItem.cpp
+﻿  Audio.cpp
+c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\gamel\audio.cpp(357): warning C4267: '初期化中': 'size_t' から 'unsigned int' に変換しました。データが失われているかもしれません。
+c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\gamel\audio.cpp(357): warning C4267: '初期化中': 'size_t' から 'const unsigned int' に変換しました。データが失われているかもしれません。
   コード生成しています。
-  1 of 1040 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  0 of 1040 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
