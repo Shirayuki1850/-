@@ -1,4 +1,8 @@
-﻿  CObjBullet.cpp
+﻿  ObjHero.cpp
+c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objhero.cpp(90): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objhero.cpp(92): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objhero.cpp(258): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objhero.cpp(261): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
   コード生成しています。
   1 of 1043 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation

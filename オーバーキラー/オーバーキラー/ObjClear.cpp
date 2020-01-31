@@ -23,7 +23,7 @@ void CObjClear::Action()			//アクション
 			m_key_flag = false;
 		}
 	}
-
+	//Pキーを押したらステージ１に移行
 	if (Input::GetVKey('P') == true)
 	{
 		if (m_key_flag == true)
@@ -32,7 +32,7 @@ void CObjClear::Action()			//アクション
 			m_key_flag = false;
 		}
 	}
-	//エンターキー押したらタイトルに移行
+	//Tキー押したらタイトルに移行
 	if (Input::GetVKey('T') == true)
 	{
 		if (m_key_flag == true)
@@ -46,8 +46,8 @@ void CObjClear::Action()			//アクション
 		m_key_flag = true;
 	}
 }
-
-void CObjClear::Draw()			//ドロー
+//ゲームクリアで出現するUI表示
+void CObjClear::Draw()			
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
