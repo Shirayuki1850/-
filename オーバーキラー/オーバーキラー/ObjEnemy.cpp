@@ -185,10 +185,10 @@ void CObjEnemy::Action()
 			Objs::InsertObj(ObjH, OBJ_HEAL_ITEM, 14);
 		}
 		
-		if (((1 <= RndNum && RndNum <= 10)&&RndNum%3==1)|| (46 <= RndNum && RndNum <= 50)||(66<=RndNum && RndNum<=70)|| (86 <= RndNum && RndNum <= 90))//20％の確率で弾薬ドロップ
+		if (((1 <= RndNum && RndNum <= 10)&&RndNum%3==1)|| (46 <= RndNum && RndNum <= 50)||(66<=RndNum && RndNum<=70)|| (86 <= RndNum && RndNum <= 90))
 		{
 			CObjBulletItem*ObjB = new CObjBulletItem(m_px, m_py);
-			Objs::InsertObj(ObjB, OBJ_BULLET_ITEM, 14);
+			Objs::InsertObj(ObjB, OBJ_BULLET_ITEM, 14);//20％の確率で弾薬ドロップ
 			int BN ;
 		}
 		
