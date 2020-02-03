@@ -1,59 +1,7 @@
-﻿  CObjBullet.cpp
-  CObjBulletLeft.cpp
-  CObjMediumBoss.cpp
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(111): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\cobjmediumboss.cpp(119): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-  CObjSpecialEnemy.cpp
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\cobjspecialenemy.cpp(102): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\cobjspecialenemy.cpp(105): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\cobjspecialenemy.cpp(175): warning C4101: 'BN': ローカル変数は 1 度も使われていません。
-  Audio.cpp
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\gamel\audio.cpp(357): warning C4267: '初期化中': 'size_t' から 'unsigned int' に変換しました。データが失われているかもしれません。
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\gamel\audio.cpp(357): warning C4267: '初期化中': 'size_t' から 'const unsigned int' に変換しました。データが失われているかもしれません。
-  DirectXDevice.cpp
-  Draw2DTex_Source.cpp
-  DrawFont.cpp
-  DrawTexture.cpp
-  GameL_Main.cpp
-  HitBoxManager.cpp
-  MultiThread.cpp
-  SceneManager.cpp
-  SceneObjManager.cpp
-  SetWindow.cpp
-  UserData.cpp
-  WinInputs.cpp
-  ObjBlock.cpp
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objblock.cpp(154): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objblock.cpp(155): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objblock.cpp(122): warning C4101: 'src': ローカル変数は 1 度も使われていません。
-  ObjBulletItem.cpp
-  ObjClear.cpp
-  コンパイル中...
-  ObjEnemy.cpp
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objenemy.cpp(55): warning C4244: '引数': 'time_t' から 'unsigned int' への変換です。データが失われる可能性があります。
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objenemy.cpp(108): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objenemy.cpp(111): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objenemy.cpp(192): warning C4101: 'BN': ローカル変数は 1 度も使われていません。
-  ObjEnemyBoss.cpp
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objenemyboss.cpp(115): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
-  ObjGameOver.cpp
-  ObjHealItem.cpp
-  ObjHero.cpp
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objhero.cpp(90): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objhero.cpp(92): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objhero.cpp(258): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1a\desktop\死ね\オーバーキラー\オーバーキラー\objhero.cpp(261): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-  ObjRespoawn.cpp
-  ObjStage.cpp
-  ObjTitle.cpp
-  SceneClear.cpp
-  SceneGameOver.cpp
-  SceneMain.cpp
-  SceneRespoawn.cpp
-  SceneTitle.cpp
+﻿  ObjBulletItem.cpp
   コード生成しています。
-  1031 of 1040 functions (99.1%) were compiled, the rest were copied from previous compilation.
-    4 functions were new in current compilation
+  1 of 1040 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   オーバーキラー.vcxproj -> C:\Users\GA1A\Desktop\死ね\オーバーキラー\x64\Release\オーバーキラー.exe

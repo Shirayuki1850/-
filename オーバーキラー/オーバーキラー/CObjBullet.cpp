@@ -101,8 +101,8 @@ void CObjBullet::Draw()
 	RECT_F dst;	//•`‰ææ•\¦ˆÊ’u
 
 	//Ø‚èæ‚èˆÊ’u‚Ìİ’è
-	src.m_top =- 2.0f;
-	src.m_left =- 2.0f;
+	src.m_top = -2.0f;
+	src.m_left = -2.0f;
 	src.m_right = -30.0f;
 	src.m_bottom = -30.0f;
 
