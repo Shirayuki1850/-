@@ -52,6 +52,7 @@ void CObjMediumBoss::Init()
 
 
 	//Music Start
+
 	Audio::Stop(5);//中ボス出現で5番を止める
 	Audio::Start(8);//中ボス出現で8番スタート
 }
@@ -186,8 +187,10 @@ void CObjMediumBoss::Action()
 	//落下による破棄
 	if (m_py > 1000.0f)
 	{
-		//音楽ストップ
+	
+		//音楽スタート
 		Audio::Start(5);
+		//音楽ストップ
 		Audio::Stop(8);
 
 		this->SetStatus(false);
