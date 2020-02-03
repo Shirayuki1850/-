@@ -153,12 +153,12 @@ void CObjHero::Action()
 						//弾丸オブジェクト作成
 						if (move_flag == false)
 						{
-							CObjBullet*obj_b = new CObjBullet(m_px-32.0f, m_py + 20.0f, move_flag);	//弾丸オブジェクト作成
+							CObjBullet*obj_b = new CObjBullet(m_px-32.0f, m_py + 8.0f, move_flag);	//弾丸オブジェクト作成
 							Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
 						}
 						if (move_flag == true)
 						{
-							CObjBullet*obj_b = new CObjBullet(m_px+64.0f, m_py + 20.0f, move_flag);	//弾丸オブジェクト作成
+							CObjBullet*obj_b = new CObjBullet(m_px+64.0f, m_py + 8.0f, move_flag);	//弾丸オブジェクト作成
 							Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
 						}
 						
@@ -179,7 +179,7 @@ void CObjHero::Action()
 					//弾丸オブジェクト作成
 					if (move_flag == false&&m_f2==true)
 					{
-						CObjBullet*obj_b = new CObjBullet(m_px - 32.0f, m_py + 20.0f, move_flag);	//弾丸オブジェクト作成
+						CObjBullet*obj_b = new CObjBullet(m_px - 32.0f, m_py + 8.0f, move_flag);	//弾丸オブジェクト作成
 						Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
 						m_f2 = false;
 						BN--;//連射したときBNから残弾数を減らす
@@ -190,7 +190,7 @@ void CObjHero::Action()
 					}
 					if (move_flag == true&&m_f2==true)
 					{
-						CObjBullet*obj_b = new CObjBullet(m_px + 64.0f, m_py + 20.0f, move_flag);	//弾丸オブジェクト作成
+						CObjBullet*obj_b = new CObjBullet(m_px + 64.0f, m_py + 8.0f, move_flag);	//弾丸オブジェクト作成
 						Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
 						m_f2 = false;
 						BN--;
