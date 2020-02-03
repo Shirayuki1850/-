@@ -67,7 +67,7 @@ void CObjTitle::Draw()
 	Font::StrDraw(L"`“®‚­r‚ğ’´‚¦‚Äs‚¯`", 230, 250, 32, c);
 
 	Font::StrDraw(L"GameStart  :@PushEnterKey", 200, 400, 32, c);
-	//Font::StrDraw(L"Next Difficulty : Push Q Key", 200, 400, 32, c);
+	
 
 
 }

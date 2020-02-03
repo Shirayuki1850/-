@@ -118,7 +118,7 @@ void CObjHero::Action()
 			if (m_hit_down == true)
 			{
 
-				m_vy = -15;//ジャンプに高さ
+				m_vy = -15;//ジャンプの高さ
 
 			}
 
@@ -153,12 +153,12 @@ void CObjHero::Action()
 						//弾丸オブジェクト作成
 						if (move_flag == false)
 						{
-							CObjBullet*obj_b = new CObjBullet(m_px-32.0f, m_py + 20.0f, move_flag);	//弾丸オブジェクト作成
+							CObjBullet*obj_b = new CObjBullet(m_px-32.0f, m_py + 8.0f, move_flag);	//弾丸オブジェクト作成
 							Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
 						}
 						if (move_flag == true)
 						{
-							CObjBullet*obj_b = new CObjBullet(m_px+64.0f, m_py + 20.0f, move_flag);	//弾丸オブジェクト作成
+							CObjBullet*obj_b = new CObjBullet(m_px+64.0f, m_py + 8.0f, move_flag);	//弾丸オブジェクト作成
 							Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
 						}
 						
@@ -179,7 +179,7 @@ void CObjHero::Action()
 					//弾丸オブジェクト作成
 					if (move_flag == false&&m_f2==true)
 					{
-						CObjBullet*obj_b = new CObjBullet(m_px - 32.0f, m_py + 20.0f, move_flag);	//弾丸オブジェクト作成
+						CObjBullet*obj_b = new CObjBullet(m_px - 32.0f, m_py + 8.0f, move_flag);	//弾丸オブジェクト作成
 						Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
 						m_f2 = false;
 						BN--;//連射したときBNから残弾数を減らす
@@ -190,7 +190,7 @@ void CObjHero::Action()
 					}
 					if (move_flag == true&&m_f2==true)
 					{
-						CObjBullet*obj_b = new CObjBullet(m_px + 64.0f, m_py + 20.0f, move_flag);	//弾丸オブジェクト作成
+						CObjBullet*obj_b = new CObjBullet(m_px + 64.0f, m_py + 8.0f, move_flag);	//弾丸オブジェクト作成
 						Objs::InsertObj(obj_b, OBJ_BULLET, 1);	//作った弾丸オブジェクトマネージャーに登録
 						m_f2 = false;
 						BN--;
@@ -405,14 +405,14 @@ void CObjHero::Draw()
 	
 	//交点
 	float  cc[4] = { 1.0f,0.0f,0.0f,1.0f };
-	src.m_top = 0.0f;
-	src.m_left = 320.0f;
-	src.m_right = 320.0f + 64.0f;
-	src.m_bottom = 64.0f;
-	dst.m_top = py;
-	dst.m_left = px;
-	dst.m_right = dst.m_left + 10.0f;
-	dst.m_bottom = dst.m_top + 10.0f;
+	src.m_top = 0.0f;                  //描画元切り取り位置
+	src.m_left = 320.0f;               //描画元切り取り位置
+	src.m_right = 320.0f + 64.0f;      //描画元切り取り位置
+	src.m_bottom = 64.0f;              //描画元切り取り位置
+	dst.m_top = py;                    //描画先表示位置
+	dst.m_left = px;                   //描画先表示位置
+	dst.m_right = dst.m_left + 10.0f;  //描画先表示位置
+	dst.m_bottom = dst.m_top + 10.0f;  //描画先表示位置
 	Draw::Draw(0, &src, &dst, cc, 0.0f);
 
 	wchar_t str[10];
