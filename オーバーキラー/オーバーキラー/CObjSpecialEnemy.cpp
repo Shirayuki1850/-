@@ -144,7 +144,7 @@ void CObjSpecialEnemy::Action()
 		if (hit_flag == false)
 		{
 			hit_flag = true;
-			if (h->GetX() - pb->GetScroll() > m_px + 128)
+			if (h->GetX() - pb->GetScroll() > m_px + 64)
 				h->DamegeFlag(true);
 			if (h->GetX() - pb->GetScroll() + 64 < m_px)
 				h->DamegeFlag(false);
@@ -202,8 +202,8 @@ void CObjSpecialEnemy::Draw()
 	//•\Ž¦ˆÊ’u‚ÌÝ’è
 	
 	dst.m_top = 0.0f + m_py;
-	dst.m_left = (128.0f    *   m_posture) + m_px + block->GetScroll();
-	dst.m_right = (128 - 128.0f *  m_posture) + m_px + block->GetScroll();
+	dst.m_left = (64.0f    *   m_posture) + m_px + block->GetScroll();
+	dst.m_right = (64 - 64.0f *  m_posture) + m_px + block->GetScroll();
 	dst.m_bottom = 64.0f + m_py;
 
 	//•`‰æ
