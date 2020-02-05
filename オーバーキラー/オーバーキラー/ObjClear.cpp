@@ -7,10 +7,7 @@
 
 using namespace GameL;
 
-CObjGameOver::CObjGameOver(int x)
-{
-	map_num = x;
-}
+
 void CObjClear::Init()			//イニシャライズ
 {
 	//flagをオフにする
@@ -63,7 +60,7 @@ void CObjClear::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	//							  x	   y  size
+	//					  x	   y  size
 	Font::StrDraw(L"GAME CLEAR", 250, 230, 60, c);
 
 	Font::StrDraw(L"PUSH T KEY BACK TO TITLE", 200, 350, 30, c);

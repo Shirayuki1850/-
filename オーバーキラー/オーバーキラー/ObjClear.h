@@ -13,4 +13,5 @@ public:
 	void Draw();	//ƒhƒ[
 private:
 	bool m_key_flag;
+	int map_num;
 };
