@@ -26,7 +26,7 @@ void CObjBoss::Init()
 
 	m_posture = 1.0f;//右向き0.0f左1.0ｆ
 
-	m_ani_time = 0;
+	m_ani_time = 0;//アニメーションフレーム動作間隔
 	m_ani_frame = 1;//静止フレームを初期にする。
 
 	m_speed_power = 0.0f;//通常速度

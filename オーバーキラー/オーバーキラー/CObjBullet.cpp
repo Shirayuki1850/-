@@ -64,7 +64,6 @@ void CObjBullet::Action()
 		Hits::DeleteHitBox(this);
 	}
 	//ƒuƒƒbƒNî•ñ‚ðŽ‚Á‚Ä‚­‚é
-
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	block->BulletHit(&b_x, &b_y, true, &m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right);
 
