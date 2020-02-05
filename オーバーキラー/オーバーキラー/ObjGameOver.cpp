@@ -36,7 +36,7 @@ void CObjGameOver::Action()
 	{
 		if (m_key_flag == true)
 		{
-			Scene::SetScene(new CSceneMain(1));
+			Scene::SetScene(new CSceneMain(map_num));
 			m_key_flag = false;
 		}
 	}

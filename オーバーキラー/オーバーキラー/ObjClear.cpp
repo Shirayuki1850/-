@@ -7,6 +7,10 @@
 
 using namespace GameL;
 
+CObjGameOver::CObjGameOver(int x)
+{
+	map_num = x;
+}
 void CObjClear::Init()			//イニシャライズ
 {
 	//flagをオフにする
