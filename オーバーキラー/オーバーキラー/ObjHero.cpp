@@ -11,6 +11,8 @@
 #include"GameL/UserData.h"
 #include"Windows.h"
 
+//
+
 
 //使用するネームスペース
 using namespace GameL;
